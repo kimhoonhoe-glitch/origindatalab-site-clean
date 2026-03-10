@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="../assets/icons/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Origindata Lab | Real-World Urban Datasets</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preload" as="image" href="../assets/hero/hero1.jpg">
+</head>
+
+<body>
+    <<header>
+        <div class="container">
+            <a href="/" class="logo">
+                Origindata<span>Lab</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="/company.html">Company</a></li>
+                    <li><a href="#different">Why It's Different</a></li>
+                    <li><a href="/use-cases.html">Use Cases</a></li>
+                    <li><a href="#packs">Dataset Packs</a></li>
+                    <li><a href="/legal-transparency.html">Legal & Transparency</a></li>
+
+                    <li><a href="#contact" class="btn btn-primary-sm">Talk to a Data Engineer</a></li>
+                </ul>
+            </nav>
+        </div>
+        </header>
+
+        <main class="use-case-detail">
+            <div
+                style="position:fixed;top:90px;right:20px;z-index:9999;background:yellow;color:black;padding:6px 10px;font-weight:900;">
+                AUTONOMOUS PAGE
+            </div>
+            <div class="container max-w-800" style="padding-top: 8rem; padding-bottom: 5rem;">
+
+                <!-- Header -->
+                <div class="uc-header text-center mb-5">
+                    <h1 class="section-title">Autonomous Driving & ADAS</h1>
+                    <p class="uc-subtitle"
+                        style="color: var(--text-muted); font-size: 1.2rem; max-width: 700px; margin: 0 auto;">
+                        Real-world urban driving data for perception, planning, and edge-case discovery.
+                    </p>
+                </div>
+
+                <!-- Section 1: The Problem -->
+                <section class="uc-section mb-5">
+                    <h2 class="uc-section-title">Why Existing Data Fails in Real Urban Driving</h2>
+                    <ul class="uc-list">
+                        <li>Simulation data breaks down in dense, unstructured traffic</li>
+                        <li>Short video clips lose temporal continuity and motion context</li>
+                        <li>Heavy anonymization removes gaze, intent, and micro-behaviors</li>
+                        <li>Edge cases occur in transitions, not isolated frames</li>
+                    </ul>
+                </section>
+
+                <!-- Section 2: Our Data Approach -->
+                <section class="uc-section mb-5">
+                    <h2 class="uc-section-title">How This Dataset Is Collected</h2>
+                    <ul class="uc-list">
+                        <li>Continuous real-world driving footage (5–15 minutes per run)</li>
+                        <li>Street-level perspective from motorcycles, cars, and urban mobility</li>
+                        <li>Segment-level indexing (1-minute units) while preserving full continuity</li>
+                        <li>Original and anonymized versions available depending on use case</li>
+                        <li>Environment, density, and motion metadata attached</li>
+                    </ul>
+                </section>
+
+                <!-- Section 3: Typical Applications -->
+                <section class="uc-section mb-5">
+                    <h2 class="uc-section-title">Typical Applications</h2>
+                    <ul class="uc-list">
+                        <li>Multi-object tracking in dense traffic</li>
+                        <li>Planning and prediction in non-lane-based roads</li>
+                        <li>Failure analysis of perception models</li>
+                        <li>Long-tail scenario discovery in emerging markets</li>
+                    </ul>
+                </section>
+
+                <!-- Section 4: Visual Reference -->
+                <section class="uc-section mb-5">
+                    <h2 class="uc-section-title">Sample Environment (Visual Reference)</h2>
+                    <div class="uc-video-container"
+                        style="border: 1px solid var(--border-color); border-radius: 6px; overflow: hidden;">
+                        <video autoplay loop muted playsinline width="100%" style="display: block;">
+                            <source src="/assets/videos/india.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </section>
+
+                <!-- Section 5: Sample Data (Structure Preview) -->
+                <section class="uc-section mb-5">
+                    <h2 class="uc-section-title">Sample Data (Structure Preview)</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 1.5rem;">
+                        The following files are provided to demonstrate data format and metadata structure only.<br>
+                        These files are provided for structure validation only (muted, 8–10s). Full datasets are shared
+                        during PoC.
+                    </p>
+
+                    <div style="margin-bottom: 2rem;">
+                        <ul class="uc-list" style="margin-bottom: 0;">
+                            <li style="margin-bottom: 0.5rem;">
+                                <a href="/assets/videos/sample_drive_01.mp4" download
+                                    style="color: var(--text-highlight); text-decoration: none;">
+                                    sample_drive_01.mp4 (8–10s, muted, 720p)
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/assets/videos/sample_drive_02.mp4" download
+                                    style="color: var(--text-highlight); text-decoration: none;">
+                                    sample_drive_02.mp4 (8–10s, muted, 720p)
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div
+                        style="background: rgba(0,0,0,0.3); padding: 1.5rem; border-radius: 6px; border: 1px solid var(--border-color);">
+                        <pre
+                            style="color: #a5b3ce; font-family: monospace; font-size: 0.85rem; overflow-x: auto; margin: 0;">
+{
+  "video_id": "sample_drive_01",
+  "duration_sec": 9.2,
+  "fps": 24,
+  "resolution": "1280x720",
+  "environment": {
+    "traffic_density": "high",
+    "road_type": "non-lane-based"
+  },
+  "raw_continuous_available": true
+}</pre>
+                    </div>
+                    <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 1rem; opacity: 0.7;">
+                        This preview represents a subset of fields for structure validation only.
+                    </p>
+                </section>
+
+                <!-- Section 6: PoC Evaluation Pack Details -->
+                <section class="uc-section mb-5">
+                    <h2 class="uc-section-title">What You Get in a PoC Evaluation Pack</h2>
+                    <ul class="uc-list">
+                        <li>Curated real-world video segments provided as a small but structurally complete evaluation
+                            pack
+                        </li>
+                        <li>Segment-level metadata JSON (environment, density, interaction, QC flags)</li>
+                        <li>Same folder and metadata structure as production deliveries</li>
+                        <li>Optional access to preserved continuous context for temporal validation</li>
+                        <li>No commitment. Engineering-only evaluation.</li>
+                    </ul>
+                </section>
+
+                <!-- Section 7: Access & PoC -->
+                <section class="uc-section text-center">
+                    <h2 class="uc-section-title">Access & Evaluation</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 2rem;">
+                        Datasets, access conditions, and pricing are defined collaboratively during PoC and early
+                        commercial
+                        discussions.
+                    </p>
+                    <a href="../index.html#contact" class="btn btn-primary">Request PoC Access</a>
+                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem; opacity: 0.8;">No
+                        payment.
+                        No commitment.</p>
+                </section>
+
+            </div>
+        </main>
+
+        <footer>
+            <div class="container">
+                <p>&copy; 2024 Origindata Lab. Images via Unsplash (Royalty Free).</p>
+            </div>
+        </footer>
+</body>
+
+</html>

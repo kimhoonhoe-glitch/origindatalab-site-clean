@@ -1,0 +1,35 @@
+Quality Summary — Evaluation Preview
+
+This document describes how data quality is controlled and validated during collection and preparation.
+All values and processes below reflect the evaluation pipeline used during PoC and production delivery.
+
+1. Capture Consistency
+- All footage is captured using fixed camera placement and configuration per collection profile.
+- Resolution, frame rate, and field of view are locked per batch.
+- Audio is removed or muted at source to avoid unnecessary data noise.
+
+2. Segment Integrity
+- Videos are segmented using deterministic rules (fixed duration with optional overlap).
+- Each segment maintains temporal continuity with adjacent segments.
+- Segment IDs preserve ordering to allow reconstruction of original sequences.
+
+3. Metadata Validation
+- Metadata is generated at the segment level.
+- Required fields are validated for presence and format.
+- Environment tags reflect observable conditions only (no inferred intent).
+
+4. Quality Control Signals
+- Segments are checked for:
+  - Camera obstruction or severe motion blur
+  - Severe exposure issues
+  - Broken or corrupted frames
+- QC flags are recorded per segment when applicable.
+
+5. Privacy Handling
+- Faces and license plates are blurred consistently across frames when required.
+- Raw continuous footage is preserved internally but shared only under explicit agreement.
+
+6. Evaluation Scope
+- PoC data represents a structurally complete subset of production delivery.
+- Quality processes remain identical between evaluation and production.
+- No manual cherry-picking is performed for evaluation samples.

@@ -1,0 +1,101 @@
+{
+    "_comment": "Schema preview only. All field values are illustrative examples and do not represent a specific delivered dataset.",
+    "dataset_version": "v1.0-sample",
+    "description": "Real-world urban point-of-view driving footage collected in high-entropy, non-lane-based traffic environments.",
+    "source": {
+        "collection_type": "real_world",
+        "capture_platform": "motorbike-mounted smartphone",
+        "regions": [
+            {
+                "country": "Vietnam",
+                "city_environment": "dense_urban"
+            }
+        ]
+    },
+    "video": {
+        "video_id": "sample_drive_01",
+        "format": "mp4",
+        "duration_sec": 9.2,
+        "fps": 24,
+        "resolution": "1280x720",
+        "audio": "muted",
+        "camera_view": "ego_pov"
+    },
+    "segmentation": {
+        "segment_level": true,
+        "segment_length_sec": 5,
+        "segment_overlap_sec": 1,
+        "segment_id_format": "video_id_segment_index",
+        "raw_continuous_available": true
+    },
+    "environment": {
+        "traffic_density": "high",
+        "road_structure": "non-lane-based",
+        "intersection_type": "implicit",
+        "pedestrian_presence": "frequent",
+        "vehicle_mix": [
+            "motorbike",
+            "car",
+            "truck",
+            "bus",
+            "rickshaw"
+        ]
+    },
+    "interaction": {
+        "multi_agent_interaction": true,
+        "negotiation_type": [
+            "implicit_right_of_way",
+            "pedestrian_vehicle_negotiation"
+        ]
+    },
+    "metadata": {
+        "annotation_level": "segment",
+        "annotation_format": "json",
+        "tags": [
+            "high_entropy",
+            "dense_traffic",
+            "urban_pov",
+            "non_structured_intersection"
+        ]
+    },
+    "quality_control": {
+        "qc_applied": true,
+        "qc_level": "segment",
+        "checks": [
+            "mounting_stability",
+            "motion_blur_threshold",
+            "lens_obstruction",
+            "timestamp_integrity",
+            "segment_continuity"
+        ],
+        "rejection_policy": "segments failing minimum usability thresholds are excluded from delivery",
+        "synthetic_corrections": false
+    },
+    "privacy": {
+        "face_blurring": "automatic",
+        "license_plate_blurring": "automatic",
+        "manual_review_on_flagged_segments": true,
+        "gdpr_compliant": true
+    },
+    "delivery": {
+        "evaluation_pack": {
+            "includes_raw_video": true,
+            "includes_metadata": true,
+            "structure_matches_production": true
+        },
+        "production_delivery": {
+            "formats_supported": [
+                "mp4",
+                "json",
+                "rosbag_optional"
+            ]
+        }
+    },
+    "usage_notes": {
+        "intended_use": "model evaluation, failure analysis, long-horizon behavior modeling",
+        "not_intended_for": [
+            "benchmark optimization",
+            "synthetic data replacement"
+        ]
+    }
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quality Summary (Evaluation Preview)</title>
+    <style>
+        body {
+            background-color: #0B0C10;
+            /* Matching site dark theme */
+            color: #C5C6C7;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            margin: 0;
+            padding: 2rem;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        header {
+            margin-bottom: 2rem;
+            border-bottom: 1px solid #1F2833;
+            padding-bottom: 1rem;
+        }
+
+        h1 {
+            color: #fff;
+            font-size: 1.8rem;
+            margin: 0 0 0.5rem 0;
+        }
+
+        .nav-links {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .nav-links a {
+            color: #45A29E;
+            text-decoration: none;
+            margin-right: 1.5rem;
+        }
+
+        .nav-links a:hover {
+            color: #66FCF1;
+            text-decoration: underline;
+        }
+
+        pre {
+            background: #15181e;
+            /* Card bg color */
+            padding: 1.5rem;
+            border-radius: 4px;
+            overflow-x: auto;
+            border: 1px solid #2D3748;
+            color: #e0e0e0;
+            font-size: 0.95rem;
+            white-space: pre-wrap;
+            /* Wrap text */
+            font-family: monospace;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Quality Summary (Evaluation Preview)</h1>
+            <div class="nav-links">
+                <a href="/" target="_self">← Back to site</a>
+                <a href="quality_summary.txt" target="_blank">Open raw TXT ↗</a>
+            </div>
+        </header>
+
+        <main>
+            <div id="content">Loading quality summary...</div>
+        </main>
+    </div>
+
+    <script>
+        fetch('quality_summary.txt')
+            .then(response => {
+                if (!response.ok) throw new Error('Network response was not ok');
+                return response.text();
+            })
+            .then(text => {
+                // Basic HTML verify/sanitize if needed, but text is trusted local asset
+                document.getElementById('content').innerHTML = '<pre>' + text + '</pre>';
+            })
+            .catch(error => {
+                document.getElementById('content').innerHTML =
+                    '<p style="color: #ff6b6b;">Error loading summary: ' + error.message + '</p>';
+            });
+    </script>
+</body>
+
+</html>

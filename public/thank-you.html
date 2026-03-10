@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Request Received | OriginDataLab</title>
+
+    <style>
+        :root {
+            --text: #111;
+            --muted: #666;
+            --border: rgba(0, 0, 0, 0.08);
+            --bg: #fff;
+            --link: #6a35ff;
+            /* 기존 보라톤 느낌 유지 */
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--text);
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji",
+                "Segoe UI Emoji";
+        }
+
+        .container {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 72px 20px 64px;
+        }
+
+        .card {
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 34px 28px;
+            text-align: center;
+        }
+
+        .title-row {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 10px;
+        }
+
+        .badge {
+            width: 28px;
+            height: 28px;
+            border-radius: 8px;
+            display: inline-grid;
+            place-items: center;
+            border: 1px solid var(--border);
+            font-size: 16px;
+            line-height: 1;
+        }
+
+        h1 {
+            font-size: 28px;
+            margin: 0;
+            letter-spacing: -0.2px;
+        }
+
+        .subtitle {
+            margin: 6px 0 0;
+            color: var(--muted);
+            font-size: 15px;
+            line-height: 1.55;
+        }
+
+        .section-title {
+            margin: 28px 0 10px;
+            font-size: 18px;
+            letter-spacing: -0.1px;
+        }
+
+        /* ✅ 중앙 정렬 + 리스트 가독성(내부는 좌측정렬) */
+        .steps-wrap {
+            text-align: center;
+            margin-top: 6px;
+        }
+
+        .steps {
+            display: inline-block;
+            /* 가운데에 놓기 */
+            text-align: left;
+            /* 글은 읽기 쉽게 왼쪽정렬 */
+            margin: 0 auto;
+            padding-left: 22px;
+            line-height: 1.7;
+            color: var(--text);
+            font-size: 15px;
+        }
+
+        .steps li {
+            margin: 6px 0;
+        }
+
+        .reassure {
+            margin-top: 18px;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .links {
+            margin-top: 22px;
+            display: flex;
+            justify-content: center;
+            gap: 18px;
+            flex-wrap: wrap;
+            font-size: 14.5px;
+        }
+
+        a {
+            color: var(--link);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(106, 53, 255, 0.35);
+            padding-bottom: 2px;
+        }
+
+        a:hover {
+            border-bottom-color: rgba(106, 53, 255, 0.75);
+        }
+
+        .divider {
+            height: 1px;
+            background: var(--border);
+            margin: 26px auto 18px;
+            width: 100%;
+        }
+
+        .footer-note {
+            margin: 0;
+            font-size: 14px;
+            color: var(--muted);
+            text-align: center;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding-top: 54px;
+            }
+
+            .card {
+                padding: 26px 18px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            .steps {
+                font-size: 14.5px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="container">
+        <section class="card" aria-label="Request received">
+            <div class="title-row">
+                <span class="badge" aria-hidden="true">✅</span>
+                <h1>Request received</h1>
+            </div>
+
+            <p class="subtitle">
+                Thanks — your PoC Lite intake was successfully submitted.
+            </p>
+
+            <h2 class="section-title">What happens next (within 24 hours)</h2>
+
+            <div class="steps-wrap">
+                <ol class="steps">
+                    <li><strong>Same-day feasibility check:</strong> We review your scenario and confirm availability.
+                    </li>
+                    <li><strong>Within 24 hours:</strong> You’ll receive a clear next-step email with a recommended PoC
+                        plan.</li>
+                    <li><strong>If approved:</strong> We’ll send a secure checkout link and a clear delivery timeline.
+                    </li>
+                </ol>
+            </div>
+
+            <p class="reassure">
+                No spam. No obligation. This request does <strong>not</strong> initiate payment.
+            </p>
+
+            <div class="links" aria-label="Helpful links">
+                <a href="/pricing.html">View Pricing</a>
+                <a href="/data-overview.html">View Data Overview</a>
+            </div>
+
+            <div class="divider" role="separator" aria-hidden="true"></div>
+
+            <p class="footer-note">
+                Enterprise / large-scale dataset?
+                <a href="/contact.html">Invoice-based engagement available →</a>
+            </p>
+        </section>
+    </main>
+</body>
+
+</html>

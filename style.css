@@ -1,0 +1,2866 @@
+/* scroll-behavior removed to prevent forced smooth scrolling */
+
+:root {
+  /* Premium Dark Theme */
+  --bg-main: #0B0C10;
+  --bg-secondary: #1F2833;
+  --bg-card: #15181e;
+
+  --text-primary: #C5C6C7;
+  --text-highlight: #66FCF1;
+  --text-muted: #6b7280;
+
+  --accent-cyan: #45A29E;
+  --accent-cyan-glow: rgba(69, 162, 158, 0.3);
+
+  --border-color: #2D3748;
+  --border-active: #45A29E;
+
+  --container-width: 1280px;
+  --header-height: 80px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+.section-title {
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: 4rem;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: #fff;
+}
+
+p {
+  color: var(--text-primary);
+  font-size: 1.125rem;
+  opacity: 0.9;
+}
+
+.subtext {
+  font-size: 1.25rem;
+  color: var(--text-highlight);
+  margin-bottom: 1rem;
+}
+
+/* Utilities */
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section {
+  padding: 8rem 0;
+}
+
+.alt-bg {
+  background-color: var(--bg-secondary);
+}
+
+.dark-section {
+  background-color: #050505;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.max-w-800 {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.mb-2 {
+  margin-bottom: 2rem;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  /* Techy sharp corners */
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-primary {
+  background-color: var(--text-highlight);
+  color: #0B0C10;
+  border: 1px solid var(--text-highlight);
+}
+
+.btn-primary:hover {
+  background-color: transparent;
+  color: var(--text-highlight);
+  box-shadow: 0 0 15px var(--accent-cyan-glow);
+}
+
+.btn-primary-sm {
+  background-color: var(--text-highlight);
+  color: #0B0C10;
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+  border-radius: 2px;
+}
+
+.btn-secondary {
+  border: 1px solid var(--text-primary);
+  color: var(--text-primary);
+}
+
+.btn-secondary:hover {
+  border-color: var(--text-highlight);
+  color: var(--text-highlight);
+}
+
+.btn-outline-full {
+  display: block;
+  width: 100%;
+  text-align: center;
+  border: 1px solid var(--border-color);
+  padding: 0.8rem;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+.btn-outline-full:hover {
+  border-color: var(--text-highlight);
+  color: var(--text-highlight);
+}
+
+/* Header */
+header {
+  height: var(--header-height);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(11, 12, 16, 0.9);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+header .container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  color: #fff;
+}
+
+.logo span {
+  color: var(--text-highlight);
+}
+
+nav ul {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+nav a {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #e0e0e0;
+}
+
+nav a:hover {
+  color: var(--text-highlight);
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero-bg-slider,
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-bg {
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 2.0s ease-in-out, transform 18s ease-out;
+  transform: scale(1.0);
+  will-change: transform, opacity;
+  z-index: 0;
+}
+
+.hero-bg.active {
+  opacity: 1;
+  z-index: 1;
+  transform: scale(1.1);
+}
+
+/* Overlay Removed - Text Shadow Added for Readability */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin-left: 0;
+  padding: 2.5rem;
+  background: rgba(11, 12, 16, 0.65);
+  backdrop-filter: blur(8px);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Reduced Global Overlay */
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.1) 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-content h1 {
+  font-size: 4.5rem;
+  line-height: 1.05;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.9);
+  /* Critical for readability on raw images */
+}
+
+.hero-product-def {
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 300;
+  max-width: 800px;
+  line-height: 1.5;
+  margin-bottom: 2.5rem;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+.hero-features {
+  list-style: none;
+  margin-bottom: 3rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+  display: inline-block;
+  /* Wrap content */
+}
+
+.hero-features li {
+  font-size: 1.2rem;
+  color: #fff;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.hero-features li:last-child {
+  margin-bottom: 0;
+}
+
+.hero-features li::before {
+  content: "▹";
+  color: #66FCF1;
+  /* Brightens the bullet */
+  margin-right: 1rem;
+  font-weight: bold;
+  font-size: 1.4rem;
+  /* Larger bullet */
+}
+
+.hero-actions {
+  margin-top: 2.5rem;
+  display: flex;
+  gap: 1.5rem;
+}
+
+
+/* Differentiation Section (Not a Marketplace) */
+.differentiation-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.diff-image-wrapper {
+  height: 500px;
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+}
+
+.diff-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0) contrast(1.2);
+  /* Black & White Gritty Look for contrast with Hero? Or just Raw? User said "Chaotic image". Let's go Raw but maybe slightly high contrast */
+  filter: contrast(1.1);
+}
+
+.diff-content h3 {
+  font-size: 2rem;
+  line-height: 1.2;
+}
+
+/* Grids */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.env-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.env-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+  transition: border-color 0.3s ease;
+}
+
+.env-card:hover {
+  border-color: var(--text-highlight);
+}
+
+.env-img-wrapper {
+  height: 320px;
+  overflow: hidden;
+  position: relative;
+}
+
+.env-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+  /* Removed filter for raw look globally, or kept if specific to env cards? User: "Hero image must look RAW". Env cards are "Unstructured Environments". I will keep them raw or slightly contrasted. */
+}
+
+.env-card:hover .env-img {
+  transform: scale(1.05);
+}
+
+.env-content {
+  padding: 1.5rem;
+}
+
+.env-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+.env-desc {
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.result-item {
+  border-left: 1px solid var(--border-color);
+  padding-left: 1.5rem;
+}
+
+.result-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-highlight);
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+
+.result-label {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.context-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+/* Why Different Cards */
+.card {
+  padding: 2.5rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: var(--text-highlight);
+}
+
+.card-icon {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Image Cards (Performance) */
+.grid-3-image-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.image-card {
+  background: var(--bg-card);
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+}
+
+.card-slider {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 1s ease-in-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.card-img.active {
+  opacity: 1;
+}
+
+.image-card:hover .card-img {
+  transform: scale(1.05);
+  transition: transform 0.5s;
+}
+
+.card-content {
+  padding: 1.5rem;
+  position: relative;
+  z-index: 2;
+  background: var(--bg-card);
+}
+
+/* Bullet Grid (Philosophy) */
+.bullet-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 3rem;
+  text-align: left;
+}
+
+.bullet-item {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 1rem;
+  border-left: 2px solid var(--text-highlight);
+  color: #fff;
+}
+
+/* Pack Cards */
+.pack-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  transition: all 0.3s;
+}
+
+.pack-card:hover {
+  border-color: var(--text-highlight);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.pack-header {
+  padding: 2rem;
+  background: #111;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.pack-body {
+  padding: 2rem;
+}
+
+.pack-focus {
+  min-height: 80px;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.pack-features {
+  margin-bottom: 2rem;
+}
+
+.pack-features li {
+  margin-bottom: 0.5rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.pack-features li::before {
+  content: "▹";
+  color: var(--text-highlight);
+  margin-right: 0.5rem;
+}
+
+/* Engineering Icons (New) */
+.engineering-icons-grid {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  margin-top: 3rem;
+}
+
+.eng-icon-item {
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.eng-icon-item:hover {
+  transform: translateY(-5px);
+}
+
+.eng-icon {
+  width: 80px;
+  height: 80px;
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  /* Circle or Square? User said "Icon-based interaction model". Circle is standard. */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: var(--text-highlight);
+  margin: 0 auto 1.5rem;
+  background: rgba(255, 255, 255, 0.02);
+  transition: all 0.3s;
+}
+
+.eng-icon-item:hover .eng-icon {
+  border-color: var(--text-highlight);
+  background: rgba(102, 252, 241, 0.1);
+  box-shadow: 0 0 20px rgba(102, 252, 241, 0.2);
+}
+
+.eng-icon-item h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.eng-icon-item p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* Contact Form */
+.contact-wrapper {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #fff;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 1rem;
+  background: #000;
+  border: 1px solid var(--border-color);
+  color: #fff;
+  font-family: inherit;
+  border-radius: 4px;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--text-highlight);
+}
+
+.full-width {
+  width: 100%;
+  text-align: center;
+}
+
+/* Footer */
+footer {
+  padding: 0.5rem 0;
+  border-top: 1px solid var(--border-color);
+  background: #050505;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .grid-3,
+  .grid-3-image-cards,
+  .env-grid,
+  .results-grid,
+  .context-grid,
+  .differentiation-grid,
+  .engineering-icons-grid {
+    grid-template-columns: 1fr;
+    display: grid;
+    /* override flex for engineering icons */
+    gap: 2rem;
+  }
+
+  .engineering-icons-grid {
+    justify-items: center;
+  }
+
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  nav {
+    display: none;
+  }
+
+  /* Simplified mobile handling */
+}
+
+/* Dataset Snapshot */
+.snapshot-section {
+  background: linear-gradient(135deg, rgba(11, 12, 16, 0.9) 0%, rgba(31, 40, 51, 0.9) 100%);
+  border-bottom: 1px solid var(--border-color);
+  padding: 4rem 0;
+  /* Slightly tighter padding for impact */
+}
+
+.snapshot-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  text-align: center;
+}
+
+.snapshot-item {
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.snapshot-item:hover {
+  transform: translateY(-5px);
+  border-color: var(--text-highlight);
+  background: rgba(102, 252, 241, 0.05);
+}
+
+.snapshot-number {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--text-highlight);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 20px rgba(102, 252, 241, 0.3);
+}
+
+.snapshot-label {
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+}
+
+@media (max-width: 768px) {
+  .snapshot-grid {
+    grid-template-columns: 1fr 1fr;
+    /* 2x2 on mobile */
+  }
+}
+
+/* Why This Data Changes Your Model */
+.model-change-section {
+  background-color: var(--bg-card);
+  /* Consistent dark theme */
+  border-bottom: 1px solid var(--border-color);
+}
+
+.model-change-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+}
+
+.change-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 2.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.change-card:hover {
+  border-color: var(--text-highlight);
+  box-shadow: 0 0 25px rgba(102, 252, 241, 0.15);
+  /* Slightly increased glow */
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.card-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  color: var(--text-muted);
+  /* Muted accent color */
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.change-card h3 {
+  font-size: 1.5rem;
+  color: #fff;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.change-card p {
+  font-size: 1rem;
+  color: var(--text-primary);
+  opacity: 0.9;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  flex-grow: 1;
+  /* Pushes content down if needed, but here mostly static */
+}
+
+/* Impact Sentence */
+.impact-sentence {
+  font-weight: 700;
+  color: #fff;
+  /* Distinct from body text */
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+  border-left: 3px solid var(--text-highlight);
+  padding-left: 1rem;
+  display: block;
+  font-size: 1.05rem;
+  opacity: 1 !important;
+  /* Override opacity from generic p */
+}
+
+.change-features {
+  list-style: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1.5rem;
+  width: 100%;
+}
+
+.change-features li {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+  padding-left: 1.5rem;
+  position: relative;
+  line-height: 1.4;
+}
+
+.change-features li strong {
+  color: #E0E0E0;
+  /* Brighter than muted text */
+  font-weight: 600;
+}
+
+.change-features li::before {
+  content: "▹";
+  /* Changed to arrow for consistency with hero */
+  color: var(--text-highlight);
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+  font-size: 1.2rem;
+  line-height: 1;
+  top: 1px;
+}
+
+@media (max-width: 768px) {
+  .model-change-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+/* Dataset Specification */
+.spec-section {
+  background-color: var(--bg-main);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.spec-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+}
+
+.spec-column {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.spec-group h3 {
+  font-size: 1rem;
+  color: var(--text-highlight);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.spec-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.spec-row:last-child {
+  border-bottom: none;
+}
+
+.spec-label {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.spec-value {
+  color: #E0E0E0;
+  font-family: 'Consolas', 'Monaco', monospace;
+  font-size: 0.85rem;
+  text-align: right;
+  letter-spacing: -0.02em;
+}
+
+@media (max-width: 768px) {
+  .spec-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+/* Video Proof Section (See the Data Your Model Fails On) */
+.video-proof-section {
+  background-color: #08090c;
+  /* Slightly darker than main bg */
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.video-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.video-card:hover {
+  border-color: var(--text-highlight);
+  transform: translateY(-2px);
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  overflow: hidden;
+}
+
+.video-wrapper video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+  transition: opacity 0.3s;
+}
+
+.video-card:hover .video-wrapper video {
+  opacity: 1;
+}
+
+.video-info {
+  padding: 1.25rem;
+}
+
+.video-info h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: #fff;
+  line-height: 1.3;
+}
+
+.video-info p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.tech-proof-caption {
+  font-size: 1.05rem;
+  color: var(--text-primary);
+  opacity: 0.9;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+}
+
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border-color), transparent);
+  margin: 3rem 0;
+  width: 100%;
+}
+
+/* Metadata Subsection */
+.metadata-subsection {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.subsection-title {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #fff;
+}
+
+.metadata-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+  padding-left: 1rem;
+}
+
+.metadata-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  color: var(--text-primary);
+  font-size: 1.05rem;
+}
+
+.metadata-list li::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: var(--text-highlight);
+  top: 1px;
+}
+
+/* Code Preview Block */
+.metadata-preview {
+  background: #0d1117;
+  /* GitHub dark code bg style */
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 1.5rem;
+  font-family: 'Fira Code', monospace;
+  /* Fallback to monospace if not available */
+  font-size: 0.9rem;
+  overflow-x: auto;
+  margin-bottom: 2rem;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.metadata-preview pre {
+  margin: 0;
+}
+
+.metadata-preview .key {
+  color: #7ee787;
+  /* Greenish for keys */
+}
+
+.metadata-preview .string {
+  color: #a5d6ff;
+  /* Blueish for string values */
+}
+
+.trust-statement {
+  font-size: 1rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 900px) {
+  .video-grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.metrics-disclaimer {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  opacity: 0.7;
+  max-width: 100%;
+  margin: 1.25rem auto 0;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.card-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: inherit;
+}
+
+/* Hero Redesign - Clean & Premium */
+
+/* Remove global overlay */
+.hero::after {
+  display: none;
+}
+
+/* Remove container styling behind text */
+.hero-content {
+  background: none;
+  backdrop-filter: none;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  /* Align with container edge */
+  max-width: 1000px;
+  /* Allow more width if needed, or keep standard */
+}
+
+/* Typography Overrides */
+.hero-content h1 {
+  color: #FFFFFF;
+  font-weight: 700;
+  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.8);
+  /* Enhanced shadow for readability without box */
+}
+
+/* Subheadline matching the primary button color */
+.hero-product-def {
+  color: #66FCF1;
+  /* matches var(--text-highlight) */
+  font-weight: 500;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.9);
+  opacity: 1;
+}
+
+/* Bullet points list - Clean, no box */
+.hero-features {
+  background: none;
+  padding: 0;
+  margin-bottom: 3rem;
+  border-radius: 0;
+}
+
+.hero-features li {
+  color: #E0E0E0;
+  /* Soft white */
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  /* Slightly increased */
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+  /* legibility on image */
+  margin-bottom: 1rem;
+  font-size: 1.15rem;
+}
+
+/* Adjust bullet icon if needed, but keeping existing is fine */
+.hero-features li::before {
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+}
+
+/* Hero Redesign Refinement */
+
+/* Shift text group slightly toward center */
+.hero-content {
+  background: none;
+  backdrop-filter: none;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  max-width: 900px;
+  margin-left: 8vw;
+  /* Shift rightward */
+}
+
+/* Subheadline: Larger, bridge color */
+.hero-product-def {
+  font-size: 1.75rem;
+  /* Increased size */
+  color: #66FCF1;
+  /* Matches CTA */
+  font-weight: 500;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.8);
+  opacity: 1;
+  max-width: 800px;
+  line-height: 1.4;
+  margin-bottom: 2.5rem;
+}
+
+/* Bullet points: Readable, subtle shadow, no outline */
+.hero-features li {
+  color: #E0E0E0;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+  /* Soft, minimal shadow */
+  margin-bottom: 1rem;
+  font-size: 1.15rem;
+}
+
+.hero-features li::before {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+/* Hero Fine-Tuning */
+
+/* Vertical Position & Breathing Room */
+.hero-content {
+  margin-top: 5vh;
+  /* Sits lower */
+  max-width: 950px;
+  /* Slightly wider */
+}
+
+/* Subheadline: Larger */
+.hero-product-def {
+  font-size: 2rem;
+  /* Increased from 1.75 */
+  line-height: 1.35;
+  margin-bottom: 2rem;
+}
+
+/* Bullet Points: Compact & Technical */
+.hero-features li {
+  font-size: 1.15rem;
+  line-height: 1.4;
+  /* Tighter */
+  margin-bottom: 0.5rem;
+  /* Reduced spacing */
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.8);
+  /* Soft, dark, no outline look */
+}
+
+/* Check mark shadow consistency */
+.hero-features li::before {
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.8);
+}
+
+/* Question Section Styles */
+.questions-section {
+  background-color: var(--bg-main);
+  border-bottom: 1px solid var(--border-color);
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.questions-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.question-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-color);
+  border-left: 3px solid var(--text-highlight);
+  padding: 2rem;
+  border-radius: 4px;
+  transition: transform 0.2s ease;
+}
+
+.question-card:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.04);
+  border-color: var(--text-highlight);
+}
+
+.question-card h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.question-card p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+@media (max-width: 900px) {
+  .questions-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Workflow Section (How Teams Use This Data) */
+.workflow-section {
+  background-color: var(--bg-card);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.workflow-steps {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+.workflow-step {
+  flex: 1;
+  position: relative;
+}
+
+.step-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-highlight);
+  opacity: 0.2;
+  margin-bottom: 0.5rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.step-content h3 {
+  font-size: 1.1rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.step-content p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.workflow-arrow {
+  font-size: 1.5rem;
+  color: var(--border-color);
+  padding-top: 2rem;
+  /* Align with content */
+}
+
+@media (max-width: 900px) {
+  .workflow-steps {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .workflow-arrow {
+    display: none;
+    /* Hide arrows on mobile */
+    /* rotate 90deg if kept */
+  }
+}
+
+/* FAQ Section */
+.faq-section {
+  background-color: var(--bg-main);
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.faq-title {
+  font-size: 1.75rem;
+  color: #fff;
+  margin-bottom: 3rem;
+  text-align: center;
+  font-weight: 700;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+}
+
+.faq-item h4 {
+  font-size: 1.1rem;
+  color: #fff;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.faq-item p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .faq-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+/* PoC Evaluation Pack */
+.poc-section {
+  background-color: var(--bg-card);
+  /* Distinct form main bg but consistent */
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.poc-intro {
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  margin-bottom: 2.5rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.poc-list {
+  text-align: left;
+  display: inline-block;
+  margin-bottom: 2.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 2rem;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+}
+
+.poc-list li {
+  margin-bottom: 0.75rem;
+  color: #fff;
+  font-size: 1rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.poc-list li:last-child {
+  margin-bottom: 0;
+}
+
+.poc-list li::before {
+  content: "•";
+  /* Clean minimal bullet */
+  color: var(--text-highlight);
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+.poc-emphasis {
+  font-style: italic;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
+}
+
+/* Quality Control Section */
+.qc-section {
+  background-color: var(--bg-main);
+  border-bottom: 1px solid var(--border-color);
+  padding: 5rem 0;
+  /* Compact padding */
+}
+
+.qc-intro {
+  font-size: 1.05rem;
+  color: var(--text-primary);
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+}
+
+.qc-list {
+  text-align: left;
+  display: inline-block;
+  margin-bottom: 2rem;
+  background: rgba(25, 29, 36, 0.5);
+  /* Slightly darker for contrast */
+  padding: 2rem;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  width: 100%;
+  /* Ensure fit in container */
+}
+
+.qc-list li {
+  margin-bottom: 1rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  padding-left: 1.5rem;
+  position: relative;
+  line-height: 1.5;
+}
+
+.qc-list li strong {
+  color: #fff;
+  font-weight: 600;
+  margin-right: 0.5rem;
+}
+
+.qc-list li:last-child {
+  margin-bottom: 0;
+}
+
+.qc-list li::before {
+  content: "✓";
+  /* Checkmark for QC feel */
+  color: var(--accent-cyan);
+  position: absolute;
+  left: 0;
+  top: 2px;
+  font-size: 0.9rem;
+}
+
+
+/* Early Evaluation & Research Usage */
+.research-section {
+  background-color: var(--bg-main);
+  border-bottom: 1px solid var(--border-color);
+  padding: 5rem 0;
+}
+
+.research-intro {
+  font-size: 1.05rem;
+  color: var(--text-primary);
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+}
+
+.research-list {
+  text-align: left;
+  display: inline-block;
+  margin-bottom: 2rem;
+  padding: 0 1rem;
+  max-width: 750px;
+}
+
+.research-list li {
+  margin-bottom: 1.25rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  position: relative;
+  line-height: 1.5;
+  list-style: none;
+}
+
+.research-list li::before {
+  content: "—";
+  color: var(--text-muted);
+  margin-right: 0.75rem;
+  font-weight: bold;
+}
+
+.research-list li strong {
+  color: #fff;
+  font-weight: 500;
+}
+
+
+/* Use Cases Placeholder Page */
+.use-cases-page {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.use-case-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.use-case-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-color);
+  padding: 1.5rem;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.use-case-card h3 {
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+
+/* Use Case Detail Page */
+.use-case-detail {
+  min-height: 80vh;
+}
+
+.uc-header {
+  margin-bottom: 4rem;
+}
+
+.uc-section {
+  margin-bottom: 4rem;
+}
+
+.uc-section-title {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.5rem;
+  display: inline-block;
+}
+
+.uc-list {
+  list-style: none;
+  padding: 0;
+}
+
+.uc-list li {
+  margin-bottom: 0.8rem;
+  padding-left: 1.5rem;
+  position: relative;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+}
+
+.uc-list li::before {
+  content: "•";
+  color: var(--text-highlight);
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+.uc-video-container {
+  max-width: 100%;
+  margin-top: 1rem;
+}
+
+/* Hover effect for linked cards */
+a.use-case-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--text-highlight);
+  transition: all 0.2s ease;
+}
+
+/* Helper for Card Links */
+a.card-link {
+  color: inherit;
+  text-decoration: none;
+  display: block;
+}
+
+/* ===== Autonomous Driving page fixes (safe minimal) ===== */
+.page-wrap {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.video-card {
+  padding: 14px 14px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.video-title {
+  margin: 12px 0 4px;
+  font-weight: 800;
+}
+
+.video-desc {
+  margin: 0 0 10px;
+  opacity: 0.85;
+}
+
+.download-btn {
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  text-decoration: none;
+  font-weight: 800;
+}
+
+.download-btn:hover {
+  border-color: rgba(255, 255, 255, 0.45);
+}
+
+/* ===== end ===== */
+/* ===== Fix: prevent horizontal layout shift between pages (scrollbar) ===== */
+@supports (scrollbar-gutter: stable) {
+  html {
+    scrollbar-gutter: stable;
+  }
+}
+
+@supports not (scrollbar-gutter: stable) {
+
+  /* fallback: keep vertical scrollbar space always */
+  body {
+    overflow-y: scroll;
+  }
+}
+
+/* ===== Legal Transparency upgrades ===== */
+.legal-hero {
+  text-align: center;
+}
+
+.lt-subtitle {
+  margin: 2rem 0 1rem;
+  text-align: center;
+  font-size: 1.1rem;
+  letter-spacing: 0.02em;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Card title centered */
+.pack-header h3 {
+  text-align: center;
+}
+
+/* Make cards equal height + button pinned to bottom */
+.pack-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.pack-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.pack-body .btn {
+  margin-top: auto;
+}
+
+/* Media consistent height */
+.pack-media {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  opacity: 0.9;
+  cursor: zoom-in;
+}
+
+/* --- Center the 2-card row inside grid-3 --- */
+#legal-transparency .grid-3:first-of-type {
+  justify-content: center;
+}
+
+/* grid-3가 flex가 아니라 grid일 경우도 대비 */
+#legal-transparency .grid-3:first-of-type {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(280px, 420px));
+  justify-content: center;
+  gap: 1.6rem;
+}
+
+/* 작은 화면에서는 자동 1열 */
+@media (max-width: 860px) {
+  #legal-transparency .grid-3:first-of-type {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- Spacing for a strong section separation --- */
+#legal-transparency .section-title {
+  margin-bottom: 2.2rem;
+  /* 기존보다 더 넓게 */
+}
+
+/* 소제목 크기/신뢰감/간격 */
+#legal-transparency .lt-subtitle {
+  margin-top: 1.6rem;
+  /* title과 소제목 간격 */
+  margin-bottom: 1.4rem;
+  font-size: 1.25rem;
+  /* 더 크게 */
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* 2개 카드 줄 아래 공간 크게 (분리감 3배 느낌) */
+#legal-transparency .grid-3:first-of-type {
+  margin-bottom: 4.2rem;
+}
+
+/* 3개 카드 줄 위 공간도 더 확보 */
+#legal-transparency .grid-3:nth-of-type(2) {
+  margin-top: 1.6rem;
+}
+
+/* --- Lightbox for diagram zoom --- */
+.lt-lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.82);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  z-index: 9999;
+}
+
+.lt-lightbox.is-open {
+  display: flex;
+}
+
+.lt-lightbox img {
+  max-width: min(1200px, 95vw);
+  max-height: 88vh;
+  width: auto;
+  height: auto;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.lt-lightbox .lt-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  font-size: 22px;
+  line-height: 1;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #fff;
+  background: rgba(0, 0, 0, 0.35);
+  cursor: pointer;
+}
+
+/* --- FIX: allow diagram images to receive clicks --- */
+.pack-card {
+  position: relative;
+}
+
+.pack-media {
+  position: relative;
+  z-index: 5;
+  /* 모든 카드 오버레이보다 위 */
+  pointer-events: auto;
+}
+
+/* 카드 내부의 다른 레이어가 클릭 가로채지 못하게 */
+.pack-card * {
+  pointer-events: none;
+}
+
+.pack-media {
+  pointer-events: auto;
+  /* 이미지 클릭만 허용 */
+}
+
+/* === FIX A: pseudo-element overlays can block clicks === */
+.pack-card::before,
+.pack-card::after,
+.pack-header::before,
+.pack-header::after,
+.pack-body::before,
+.pack-body::after {
+  pointer-events: none !important;
+}
+
+/* Ensure the image is always clickable */
+.pack-media.js-zoom {
+  position: relative;
+  z-index: 50;
+  pointer-events: auto !important;
+}
+
+/* === FIX B: force lightbox visibility when opened === */
+.lt-lightbox {
+  display: none !important;
+  z-index: 99999 !important;
+}
+
+.lt-lightbox.is-open {
+  display: flex !important;
+}
+
+/* Company page hero spacing (ONLY) */
+#company-hero {
+  padding-top: 5.5rem;
+  /* 위에서 아래로 내리는 느낌 */
+  padding-bottom: 4.5rem;
+}
+
+#company-hero .container {
+  min-height: calc(100vh - 140px);
+  /* 헤더 제외하고 화면 높이 사용 */
+  display: flex;
+  align-items: center;
+  /* 세로 중앙 정렬 */
+}
+
+#company-hero .diff-content h2 {
+  text-align: left !important;
+}
+
+/* company principle cards */
+.diff-card {
+  background: rgba(255, 255, 255, 0.04);
+  /* 너무 튀지 않게 */
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: none;
+  /* 그림자 제거 */
+}
+
+.diff-card h3 {
+  font-weight: 600;
+}
+
+.diff-card p {
+  color: #b8c0c8;
+}
+
+/* Pricing page – breathing space tweak */
+.pricing-card {
+  padding: 26px;
+}
+
+.pricing-card ul {
+  margin-top: 16px;
+}
+
+/* Anchor offset for fixed header */
+#contact {
+  scroll-margin-top: 96px;
+  /* 헤더 높이에 맞게 조절 */
+}
+
+/* Fix: ensure pack-card CTA button receives hover/click */
+.pack-card {
+  position: relative;
+}
+
+.pack-card .btn-outline-full {
+  position: relative;
+  z-index: 10;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+/* If a transparent overlay exists on cards/images, disable it */
+.pack-card::before,
+.pack-card::after,
+.pack-card img {
+  pointer-events: none;
+}
+
+/* ===== Page spacing normalization ===== */
+
+/* 모든 페이지 공통: 헤더 아래 기본 여백 */
+main {
+  padding-top: 5rem;
+}
+
+/* 혹시 특정 페이지에서 덮어쓰는 경우 방어 */
+body>main {
+  margin-top: 0;
+}
+
+/* Standard spacing between header and content (all pages) */
+.page-main {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+/* Legal-level spacing under fixed header */
+.page-main {
+  padding-top: 14rem;
+  padding-bottom: 6rem;
+}
+
+/* =========================================================
+   STANDARD SPACING FIX (FINAL)
+   - Keep header unified (font/alignment/white CTA)
+   - Index hero touches header (no gap)
+   - Restore normal section spacing site-wide
+   - Legal/Data Overview get safe top spacing (not glued)
+   ========================================================= */
+
+/* -------------------------
+   1) HEADER (keep as-is)
+   ------------------------- */
+.site-header,
+header {
+  position: relative;
+  z-index: 1000;
+  width: 100%;
+  background: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.site-header .container,
+header .container,
+.site-header .header-inner,
+header .header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.25rem 1.5rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.site-header .logo,
+header .logo {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.site-header .logo span,
+header .logo span {
+  color: #4ef0e8;
+  font-weight: 700;
+}
+
+.site-header nav ul,
+header nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  margin: 0;
+  padding: 0;
+}
+
+.site-header nav a,
+header nav a,
+.site-header nav ul li a,
+header nav ul li a {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+}
+
+.site-header nav a:hover,
+header nav a:hover,
+.site-header nav ul li a:hover,
+header nav ul li a:hover {
+  color: #ffffff;
+}
+
+.site-header .btn,
+.site-header .btn-cta,
+.site-header .btn-primary-sm,
+header .btn,
+header .btn-cta,
+header .btn-primary-sm {
+  padding: 0.6rem 1.1rem;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #000000;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* -------------------------
+   2) GLOBAL CONTENT SPACING (restore)
+   ------------------------- */
+
+/* ✅ 기본 섹션 간격 복구: 사이트 전체가 바짝 붙는 현상 해결 */
+.section {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+/* ✅ 섹션 제목/문단 기본 여백 복구 */
+h1 {
+  margin: 0 0 1rem 0;
+}
+
+h2 {
+  margin: 0 0 0.75rem 0;
+}
+
+p {
+  margin: 0 0 1rem 0;
+}
+
+/* -------------------------
+   3) INDEX HERO ONLY (touch header)
+   - index의 히어로만 위쪽 여백 제거
+   ------------------------- */
+
+/* index에만 class를 주면 가장 안전함: <body class="home"> */
+body.home .section:first-of-type {
+  padding-top: 0;
+}
+
+/* hero 계열이 section이 아니어도 안전하게 0 처리 */
+body.home .hero,
+body.home .hero-section,
+body.home #hero,
+body.home [class*="hero"] {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+/* -------------------------
+   4) PAGE TOP SPACING (legal/data-overview 같은 페이지)
+   - 헤더와 본문이 너무 붙는 것 방지
+   ------------------------- */
+
+/* 이 클래스를 body에 붙인 페이지는 상단 여백 확보: <body class="page-spaced"> */
+body.page-spaced main {
+  padding-top: 0rem;
+  /* ✅ 헤더 아래 안전 여백 */
+  padding-bottom: 6rem;
+}
+
+/* 혹시 main에 page-main을 쓰는 페이지가 있으면 이것도 안전하게 */
+.page-main {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+/* -------------------------
+   5) Safety
+   ------------------------- */
+.site-header *,
+header * {
+  box-sizing: border-box;
+}
+
+/* Use Cases page: top spacing under header (tune this number) */
+.use-cases-hero {
+  padding-top: 6rem;
+  padding-bottom: 5rem;
+}
+
+/* data-overview 전용: PoC steps 리스트 정렬 */
+body.data-overview ol {
+  padding-left: 1.25rem;
+  list-style-position: inside;
+}
+
+/* Data Overview CTA link enhancements */
+.cta-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.cta-link {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.cta-link .arrow {
+  margin-left: 0.25rem;
+  transition: transform 0.2s ease;
+}
+
+.cta-link:hover {
+  color: #ffffff;
+  transform: translateX(2px);
+}
+
+.cta-link:hover .arrow {
+  transform: translateX(3px);
+}
+
+/* =========================================================
+   CTA ROW & LINK STYLE (FINAL, LOCKED VERSION)
+   ========================================================= */
+
+/* 기본 CTA row: 왼쪽 정렬 (전역 기본값) */
+.cta-row {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+/* 링크형 CTA (Request / View 등) */
+.cta-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.85);
+  transition: transform .15s ease, color .15s ease;
+}
+
+/* hover 효과 */
+.cta-link:hover {
+  color: #ffffff;
+  transform: translateX(1px);
+}
+
+/* 화살표 */
+.cta-link .arrow {
+  display: inline-block;
+  transition: transform .15s ease;
+}
+
+.cta-link:hover .arrow {
+  transform: translateX(2px);
+}
+
+/* =========================================================
+   PAGE-SPECIFIC OVERRIDES
+   ========================================================= */
+
+/* Data Overview 페이지에서만 CTA 중앙 정렬 */
+.data-overview .cta-row {
+  justify-content: center;
+  text-align: center;
+}
+
+/* Pricing 페이지는 무조건 왼쪽 정렬 잠금 */
+.pricing-page .cta-row {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+/* 🔥 pricing page click fix */
+.section-dark-section::before,
+.section-dark-section::after {
+  pointer-events: none !important;
+}
+
+.section-dark-section * {
+  pointer-events: auto;
+}
+
+/* 🔒 PoC Lite card z-index safety */
+.pack-card {
+  position: relative;
+  z-index: 2;
+}
+
+/* PoC pricing card click fix */
+.pack-card {
+  position: relative;
+}
+
+.pack-card * {
+  pointer-events: auto;
+}
+
+.pack-card .btn {
+  position: relative;
+  z-index: 2;
+}
+
+/* Contact page spacing — aligned with Use Cases */
+.contact-main {
+  padding-top: 2.5rem;
+  padding-bottom: 6rem;
+}
+
+/* prevent double spacing inside contact main */
+main.contact-main .section {
+  padding-top: 0 !important;
+}
+
+.trust-note-section {
+  max-width: 720px;
+  margin: 3.5rem auto 0;
+  padding-top: 2.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  text-align: center;
+}
+
+.trust-note-section h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.trust-note-section p {
+  color: #c7c7c7;
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+}
+
+/* Company - Trust text under 3-card grid */
+.trust-text {
+  max-width: 860px;
+  margin: 2.5rem auto 0;
+  color: var(--text-muted);
+  text-align: left;
+  /* ✅ 이 한 줄이 핵심 */
+}
+
+.trust-text h3 {
+  margin: 0 0 .75rem;
+  color: var(--text);
+}
+
+.trust-text p {
+  margin: 0;
+  line-height: 1.65;
+}
+
+/* ✅ B-1: Evaluation trust note (Company) — TEXT ONLY */
+.trust-note {
+  margin-top: 2.5rem;
+  max-width: 860px;
+  text-align: left;
+}
+
+.trust-note__title {
+  font-weight: 700;
+  margin-bottom: .6rem;
+}
+
+.trust-note__text {
+  opacity: .9;
+  line-height: 1.65;
+}
+
+.pricing-trust-block {
+  max-width: 80ch;
+  margin-top: 1.5rem;
+  text-align: left;
+}
+
+.pricing-trust-line {
+  margin: 0;
+  opacity: .9;
+}
+
+.pricing-micro-note {
+  margin: 0.4rem 0 0;
+  opacity: .75;
+}
+
+.pricing-policy-note {
+  margin: 0.6rem 0 0;
+  opacity: .9;
+  font-weight: 500;
+}
+
+/* ✅ HOTFIX: Hero slider layout restore */
+.hero {
+  position: relative;
+  min-height: 82vh;
+  /* 필요하면 75~90vh 조절 */
+  overflow: hidden;
+}
+
+#heroSlider.hero-bg-slider {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+#heroSlider .hero-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 900ms ease;
+  pointer-events: none;
+}
+
+/* active 한 장만 보이게 */
+#heroSlider .hero-bg.active {
+  opacity: 1;
+}
+
+/* 텍스트/버튼이 이미지 위로 오게 */
+.hero .hero-content,
+.hero .container.hero-content,
+.hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: #000;
+}
+
+#heroSlider {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+#heroSlider .hero-bg {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+  background-size: cover;
+  background-position: center;
+}
+
+#heroSlider .hero-bg.active {
+  opacity: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  height: 100%;
+}
+
+/* =========================
+   HEADER (solid background)
+   ========================= */
+header,
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height, 80px);
+  z-index: 9999;
+
+  background: rgba(11, 12, 16, 0.90);
+  /* ✅ 배경 복구 */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, .12);
+}
+
+/* 헤더가 fixed이면 본문이 헤더 밑으로 숨지 않게 */
+body.home main {
+  padding-top: var(--header-height, 80px);
+}
+
+/* =========================
+   HERO (layout + slider)
+   ========================= */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background: #000;
+}
+
+/* slider container */
+#heroSlider {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* slides */
+#heroSlider .hero-bg {
+  position: absolute;
+  inset: 0;
+
+  background-size: cover;
+  background-position: center;
+
+  opacity: 0;
+  transform: scale(1);
+
+  transition:
+    opacity 1s ease-in-out,
+    transform 12s ease-out;
+
+  will-change: transform, opacity;
+}
+
+/* active slide */
+#heroSlider .hero-bg.active {
+  opacity: 1;
+  transform: scale(1.04);
+}
+
+
+/* content layer */
+.hero-content {
+  position: relative;
+  z-index: 10;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#heroSlider .hero-bg {
+  animation: heroPan 30s ease-in-out infinite alternate;
+}
+
+@keyframes heroPan {
+  0% {
+    background-position: 50% 50%;
+  }
+
+  100% {
+    background-position: 52% 48%;
+  }
+}
+
+.cta-micro {
+  margin-top: 14px;
+  font-size: 1rem;
+  color: var(--accent-primary);
+  font-weight: 500;
+  opacity: .95;
+}
+
+/* ===== HERO trust micro copy ===== */
+
+.trust-micro {
+  margin: 16px 0 10px;
+  font-size: 1.02rem;
+  font-weight: 600;
+  color: #ffffff;
+  opacity: 0.92;
+  max-width: 720px;
+}
+
+/* CTA reassurance line */
+
+.cta-micro {
+  margin-top: 14px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+  opacity: 1;
+}
+
+/* ===== Pricing trust note (conversion booster) ===== */
+.trust-note {
+  margin: 28px auto 22px;
+  max-width: 980px;
+  padding: 18px 18px;
+  border: 1px solid rgba(255, 255, 255, .12);
+  background: rgba(255, 255, 255, .04);
+  border-radius: 14px;
+}
+
+.trust-note__title {
+  font-weight: 800;
+  font-size: 1.05rem;
+  margin-bottom: 12px;
+}
+
+.trust-note__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.trust-note__item {
+  border: 1px solid rgba(255, 255, 255, .10);
+  background: rgba(0, 0, 0, .18);
+  border-radius: 12px;
+  padding: 12px 12px;
+}
+
+.trust-note__k {
+  font-weight: 800;
+  font-size: .92rem;
+  opacity: .95;
+  margin-bottom: 6px;
+  color: #fff;
+}
+
+.trust-note__v {
+  font-size: .95rem;
+  line-height: 1.45;
+  opacity: .85;
+}
+
+.trust-note__foot {
+  margin-top: 12px;
+  font-size: .95rem;
+  opacity: .8;
+}
+
+/* responsive */
+@media (max-width: 900px) {
+  .trust-note__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .trust-note {
+    margin: 22px 14px 18px;
+  }
+}
+
+/* ===== Pricing trust block ===== */
+
+.pricing-trust-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #ffffff;
+}
+
+.pricing-trust-k {
+  font-weight: 700;
+  margin-top: 10px;
+  color: #ffffff;
+}
+
+.pricing-trust-v {
+  opacity: .85;
+  line-height: 1.5;
+}
+
+.pricing-trust-block {
+  margin-top: 20px;
+}
+
+/* ===== Company: data coverage snapshot ===== */
+.coverage-snapshot {
+  margin-top: 14px;
+  max-width: 860px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #ffffff;
+  opacity: .92;
+}
+
+.coverage-snapshot strong {
+  font-weight: 700;
+  opacity: 1;
+}
+
+/* Company: data coverage snapshot */
+.company-snapshot {
+  margin-top: 0.75rem;
+  font-size: 1rem;
+  /* 기존 본문과 동일 크기 */
+  line-height: 1.6;
+  color: rgba(255, 255, 255, .85);
+  text-align: left;
+}
+
+.company-snapshot strong {
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.company-subtext {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-top: 0.6rem;
+  max-width: 80ch;
+}
+
+.section ul {
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.section h2 {
+  margin-bottom: 1.2rem;
+}
+
+.section ul {
+  margin-top: 1rem;
+}
+
+/* =========================
+   Fixed header spacing fix
+   ========================= */
+.page-main {
+  padding-top: 80px !important;
+}
+
+/* ===== Global layout spacing restore ===== */
+
+/* fixed header offset */
+.page-main {
+  padding-top: 80px !important;
+}
+
+/* section vertical rhythm */
+.page-main>.section {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+/* emphasized dark sections */
+.page-main>.dark-section {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+/* ===== Data Overview only: top spacing under fixed header ===== */
+body.data-overview .page-main {
+  padding-top: 80px;
+}
+
+/* Data Overview only: space between sections */
+body.data-overview .page-main>.section+.section {
+  margin-top: 40px !important;
+}
+
+/* Data Overview only: space before final CTA buttons */
+body.data-overview .section .cta-row {
+  margin-top: 40px;
+}
+
+/* ===== Data Overview: title alignment ===== */
+body.data-overview .section-title {
+  text-align: left !important;
+}
+
+/* ===== Data Overview: button alignment ===== */
+body.data-overview .cta-row {
+  justify-content: flex-start !important;
+  text-align: left !important;
+}
+
+/* ===== Data Overview: space between buttons and following text ===== */
+body.data-overview .cta-row+p {
+  margin-top: 20px;
+}
+
+/* ===== Data Overview: space between info box and CTA buttons ===== */
+body.data-overview .recommended-steps+.cta-row {
+  margin-top: 40px;
+}
+
+/* ===== Data Overview: space after top button group ===== */
+body.data-overview .cta-row+.lead {
+  margin-top: 20px;
+}
+
+body.use-cases .page-main {
+  padding-top: 80px;
+}
+
+/* ===== Autonomous page: header spacing ===== */
+body.autonomous .page-main {
+  padding-top: 80px;
+}
+
+/* Autonomous page top spacing fix */
+body.autonomous .page-wrap {
+  padding-top: 80px;
+}
+
+/* Use Cases page top spacing */
+body.use-cases main.use-cases-page {
+  padding-top: 80px !important;
+  justify-content: flex-start !important;
+}
+
+/* Home only: anchor offset for fixed header */
+body.home #different,
+body.home #packs,
+body.home #contact {
+  scroll-margin-top: 100px;
+}
+
+/* Contact only: top spacing under fixed header */
+body.contact .contact-main {
+  padding-top: 120px;
+}
+
+/* Contact page: remove header separator */
+body.contact header,
+body.contact .site-header {
+  border-bottom: none;
+  backdrop-filter: none;
+}
+
+body.home #contact>*:first-child>*:first-child {
+  margin-top: 0 !important;
+}
+
+/* index page anchor fix */
+body.home section#contact {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+body.home .hero-content {
+  padding-top: 48px;
+}
+
+.company-photo {
+  width: 100%;
+  max-width: 900px;
+  display: block;
+  margin: 0;
+}
+
+#contact {
+  padding-bottom: 0;
+}

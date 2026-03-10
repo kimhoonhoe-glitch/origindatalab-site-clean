@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/assets/icons/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Origindata Lab | Real-World Urban Datasets</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preload" as="image" href="/assets/hero/hero1.jpg">
+
+  <style>
+    /* index 전용: 히어로를 헤더에 밀착 */
+    body.home main {
+      padding-top: 0 !important;
+    }
+  </style>
+</head>
+
+<body class="home">
+  <!-- INDEX_MARKER_2026-03-03 -->
+  <header>
+    <div class="container">
+      <a href="/" class="logo">
+        Origindata<span>Lab</span>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="/company.html">Company</a></li>
+          <li><a href="#different">Why It's Different</a></li>
+          <li><a href="/use-cases.html">Use Cases</a></li>
+          <li><a href="#packs">Dataset Packs</a></li>
+          <li><a href="/legal-transparency.html">Legal & Transparency</a></li>
+
+          <li><a href="#contact" class="btn btn-primary-sm">Talk to a Data Engineer</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ✅ HERO (Rebuilt, accessible) -->
+    <section class="hero" role="region" aria-label="OriginDataLab hero section">
+      <!-- background slider (decorative) -->
+      <div class="hero-bg-slider" id="heroSlider" aria-hidden="true">
+        <div class="hero-bg active" style="background-image:url('/assets/hero/1.webp');"></div>
+        <div class="hero-bg" style="background-image:url('/assets/hero/2.webp');"></div>
+        <div class="hero-bg" style="background-image:url('/assets/hero/3.webp');"></div>
+        <div class="hero-bg" style="background-image:url('/assets/hero/4.webp');"></div>
+      </div>
+
+
+
+      <div class="container hero-content">
+        <h1>We capture real-world environments where simulations fail.</h1>
+        <p class="hero-product-def">
+          Production-grade real-world urban POV video datasets—segmented, metadata-rich, and built for long-horizon
+          modeling.
+        </p>
+        <ul class="hero-features">
+          <li>Segment-ready clips (30-90s) + preserved continuous originals</li>
+          <li>Metadata-first: density / interaction / environment tags per segment</li>
+          <li>Built for high-entropy urban scenes where rules break</li>
+        </ul>
+
+        <p class="trust-micro">Quality-checked. Metadata-rich. Segment-ready (30–90s) with preserved continuous
+          originals.</p>
+
+        <div class="hero-actions">
+          <a href="#packs" class="btn btn-primary">Request Sample Pack</a>
+          <a href="/data-overview.html" class="btn btn-primary">Data Overview</a>
+        </div>
+        <p class="cta-micro">
+          No spam. No pressure. <strong>Talk to a data engineer</strong> — reply within 24 hours.
+        </p>
+      </div>
+    </section>
+
+
+
+    <!-- Questions AI Teams Ask (New) -->
+    <section class="section questions-section">
+      <div class="container">
+        <h2 class="section-title">Questions AI Teams Ask — And Why This Data Exists</h2>
+        <div class="questions-grid">
+          <!-- Q1 -->
+          <div class="question-card">
+            <h3 class="question-title">Q: What data helps reduce sim-to-real gaps in autonomous driving?</h3>
+            <p class="question-answer">Models fail not because they lack data, but because they lack exposure to
+              unstructured, high-entropy real-world environments. This dataset captures the chaotic conditions where
+              rule-based assumptions break down.</p>
+          </div>
+          <!-- Q2 -->
+          <div class="question-card">
+            <h3 class="question-title">Q: What datasets capture chaotic urban traffic and informal road behavior?</h3>
+            <p class="question-answer">Most public datasets focus on structured roads. This data focuses on informal
+              traffic systems with dense interactions, lane-less movement, and implicit human negotiation.</p>
+          </div>
+          <!-- Q3 -->
+          <div class="question-card">
+            <h3 class="question-title">Q: How do teams train models for unstructured road environments?</h3>
+            <p class="question-answer">Teams isolate high-risk, high-uncertainty scenarios and use them for targeted
+              training and evaluation. Segment-level metadata enables precise filtering without over-annotation.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dataset Snapshot (New) -->
+    <section class="section snapshot-section">
+      <div class="container">
+        <h2 class="section-title">Dataset Snapshot</h2>
+        <div class="snapshot-grid">
+          <div class="snapshot-item">
+            <div class="snapshot-number">500+</div>
+            <div class="snapshot-label">Hours of Footage</div>
+          </div>
+          <div class="snapshot-item">
+            <div class="snapshot-number">25k+</div>
+            <div class="snapshot-label">Unique Segments</div>
+          </div>
+          <div class="snapshot-item">
+            <div class="snapshot-number">15+</div>
+            <div class="snapshot-label">Urban Environments</div>
+          </div>
+          <div class="snapshot-item">
+            <div class="snapshot-number">100%</div>
+            <div class="snapshot-label">Real-World Chaos</div>
+          </div>
+        </div>
+        <p style="text-align: center; color: #ffffff; font-size: 1.25rem; font-weight: 500; margin-top: 2.5rem;">
+          Inventory as of March 2026. Updated on a rolling basis.
+        </p>
+      </div>
+    </section>
+
+    <!-- Why This Data Changes Your Model (New) -->
+    <section class="section model-change-section">
+      <div class="container">
+        <h2 class="section-title">Why This Data Changes Your Model</h2>
+        <p class="section-subtitle"
+          style="text-align: center; color: var(--text-muted); font-size: 1.1rem; margin-top: -2rem; margin-bottom: 3rem;">
+          Built for failure modes your simulation never captured.
+        </p>
+        <div class="model-change-grid">
+          <!-- Card 1 -->
+          <div class="change-card">
+            <div class="card-label">FAILURE MODE</div>
+            <h3>Simulation Gap Breaker</h3>
+            <p>When agents behave outside rule-based assumptions, synthetic data collapses. Our footage captures
+              spontaneous, density-driven, rule-breaking interactions in uncontrolled urban space.</p>
+            <p class="impact-sentence">Break the simulation ceiling.</p>
+            <ul class="change-features">
+              <li><strong>High-entropy</strong> traffic flows</li>
+              <li><strong>Informal negotiation</strong> between agents</li>
+              <li><strong>Non-lane-based</strong> navigation</li>
+            </ul>
+          </div>
+          <!-- Card 2 -->
+          <div class="change-card">
+            <div class="card-label">TEMPORAL REASONING</div>
+            <h3>Long-Horizon Behavioral Continuity</h3>
+            <p>Segment-ready clips are extracted from preserved continuous recordings, enabling long-horizon modeling
+              and temporal reasoning.</p>
+            <p class="impact-sentence">Model causality, not just frames.</p>
+            <ul class="change-features">
+              <li><strong>30–90s segments</strong> with continuous origin</li>
+              <li><strong>Timestamp-aligned</strong> metadata</li>
+              <li><strong>Cross-segment identity</strong> persistence</li>
+            </ul>
+          </div>
+          <!-- Card 3 -->
+          <div class="change-card">
+            <div class="card-label">MULTI-AGENT CHAOS</div>
+            <h3>Density-Aware Interaction Intelligence</h3>
+            <p>Real-world environments where vehicles, pedestrians, and informal actors negotiate space dynamically.</p>
+            <p class="impact-sentence">Train for multi-agent chaos.</p>
+            <ul class="change-features">
+              <li><strong>Density tagging</strong> (Low / Medium / High)</li>
+              <li><strong>Interaction type</strong> labeling</li>
+              <li><strong>Environment-type</strong> classification</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="model-cta text-center" style="margin-top: 3rem;">
+          <a href="#contact" class="btn btn-primary">Request a schema preview and sample pack</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dataset Specification (New) -->
+    <section id="dataset-spec" class="section spec-section">
+      <div class="container">
+        <h2 class="section-title">Dataset Specification</h2>
+        <div class="spec-grid">
+          <!-- Column 1 -->
+          <div class="spec-column">
+            <div class="spec-group">
+              <h3>Capture</h3>
+              <div class="spec-row"><span class="spec-label">POV</span><span class="spec-value">Motorbike-mounted /
+                  Mobile urban</span></div>
+              <div class="spec-row"><span class="spec-label">Resolution</span><span class="spec-value">1080p</span>
+              </div>
+              <div class="spec-row"><span class="spec-label">Frame Rate</span><span class="spec-value">24fps</span>
+              </div>
+              <div class="spec-row"><span class="spec-label">Codec</span><span class="spec-value">H.264</span></div>
+            </div>
+
+            <div class="spec-group">
+              <h3>Clip Structure</h3>
+              <div class="spec-row"><span class="spec-label">Segment Length</span><span class="spec-value">30–90
+                  seconds</span></div>
+              <div class="spec-row"><span class="spec-label">Continuous Originals</span><span
+                  class="spec-value">Preserved</span></div>
+              <div class="spec-row"><span class="spec-label">Unique Segment IDs</span><span
+                  class="spec-value">Yes</span></div>
+            </div>
+
+            <div class="spec-group">
+              <h3>Metadata</h3>
+              <div class="spec-row"><span class="spec-label">Density tags</span><span class="spec-value">Low / Medium /
+                  High</span></div>
+              <div class="spec-row"><span class="spec-label">Interaction type</span><span class="spec-value">Vehicle,
+                  pedestrian, mixed</span></div>
+              <div class="spec-row"><span class="spec-label">Environment type</span><span
+                  class="spec-value">Intersection, narrow street, market, etc.</span></div>
+              <div class="spec-row"><span class="spec-label">Timestamp aligned</span><span class="spec-value">Yes</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 2 -->
+          <div class="spec-column">
+            <div class="spec-group">
+              <h3>Formats</h3>
+              <div class="spec-row"><span class="spec-label">Video Format</span><span class="spec-value">MP4</span>
+              </div>
+              <div class="spec-row"><span class="spec-label">Metadata Format</span><span class="spec-value">JSON</span>
+              </div>
+              <div class="spec-row"><span class="spec-label">Naming</span><span class="spec-value">Standardized
+                  Convention</span></div>
+            </div>
+
+            <div class="spec-group">
+              <h3>Delivery</h3>
+              <div class="spec-row"><span class="spec-label">Packaging</span><span class="spec-value">Batch
+                  packaged</span></div>
+              <div class="spec-row"><span class="spec-label">Access</span><span class="spec-value">Secure
+                  download</span></div>
+              <div class="spec-row"><span class="spec-label">Organization</span><span class="spec-value">Sorted by
+                  segment ID</span></div>
+            </div>
+
+            <div class="spec-group">
+              <h3>Licensing</h3>
+              <div class="spec-row"><span class="spec-label">Default Rights</span><span
+                  class="spec-value">Non-exclusive</span></div>
+              <div class="spec-row"><span class="spec-label">Options</span><span class="spec-value">Custom agreements
+                  available</span></div>
+            </div>
+          </div>
+        </div>
+
+        <p class="text-center"
+          style="margin-top: 3rem; margin-bottom: 2rem; max-width: 900px; margin-left: auto; margin-right: auto; color: #ffffff; font-size: 1.25rem; font-weight: 500; line-height: 1.6;">
+          Data is delivered as raw video clips with segment-level scenario metadata.
+          Heavy annotations (e.g., bounding boxes, pixel-level segmentation)
+          are not included by default, but can be provided upon request.
+        </p>
+
+        <div class="spec-cta text-center" style="margin-top: 3rem;">
+          <a href="#contact" class="btn btn-primary-sm">Request schema + sample pack</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why We're Not a Data Marketplace (New) -->
+    <section id="not-marketplace" class="section">
+      <div class="container">
+        <div class="differentiation-grid">
+          <div class="diff-image-wrapper">
+            <img src="/assets/sections/env-traffic-new.webp" alt="Chaotic Real World Environment" class="diff-image">
+          </div>
+          <div class="diff-content">
+            <h2 class="section-title" style="text-align: left; margin-bottom: 1.5rem;">Why We’re Not a Data Marketplace
+            </h2>
+            <h3 style="color: var(--text-highlight); margin-bottom: 2rem;">Most data platforms sell everything.<br>We
+              focus on what’s hardest to capture.</h3>
+
+            <p class="mb-2">Most dataset marketplaces aggregate massive volumes of scraped, simulated, or third-party
+              data.</p>
+            <p class="mb-2"><strong>Origin Data Lab is different.</strong><br>We capture high-entropy urban environments
+              where rules break down, signals are ignored, and human behavior dominates.</p>
+            <p class="mb-2">We don’t sell more data.<br>We sell data that makes models stop hallucinating about the real
+              world.</p>
+
+            <a href="#contact" class="btn btn-primary" style="margin-top: 2rem;">Request Sample Pack</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How Teams Use This Data (New) -->
+    <section class="section workflow-section">
+      <div class="container">
+        <h2 class="section-title">How Teams Use This Data</h2>
+        <div class="workflow-steps">
+          <div class="workflow-step">
+            <div class="step-number">01</div>
+            <div class="step-content">
+              <h3>Secure Delivery</h3>
+              <p>Teams access video segments and metadata via secure delivery.</p>
+            </div>
+          </div>
+          <div class="workflow-arrow">→</div>
+          <div class="workflow-step">
+            <div class="step-number">02</div>
+            <div class="step-content">
+              <h3>Pipeline Ingestion</h3>
+              <p>Metadata (JSON/Parquet) is loaded directly into training or evaluation pipelines.</p>
+            </div>
+          </div>
+          <div class="workflow-arrow">→</div>
+          <div class="workflow-step">
+            <div class="step-number">03</div>
+            <div class="step-content">
+              <h3>Precision Filtering</h3>
+              <p>Engineers filter data by environment, density, interaction type, and quality flags.</p>
+            </div>
+          </div>
+          <div class="workflow-arrow">→</div>
+          <div class="workflow-step">
+            <div class="step-number">04</div>
+            <div class="step-content">
+              <h3>Model Execution</h3>
+              <p>Selected segments are used for model training, stress testing, or failure analysis.</p>
+            </div>
+          </div>
+          <div class="workflow-arrow">→</div>
+          <div class="workflow-step">
+            <div class="step-number">05</div>
+            <div class="step-content">
+              <h3>Scale Up</h3>
+              <p>Results from PoC determine scale-up to larger dataset packs.</p>
+            </div>
+          </div>
+        </div>
+        <p class="text-center" style="margin-top: 3rem; color: var(--text-muted); font-size: 0.95rem;">
+          This data is designed for engineers, not for browsing.
+        </p>
+      </div>
+    </section>
+
+    <!-- Context Section (New) -->
+    <section id="context" class="section">
+      <div class="container">
+        <div class="context-grid">
+          <div>
+            <h2 class="section-title" style="text-align: left; margin-bottom: 1.5rem;">This Is Not Just Video. It's
+              Context.</h2>
+            <p class="mb-2">Most datasets fail because they provide snapshots, not stories. OriginData Lab delivers
+              complete temporal consistency.</p>
+            <ul class="pack-features">
+              <li><strong>Long-Context Continuity:</strong> Pre-event and post-event frames to understand cause and
+                effect.</li>
+              <li><strong>Rich Metadata:</strong> Segment-level tagging for interaction-heavy environments.</li>
+              <li><strong>Segment-Ready:</strong> Structured specifically for immediate insertion into training
+                pipelines.</li>
+            </ul>
+          </div>
+          <div class="image-card" style="height: 300px;">
+            <!-- Abstract representation of data stream -->
+            <div class="hero-bg"
+              style="background-image: url('/assets/sections/context-realworld.webp'); opacity: 0.6; position: relative;">
+            </div>
+            <div style="position: absolute; bottom: 20px; left: 20px; z-index: 2;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Unstructured Environments (New) -->
+    <section id="unstructured" class="section dark-section">
+      <div class="container">
+        <h2 class="section-title">Built for Unstructured Real-World Environments</h2>
+        <div class="env-grid">
+          <!-- Card 1 -->
+          <div class="env-card">
+            <div class="env-img-wrapper">
+              <img src="/assets/sections/env-card-1.webp" class="env-img" alt="Unstructured Road">
+            </div>
+            <div class="env-content">
+              <h3 class="env-title">Unstructured Road & Path Boundaries</h3>
+              <p class="env-desc">Lanes disappear. Movement adapts in real time.</p>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div class="env-card">
+            <div class="env-img-wrapper">
+              <img src="/assets/sections/env-card-2.webp" class="env-img" alt="Dense Interaction">
+            </div>
+            <div class="env-content">
+              <h3 class="env-title">Dense Human–Vehicle Interaction</h3>
+              <p class="env-desc">People, motorcycles, and vehicles share space.</p>
+            </div>
+          </div>
+          <!-- Card 3 -->
+          <div class="env-card">
+            <div class="env-img-wrapper">
+              <img src="/assets/sections/env-card-3.webp" class="env-img" alt="Low Enforcement">
+            </div>
+            <div class="env-content">
+              <h3 class="env-title">Low-Enforcement, High-Entropy Zones</h3>
+              <p class="env-desc">Inconsistent rules. Continuous edge cases.</p>
+            </div>
+          </div>
+          <!-- Card 4 -->
+          <div class="env-card">
+            <div class="env-img-wrapper">
+              <img src="/assets/sections/env-card-4.webp" class="env-img" alt="Motion Intelligence">
+            </div>
+            <div class="env-content">
+              <h3 class="env-title">Behavior & Motion Intelligence</h3>
+              <p class="env-desc">Real-world decisions captured as they happen.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why This Data Is Different (Rewritten) -->
+    <section id="different" class="section alt-bg">
+      <div class="container">
+        <h2 class="section-title">The Entropy Gap</h2>
+        <div class="grid-3">
+          <div class="card bg-urban-1">
+            <div class="card-icon">01</div>
+            <h3>Simulation & Synthetic</h3>
+            <p style="font-size: 0.95rem; margin-bottom: 1rem; color: var(--text-muted);">The "Perfect World" Problem
+            </p>
+            <p>Simulators rely on programmed logic. They cannot generate the irrational, aggressive, and non-compliant
+              behaviors found in real dense urban centers.</p>
+          </div>
+          <div class="card bg-urban-2" style="border-color: var(--text-highlight);">
+            <div class="card-icon" style="color: var(--text-highlight);">02</div>
+            <h3 style="color: var(--text-highlight);">OriginData High-Entropy</h3>
+            <p style="font-size: 0.95rem; margin-bottom: 1rem; color: var(--text-muted);">The "Real World" Solution</p>
+            <p>Captured where standard collection vehicles are afraid to go. We target high-friction zones to capture
+              raw, unscripted edge cases.</p>
+          </div>
+          <div class="card bg-urban-3">
+            <div class="card-icon">03</div>
+            <h3>Scraped Internet Data</h3>
+            <p style="font-size: 0.95rem; margin-bottom: 1rem; color: var(--text-muted);">The "Quality" Problem</p>
+            <p>Inconsistent sensors, rolling shutter artifacts, and lossy compression make scraped data unreliable for
+              precision depth and motion training.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Failure Scenarios This Data Is Built For (Use Cases) -->
+    <section id="use-cases" class="section">
+      <div class="container">
+        <h2 class="section-title">Failure Scenarios This Data Is Built For</h2>
+        <p class="section-subtitle text-center"
+          style="color: var(--text-muted); font-size: 1.1rem; margin-top: -2rem; margin-bottom: 3rem;">
+          Not industries. Not demos. These are the moments where models break in the real world.</p>
+
+        <div class="env-grid">
+          <!-- Scenario 1 -->
+          <div class="env-card" style="height: auto;">
+            <div class="env-content">
+              <h3 class="env-title">Implicit Negotiation Without Rules</h3>
+              <p class="env-desc" style="margin-bottom: 1rem;">
+                Unsignalized interactions where right-of-way is inferred through human behavior rather than traffic
+                logic.
+              </p>
+              <p style="font-size: 0.9rem; color: var(--text-highlight);">
+                <span style="color: var(--text-muted);">Common failure:</span> Overconfident path prediction and delayed
+                braking decisions.
+              </p>
+            </div>
+          </div>
+
+          <!-- Scenario 2 -->
+          <div class="env-card" style="height: auto;">
+            <div class="env-content">
+              <h3 class="env-title">High-Density Multi-Agent Compression</h3>
+              <p class="env-desc" style="margin-bottom: 1rem;">
+                Motorcycles, pedestrians, and vehicles occupying overlapping space with minimal separation.
+              </p>
+              <p style="font-size: 0.9rem; color: var(--text-highlight);">
+                <span style="color: var(--text-muted);">Common failure:</span> Object tracking instability and
+                trajectory prediction collapse.
+              </p>
+            </div>
+          </div>
+
+          <!-- Scenario 3 -->
+          <div class="env-card" style="height: auto;">
+            <div class="env-content">
+              <h3 class="env-title">Near-Miss and Human Hesitation Events</h3>
+              <p class="env-desc" style="margin-bottom: 1rem;">
+                Moments of pause, micro-braking, and implicit negotiation before movement.
+              </p>
+              <p style="font-size: 0.9rem; color: var(--text-highlight);">
+                <span style="color: var(--text-muted);">Common failure:</span> Intent prediction models fail to
+                anticipate hesitation and yield behavior.
+              </p>
+            </div>
+          </div>
+
+          <!-- Scenario 4 -->
+          <div class="env-card" style="height: auto;">
+            <div class="env-content">
+              <h3 class="env-title">Lane-less and Degraded Road Geometry</h3>
+              <p class="env-desc" style="margin-bottom: 1rem;">
+                Missing lane markings, temporary obstacles, and informal road structures.
+              </p>
+              <p style="font-size: 0.9rem; color: var(--text-highlight);">
+                <span style="color: var(--text-muted);">Common failure:</span> Lane-dependent assumptions generate
+                invalid planning outputs.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <p class="text-center" style="margin-top: 2rem; color: var(--text-muted); font-size: 0.95rem;">
+          These scenarios are underrepresented in simulation and benchmark datasets, but dominate real-world deployment
+          failures.
+        </p>
+      </div>
+    </section>
+
+    <!-- What Changes After You Train (New) -->
+    <section id="results" class="section dark-section">
+      <div class="container text-center">
+        <h2 class="section-title">What Changes After You Train On This</h2>
+        <div class="results-grid">
+          <div class="result-item">
+            <div class="result-number">FEWER</div>
+            <div class="result-label">Sim-to-Real Failures</div>
+          </div>
+          <div class="result-item">
+            <div class="result-number">DENSE</div>
+            <div class="result-label">High-Entropy Exposure</div>
+          </div>
+          <div class="result-item">
+            <div class="result-number">EDGE</div>
+            <div class="result-label">Rare Behavior Coverage</div>
+          </div>
+          <div class="result-item">
+            <div class="result-number">ROBUST</div>
+            <div class="result-label">Long-Horizon Stability</div>
+          </div>
+        </div>
+        <p class="metrics-disclaimer">
+          Outcomes depend on model architecture and integration strategy. This data is designed to expose failure modes
+          during evaluation, not to guarantee production performance metrics.
+        </p>
+      </div>
+    </section>
+
+    <!-- Philosphy -->
+    <section class="section">
+      <div class="container text-center max-w-800">
+        <h2 class="section-title">From Chaos to Structure</h2>
+        <p class="lead-text">We focus on preserving real-world complexity while delivering datasets that are structured,
+          searchable, and ready for engineering workflows.</p>
+        <div class="bullet-grid">
+          <div class="bullet-item">Segment-level quality control</div>
+          <div class="bullet-item">Metadata-driven organization</div>
+          <div class="bullet-item">Traceable data lineage</div>
+          <div class="bullet-item">Documentation-first delivery</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dataset Packs -->
+    <section id="packs" class="section dark-section">
+      <div class="container">
+        <h2 class="section-title">Production-Grade Dataset Packs</h2>
+        <div class="grid-3">
+          <!-- Pack 1 -->
+          <div class="pack-card">
+            <div class="pack-header">
+              <h3>Urban POV Streams</h3>
+            </div>
+            <img src="/assets/packs/pov-2.webp" style="width: 100%; height: 180px; object-fit: cover; opacity: 0.8;">
+            <div class="pack-body">
+              <p class="pack-focus">High-density agent interaction from mobile viewpoints.</p>
+              <ul class="pack-features">
+                <li>Non-standard vehicles</li>
+                <li>Close-proximity maneuvering</li>
+              </ul>
+              <a href="/contact.html" class="btn btn-outline-full">Request Coverage Snapshot</a>
+            </div>
+          </div>
+          <!-- Pack 2 -->
+          <div class="pack-card">
+            <div class="pack-header">
+              <h3>Chaotic Intersections</h3>
+            </div>
+            <img src="/assets/sections/inter-3.webp"
+              style="width: 100%; height: 180px; object-fit: cover; opacity: 0.8;">
+            <div class="pack-body">
+              <p class="pack-focus">Non-signaled crossings, negotiation behavior, near-miss dynamics.</p>
+              <ul class="pack-features">
+                <li>Multi-agent prediction</li>
+                <li>Unstructured flows</li>
+              </ul>
+              <a href="/contact.html" class="btn btn-outline-full">Request Coverage Snapshot</a>
+            </div>
+          </div>
+          <!-- Pack 3 -->
+          <div class="pack-card">
+            <div class="pack-header">
+              <h3>Continuous Context</h3>
+            </div>
+            <img src="/assets/sections/continuous-context.webp"
+              style="width: 100%; height: 180px; object-fit: cover; opacity: 0.8;">
+            <div class="pack-body">
+              <p class="pack-focus">Extended temporal sequences for long-horizon reasoning.</p>
+              <ul class="pack-features">
+                <li>Loop closure testing</li>
+                <li>Environmental drift</li>
+              </ul>
+              <a href="/contact.html" class="btn btn-outline-full">Request Coverage Snapshot</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust / Engineering Section -->
+    <section class="section dark-section">
+      <div class="container text-center">
+        <h2 class="section-title">Built for Engineering Teams</h2>
+        <p class="subtext">Designed for direct integration with perception and planning pipelines.</p>
+        <p class="mb-2">Video segments and structured metadata are delivered in formats commonly used in modern
+          perception pipelines.</p>
+
+        <div class="engineering-icons-grid">
+          <div class="eng-icon-item">
+            <div class="eng-icon" onclick="alert('Opening Video Modal (Simulated)');">▶</div>
+            <h4>Sample Clips</h4>
+            <p>Watch raw footage</p>
+          </div>
+
+          <a href="/assets/schema/schema_overview.html" target="_blank" rel="noopener noreferrer" class="card-link"
+            title="Preview of delivery structure (non-binding) — illustrative example for PoC structure validation.">
+            <div class="eng-icon-item">
+              <div class="eng-icon">📄</div>
+              <h4>Schema Overview</h4>
+              <p>Segment metadata structure (JSON)</p>
+            </div>
+          </a>
+
+          <a href="/assets/schema/quality_summary.html" target="_blank" rel="noopener noreferrer" class="card-link"
+            title="How quality is checked (evaluation preview) — QC signals, privacy handling, and validation rules.">
+
+            <div class="eng-icon-item">
+              <div class="eng-icon">✔</div>
+              <h4>Quality Summary</h4>
+              <p>Video integrity and QC checks</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- See the Data Your Model Fails On (New Section) -->
+    <section class="section video-proof-section">
+      <div class="container">
+        <h2 class="section-title">See the Data Your Model Fails On</h2>
+        <p class="section-subtitle text-center"
+          style="color: var(--text-muted); font-size: 1.1rem; margin-top: -2rem; margin-bottom: 3rem;">
+          Real-world, high-entropy urban footage captured where rules break and simulations collapse.
+        </p>
+
+        <div class="video-grid">
+          <!-- Video Card 1 -->
+          <div class="video-card">
+            <div class="video-wrapper">
+              <video class="card-video" autoplay muted loop playsinline preload="metadata" poster="/assets/hero/1.jpg">
+                <source src="/assets/videos/india.mp4" type="video/mp4">
+              </video>
+              <div class="video-overlay"></div>
+            </div>
+            <div class="video-info">
+              <h3>Unstructured Urban Flow — India</h3>
+              <p>Lane-less traffic with implicit negotiation between vehicles and pedestrians.</p>
+            </div>
+          </div>
+
+          <!-- Video Card 2 -->
+          <div class="video-card">
+            <div class="video-wrapper">
+              <video class="card-video" autoplay muted loop playsinline preload="metadata" poster="/assets/hero/2.jpg">
+                <source src="/assets/videos/vietnam.mp4" type="video/mp4">
+              </video>
+              <div class="video-overlay"></div>
+            </div>
+            <div class="video-info">
+              <h3>Dense Interaction — Vietnam</h3>
+              <p>High-density motorcycle and pedestrian interaction in informal traffic.</p>
+            </div>
+          </div>
+
+          <!-- Video Card 3 -->
+          <div class="video-card">
+            <div class="video-wrapper">
+              <video class="card-video" autoplay muted loop playsinline preload="metadata" poster="/assets/hero/3.jpg">
+                <source src="/assets/videos/pedestrian.mp4" type="video/mp4">
+              </video>
+              <div class="video-overlay"></div>
+            </div>
+            <div class="video-info">
+              <h3>Human-Centric Navigation — Pedestrian POV</h3>
+              <p>First-person walking perspective capturing hesitation and spatial negotiation.</p>
+            </div>
+          </div>
+        </div>
+
+        <p class="tech-proof-caption text-center">
+          All footage is captured as continuous POV recordings and delivered as segment-ready clips with preserved
+          temporal context.
+        </p>
+
+        <div class="section-divider"></div>
+
+        <div class="metadata-subsection">
+          <h3 class="subsection-title">Segment-Level Metadata & Quality Control</h3>
+
+          <ul class="metadata-list">
+            <li>Each clip retains a traceable origin from continuous raw footage.</li>
+            <li>Segment-level metadata includes environment, density, interaction type, and temporal context.</li>
+            <li>Every segment passes multi-stage quality checks before release.</li>
+          </ul>
+
+          <div class="metadata-preview">
+            <pre><code>{
+  <span class="key">"segment_id"</span>: <span class="string">"VN-HCMC-INT-0231"</span>,
+  <span class="key">"environment"</span>: <span class="string">"market_street"</span>,
+  <span class="key">"density"</span>: <span class="string">"high"</span>,
+  <span class="key">"interaction"</span>: [<span class="string">"pedestrian"</span>, <span class="string">"motorcycle"</span>, <span class="string">"vehicle"</span>],
+  <span class="key">"duration"</span>: <span class="string">"15s"</span>,
+  <span class="key">"origin_continuous_id"</span>: <span class="string">"VN-HCMC-RAW-0048"</span>
+}</code></pre>
+          </div>
+
+          <p class="trust-statement text-center">
+            This structure ensures training data remains interpretable, traceable, and directly usable in ML pipelines.
+          </p>
+
+          <div class="text-center" style="margin-top: 2rem;">
+            <a href="#contact" class="btn btn-primary">REQUEST FULL SAMPLE PACK</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quality Control & Responsible Collection (New) -->
+    <section class="section qc-section">
+      <div class="container text-center max-w-800">
+        <h2 class="section-title">Quality Control & Responsible Collection</h2>
+        <p class="qc-intro">
+          Quality control is performed at the segment level where specific reasons for rejection are recorded. Original
+          continuous footage can be preserved for context, while metadata includes QC flags to support precise
+          filtering.
+        </p>
+
+        <ul class="qc-list">
+          <li><strong>Segment-level QC:</strong> Automatic checks + review flags; segments may be rejected with recorded
+            reasons.</li>
+          <li><strong>Traceable structure:</strong> Each segment remains linked to its continuous original for temporal
+            context.</li>
+          <li><strong>Privacy-aware handling:</strong> Faces and license plates are blurred or masked where required,
+            while preserving motion cues and interaction dynamics.</li>
+          <li><strong>Consent & responsible capture:</strong> Collection is conducted with consent and aligned with
+            responsible data practices.</li>
+        </ul>
+
+        <p class="qc-disclaimer">
+          Details and documentation are available during PoC alignment.
+        </p>
+
+        <div style="margin-top: 4rem; text-align: left; max-width: 700px; margin-left: auto; margin-right: auto;">
+          <h3
+            style="color: #fff; font-size: 1.2rem; margin-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.5rem;">
+            Privacy & Licensing Summary</h3>
+          <ul style="list-style: none; padding: 0; color: #f0f0f0; font-size: 0.95rem; line-height: 1.6;">
+            <li style="margin-bottom: 0.5rem;">• Faces and license plates are blurred by default in delivered clips.
+            </li>
+            <li style="margin-bottom: 0.5rem;">• No intentional capture of sensitive locations or personal identifiers.
+            </li>
+            <li style="margin-bottom: 0.5rem;">• Data is licensed for evaluation or commercial use depending on
+              agreement.</li>
+            <li style="margin-bottom: 0.5rem;">• PoC data is provided for evaluation purposes only.</li>
+            <li>• Full licensing terms are defined separately upon engagement.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Early Evaluation & Research Usage (New) -->
+    <section class="section research-section">
+      <div class="container text-center max-w-800">
+        <h2 class="section-title">Early Evaluation & Research Usage</h2>
+        <p class="research-intro">
+          This dataset is currently used for internal research, early-stage evaluation, and to assess model behavior in
+          high-entropy environments.
+        </p>
+
+        <ul class="research-list">
+          <li><strong>Internal research evaluation:</strong> Assessed in controlled research and exploratory model
+            evaluation settings.</li>
+          <li><strong>Pilot-scale testing:</strong> Used to probe model behavior under dense interaction and
+            unstructured
+            traffic conditions.</li>
+          <li><strong>Failure-mode analysis:</strong> Applied to identify edge cases not observable in structured
+            datasets.</li>
+        </ul>
+
+        <p class="research-disclaimer">
+          Details are shared during PoC alignment and evaluation discussions.
+        </p>
+      </div>
+    </section>
+
+    <!-- Access Process -->
+    <section class="section bg-card">
+      <div class="container text-center">
+        <h2 class="section-title">How Access Works</h2>
+
+        <p style="margin-bottom: 2rem;">
+          We prioritize engineering fit over sales volume.
+        </p>
+
+        <div
+          style="text-align: left; max-width: 500px; margin: 0 auto; background: rgba(255,255,255,0.05); padding: 2rem; border-radius: 8px;">
+          <ol style="list-style: none; padding: 0; margin: 0; color: #fff; font-weight: 500;">
+            <li style="margin-bottom: 1rem;">1. Request PoC access (work email + use case)</li>
+            <li style="margin-bottom: 1rem;">2. Alignment on format, scope, and filters</li>
+            <li>3. Secure delivery via download link or cloud storage</li>
+          </ol>
+        </div>
+
+        <p class="text-center"
+          style="margin-top: 3rem; margin-bottom: 2rem; max-width: 900px; margin-left: auto; margin-right: auto; color: #ffffff; font-size: 1.25rem; font-weight: 500; line-height: 1.6;">
+          PoC data is delivered via secure signed download links.
+          Commercial access is provided under standard data licensing terms,
+          with billing handled via invoice upon scope confirmation.
+        </p>
+
+        <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 2rem;">
+          This process ensures you get exactly the data structure your pipeline needs.
+        </p>
+      </div>
+    </section>
+
+    <!-- FAQ Section (New) -->
+    <section class="section faq-section">
+      <div class="container">
+        <h3 class="faq-title">Frequently Asked by AI & Autonomous Systems Teams</h3>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <h4>Is this data labeled with bounding boxes or trajectories?</h4>
+            <p>Focus on context-aware metadata, not heavy annotation.</p>
+          </div>
+          <div class="faq-item">
+            <h4>Can this data be used for PoC and internal evaluation?</h4>
+            <p>Yes. Packs are designed specifically for model evaluation and pilot testing.</p>
+          </div>
+          <div class="faq-item">
+            <h4>Is this data ethically collected?</h4>
+            <p>Yes. Data is collected with consent and designed to avoid personal identification.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PoC Evaluation Pack (New) -->
+    <section class="section poc-section">
+      <div class="container text-center max-w-800">
+        <h2 class="section-title">What You Get in a PoC Evaluation Pack</h2>
+        <p class="poc-intro">
+          PoC evaluation packs are scope-based. Commercial terms are discussed after technical fit is confirmed.
+        </p>
+
+        <ul class="poc-list">
+          <li>Curated real-world video segments (small but structurally complete evaluation pack)</li>
+          <li>Segment-level metadata JSON (environment, density, interaction, QC flags)</li>
+          <li>Same folder and metadata structure as production deliveries</li>
+          <li>Delivery within 48–72 hours after alignment</li>
+          <li>No commitment. Engineering-only evaluation.</li>
+        </ul>
+
+        <p class="poc-emphasis">
+          Designed for internal model evaluation, not for public benchmarks.
+        </p>
+
+        <p class="poc-emphasis" style="color: #ffffff;">
+          PoC data is delivered via secure signed download links.
+          Commercial access is provided under standard data licensing terms,
+          with billing handled via invoice upon scope confirmation.
+        </p>
+
+        <div style="margin-top: 4rem; text-align: left; max-width: 700px; margin-left: auto; margin-right: auto;">
+          <h3
+            style="color: #fff; font-size: 1.2rem; margin-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.5rem;">
+            Privacy & Licensing Summary</h3>
+          <ul style="list-style: none; padding: 0; color: #f0f0f0; font-size: 0.95rem; line-height: 1.6;">
+            <li style="margin-bottom: 0.5rem;">• Faces and license plates are blurred by default in delivered clips.
+            </li>
+            <li style="margin-bottom: 0.5rem;">• No intentional capture of sensitive locations or personal identifiers.
+            </li>
+            <li style="margin-bottom: 0.5rem;">• Data is licensed for evaluation or commercial use depending on
+              agreement.</li>
+            <li style="margin-bottom: 0.5rem;">• PoC data is provided for evaluation purposes only.</li>
+            <li>• Full licensing terms are defined separately upon engagement.</li>
+          </ul>
+        </div>
+
+        <div class="poc-cta" style="margin-top: 3rem;">
+          <a href="#contact" class="btn btn-primary">Request PoC Access</a>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem; opacity: 0.8;">No payment. No
+            commitment.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section id="contact" class="section">
+      <div class="container contact-wrapper">
+
+        <h2 class="section-title text-center">
+          Start with a $500 PoC.<br />
+          Validate on real-world data.
+        </h2>
+
+        <p class="lead text-center" style="max-width: 680px; margin: 1rem auto 2rem;">
+          This short form starts a <strong>PoC Lite intake</strong>.
+          Share your target scenario and we’ll confirm feasibility and next steps
+          <strong>before any payment</strong>.
+        </p>
+
+        <form id="pocForm" class="contact-form" action="https://formspree.io/f/xaqdzezp" method="POST">
+          <input type="hidden" name="_subject" value="[PoC Lite] New Contact Submission" />
+          <input type="hidden" name="_redirect" value="/thank-you.html" />
+
+          <div class="form-group">
+            <label>Work Email (used for PoC delivery)</label>
+            <input type="email" name="email" placeholder="name@company.com" required />
+          </div>
+
+          <div class="form-group">
+            <label>Project Stage (current development phase)</label>
+            <select name="project_stage" required>
+              <option value="Research">Research</option>
+              <option value="Proof of Concept">Proof of Concept</option>
+              <option value="Production">Production</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>What specific scenarios should this $500 PoC focus on?</label>
+            <textarea name="scenario" rows="4"
+              placeholder="Example: non-lane-based traffic, dense pedestrians, night rain, occlusions..."
+              required></textarea>
+          </div>
+          <p style="margin:0 0 0.8rem; text-align:center; color:var(--text-primary); line-height:1.6;">
+            No payment is collected through this form. We review fit first and confirm next steps before any paid PoC
+            begins.
+          </p>
+          <button type="submit" class="btn btn-primary full-width">
+            Start PoC Lite Review
+          </button>
+
+          <!-- Secondary paths -->
+          <div class="cta-row"
+            style="margin-top: 1rem; display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
+            <a href="/pricing.html" class="btn">
+              Request a Custom Quote →
+            </a>
+            <a href="/data-overview.html" class="btn">
+              View Data Overview →
+            </a>
+          </div>
+
+          <p class="text-muted"
+            style="font-size: 0.9rem; margin-top: 1rem; margin-bottom: 3rem; line-height: 1.6; text-align:center;">
+            PoC Lite is capped at <strong>$500</strong>.
+            For larger scope or production licensing, please use <strong>Custom Quote</strong>.
+          </p>
+
+        </form>
+
+      </div>
+    </section>
+
+    <footer style="background:var(--bg-main); margin-top:0;">
+      <div class="container" style="padding:1rem 0 8rem;">
+
+        <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:2rem; align-items:start; text-align:center;">
+
+          <div>
+            <p style="margin:0 0 0.55rem; color:#ffffff; font-size:1.08rem; font-weight:700; line-height:1.3;">
+              OriginDataLab
+            </p>
+            <p style="margin:0; color:#ffffff; font-size:1rem; font-weight:600; line-height:1.3;">
+              Real-world urban datasets<br />
+              for AI systems that<br />
+              fail in messy reality.
+            </p>
+          </div>
+
+          <div>
+            <p style="margin:0 0 0.6rem; color:#ffffff; font-size:1rem; font-weight:700; line-height:1.3;">
+              Navigation
+            </p>
+            <div style="display:flex; flex-direction:column; gap:0.35rem; align-items:center;">
+              <a href="/company.html"
+                style="color:var(--text-primary); text-decoration:none; line-height:1.6;">Company</a>
+              <a href="/data-overview.html"
+                style="color:var(--text-primary); text-decoration:none; line-height:1.6;">Data Overview</a>
+              <a href="/pricing.html"
+                style="color:var(--text-primary); text-decoration:none; line-height:1.6;">Pricing</a>
+              <a href="/use-cases.html" style="color:var(--text-primary); text-decoration:none; line-height:1.6;">Use
+                Cases</a>
+              <a href="/contact.html"
+                style="color:var(--text-primary); text-decoration:none; line-height:1.6;">Contact</a>
+            </div>
+          </div>
+
+          <div>
+            <p style="margin:0 0 0.6rem; color:#ffffff; font-size:1rem; font-weight:700; line-height:1.3;">
+              Operational Base
+            </p>
+            <p style="margin:0 0 0.8rem; color:var(--text-primary); line-height:1.6;">
+              South Korea
+            </p>
+
+            <p style="margin:0 0 0.35rem; color:#ffffff; font-size:1rem; font-weight:700; line-height:1.3;">
+              Collection Network
+            </p>
+            <p style="margin:0; color:var(--text-primary); line-height:1.6;">
+              South Asia · Southeast Asia
+            </p>
+          </div>
+
+        </div>
+
+        <div <div
+          style="margin-top:0.15rem; padding-top:0.15rem; border-top:1px solid var(--border-color); text-align:center;">
+          <p style="max-width:720px; margin:0 auto 0.05rem; color:var(--text-primary); line-height:1.55;">
+            High-entropy urban mobility datasets for AI, robotics, and autonomous systems.
+          <p style="max-width:720px; margin:0 auto; color:var(--text-muted); line-height:1.55;">
+            © 2024–2026 OriginDataLab. All rights reserved.
+          </p>
+        </div>
+
+      </div>
+    </footer>
+    <script>
+      (function () {
+        const form = document.getElementById('pocForm');
+        if (!form) {
+          console.warn('[pocForm] not found');
+          return;
+        }
+
+        // 중복 바인딩 방지(혹시 나중에 또 생길까봐)
+        if (form.dataset.bound === '1') return;
+        form.dataset.bound = '1';
+
+        form.addEventListener('submit', async (e) => {
+          e.preventDefault();
+
+          const thankyou = form.getAttribute('data-thankyou') || '/thank-you.html';
+
+          try {
+            const formData = new FormData(form);
+            const res = await fetch(form.action, {
+              method: 'POST',
+              body: formData,
+              headers: { 'Accept': 'application/json' }
+            });
+
+            if (res.ok) {
+              window.location.href = thankyou;
+            } else {
+              alert('Submission failed. Please try again.');
+            }
+          } catch (err) {
+            alert('Network error. Please try again.');
+          }
+        });
+
+        console.log('[pocForm] submit handler attached');
+      })();
+    </script>
+
+    <script>
+      // Single source of truth: always use contact.html
+      if (location.hash === '#contact') {
+        location.replace('./contact.html');
+      }
+    </script>
+
+    <script type="module" src="/main.js"></script>
+</body>
+
+</html>

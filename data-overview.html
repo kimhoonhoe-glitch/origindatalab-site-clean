@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/assets/icons/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Origindata Lab | Real-World Urban Datasets</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preload" as="image" href="/assets/hero/hero1.jpg">
+</head>
+
+<body class="page-spaced data-overview">
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="./index.html" class="logo">
+                Origindata<span>Lab</span>
+            </a>
+
+            <nav>
+                <ul>
+                    <li><a href="./index.html#company">Company</a></li>
+                    <li><a href="./index.html#different">Why It’s Different</a></li>
+                    <li><a href="./use-cases.html">Use Cases</a></li>
+                    <li><a href="./pricing.html">Pricing</a></li>
+                    <li><a href="./data-overview.html">Data Overview</a></li>
+                    <li><a href="./legal-transparency.html">Legal & Transparency</a></li>
+                </ul>
+            </nav>
+
+            <a class="btn-cta" href="./contact.html">
+                TALK TO A DATA ENGINEER
+            </a>
+        </div>
+    </header>
+
+    <main class="container page-main">
+        <!-- HERO -->
+        <section class="section">
+            <h1 class="section-title text-left">Data Overview</h1>
+            <p class="lead text-left mw-78ch">
+                This is a practical summary of what you actually receive in a PoC pack: scenes, metadata,
+                QC signals, and delivery structure. Start small, validate fit, then scale.
+            </p>
+
+            <div class="cta-row cta-links">
+                <a href="/pricing.html" class="btn btn-primary">
+                    View PoC Tiers
+                </a>
+
+                <a href="/contact.html" class="cta-link">
+                    Request a Coverage Snapshot <span class="arrow">→</span>
+                </a>
+
+                <a href="/legal-transparency.html" class="cta-link">
+                    Trust and Transparency <span class="arrow">→</span>
+                </a>
+            </div>
+
+            <p class="mt-12 note mw-78ch">
+                Goal: reduce integration friction. You should be able to run your pipeline end-to-end
+                within days, not weeks.
+            </p>
+        </section>
+
+        <!-- WHAT YOU GET -->
+        <section class="section">
+            <div class="pack-card mt-12">
+                <h2 class="section-title text-left">What you get in a PoC pack</h2>
+                <ul>
+                    <li>MP4 clips (short segments suitable for fast iteration)</li>
+                    <li>JSON metadata per clip (scene type + operational notes)</li>
+                    <li>High-level QC summary (accept/reject signals and reasons)</li>
+                    <li>Coverage notes (what is included, what is excluded)</li>
+                    <li>Non-binding delivery structure preview for validation</li>
+                </ul>
+                <p class="mt-12 note mw-78ch">
+                    We keep the format simple: video + metadata. You can add labels later if your team
+                    wants labeling or evaluation tasks.
+                </p>
+            </div>
+        </section>
+
+        <!-- DATASET SNAPSHOT -->
+        <section class="section">
+            <h2 class="section-title text-left">Dataset snapshot</h2>
+
+            <div style="
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:1.5rem;
+    margin-top:1.5rem;
+  ">
+
+                <div class="pack-card">
+                    <h3 style="font-size:1.6rem;margin:0;">120+</h3>
+                    <p style="margin:0.4rem 0 0;color:var(--text-muted);">
+                        hours of raw footage
+                    </p>
+                </div>
+
+                <div class="pack-card">
+                    <h3 style="font-size:1.6rem;margin:0;">18,000+</h3>
+                    <p style="margin:0.4rem 0 0;color:var(--text-muted);">
+                        video segments
+                    </p>
+                </div>
+
+                <div class="pack-card">
+                    <h3 style="font-size:1.6rem;margin:0;">4</h3>
+                    <p style="margin:0.4rem 0 0;color:var(--text-muted);">
+                        cities
+                    </p>
+                </div>
+
+                <div class="pack-card">
+                    <h3 style="font-size:1.6rem;margin:0;">3</h3>
+                    <p style="margin:0.4rem 0 0;color:var(--text-muted);">
+                        countries
+                    </p>
+                </div>
+
+            </div>
+
+            <p class="mt-12 note mw-78ch">
+                Coverage is continuously expanding as new collection cycles are completed.
+            </p>
+
+        </section>
+
+        <!-- COVERAGE -->
+        <section class="section">
+            <h2 class="section-title text-left">Coverage at a glance</h2>
+            <p class="lead text-left mw-78ch">
+                Our core focus is high-entropy traffic environments and edge-like everyday reality:
+                mixed agents, dense interactions, and non-lane-based flow.
+            </p>
+
+            <div class="pack-card mt-12">
+                <h3 class="section-title text-left">Representative scene categories</h3>
+                <ul>
+                    <li>Unstructured urban flow (mixed agents, non-lane-based)</li>
+                    <li>Dense intersections and merges</li>
+                    <li>Near-field pedestrian interactions</li>
+                    <li>Motorcycle-heavy corridors</li>
+                    <li>Night, rain, glare, occlusion-heavy moments</li>
+                </ul>
+                <p class="mt-12 note mw-78ch">
+                    Need a specific city pattern or traffic behavior? Ask for a Coverage Snapshot and we
+                    will reply with what is feasible and how fast.
+                </p>
+            </div>
+        </section>
+
+        <!-- METADATA -->
+        <section class="section dark-section">
+            <h2 class="section-title text-left">Dataset schema overview</h2>
+            <p class="lead text-left mw-78ch">
+                Each delivery includes structured video segments and consistent metadata so your team can filter, audit,
+                and integrate quickly. The schema is intentionally simple for PoC speed while remaining stable enough
+                for larger training pipelines.
+            </p>
+
+            <div class="pack-card mt-12">
+                <h3 class="section-title text-left">Core fields</h3>
+                <ul>
+                    <li><strong>segment_id</strong> — stable ID used for joins and traceability</li>
+                    <li><strong>scene_type</strong> — high-level environment category</li>
+                    <li><strong>short_description</strong> — short natural language description</li>
+                    <li><strong>capture_context</strong> — optional context such as time_of_day or platform</li>
+                    <li><strong>qc_status</strong> — basic QC result for the segment</li>
+                    <li><strong>qc_notes</strong> — brief QC reviewer notes</li>
+                </ul>
+            </div>
+
+            <div class="pack-card mt-12">
+                <h3 class="section-title text-left">Example segment metadata (illustrative)</h3>
+                <pre style="white-space: pre-wrap; line-height: 1.35; margin: 0;">
+{
+  "segment_id": "IN-BLR-2026-02-000123",
+  "scene_type": "unstructured_urban_flow",
+  "short_description": "Dense mixed traffic with frequent cut-ins and near-field pedestrians.",
+  "capture_context": {
+    "time_of_day": "day",
+    "weather": "clear",
+    "platform": "two_wheeler"
+  },
+  "qc_status": "pass",
+  "qc_notes": "Stable exposure, minimal obstruction, continuous forward view."
+}
+          </pre>
+                <p class="mt-12 note mw-78ch">
+                    This example illustrates the structure. Final schema definitions and allowed values are shared
+                    during the PoC stage so your pipeline can validate exact keys.
+                </p>
+            </div>
+        </section>
+
+        <!-- QC -->
+        <section class="section">
+            <h2 class="section-title text-left">Quality control summary</h2>
+            <p class="lead text-left mw-78ch">
+                Quality control focuses on technical usability rather than visual perfection.
+                Each segment is checked for video integrity, basic visibility, continuity, and metadata completeness to
+                ensure the data can be reliably ingested into training pipelines.
+            </p>
+
+            <div class="pack-card mt-12">
+                <h3 class="section-title text-left">QC checks (overview)</h3>
+                <ul>
+                    <li><strong>Video integrity</strong> — corruption, missing frames, encoding errors</li>
+                    <li><strong>Exposure and visibility</strong> — severe blur or unusable lighting</li>
+                    <li><strong>Obstruction</strong> — camera blocked or heavy handling artifacts</li>
+                    <li><strong>Segment continuity</strong> — stable forward motion within the clip</li>
+                    <li><strong>Metadata completeness</strong> — required fields present</li>
+                </ul>
+                <p class="mt-12 note mw-78ch">
+                    For PoC deliveries, QC remains lightweight and transparent.
+                    For larger production programs, QC can be extended with additional checks and sampling.
+                </p>
+            </div>
+        </section>
+
+        <!-- HOW TO EVALUATE -->
+        <section class="section dark-section">
+            <h2 class="section-title text-left">How to evaluate with a PoC</h2>
+            <p class="lead text-left mw-78ch">
+                Start with a small PoC dataset, validate integration with your pipeline,
+                then expand coverage once the data proves useful for your model training.
+            </p>
+
+            <div class="pack-card mt-12">
+                <h3 class="section-title text-left">Recommended evaluation steps</h3>
+                <ol>
+                    <li>Run your ingestion pipeline (MP4 + JSON)</li>
+                    <li>Verify metadata parsing and schema compatibility</li>
+                    <li>Filter by scene_type and inspect environment diversity</li>
+                    <li>Run a small training or evaluation experiment</li>
+                    <li>Decide next data scale and scene coverage targets</li>
+                </ol>
+            </div>
+
+            <div class="cta-row">
+                <a href="/pricing.html" class="btn btn-primary">Choose a PoC tier</a>
+                <a href="./contact.html" class="btn btn-primary">
+                    Send Requirements →
+                </a>
+            </div>
+
+            <p class="mt-12 note mw-78ch">
+                We will respond with a practical data plan based on your target environment, licensing constraints,
+                and evaluation workflow.
+            </p>
+        </section>
+
+        <!-- FAQ -->
+        <section class="section">
+            <h2 class="section-title text-left">FAQ</h2>
+
+            <div class="pack-card mt-12">
+                <h3 class="section-title text-left">Can you provide labels?</h3>
+                <p class="mw-78ch">
+                    Yes, but PoC usually starts with video + metadata first. After you validate value, we
+                    can add labeling or evaluation tasks based on your needs.
+                </p>
+            </div>
+
+            <div class="pack-card mt-12">
+                <h3 class="section-title text-left">Do you support custom scene requests?</h3>
+                <p class="mw-78ch">
+                    Yes. Send a short requirement list and we will reply with feasibility, timeline, and
+                    minimum order assumptions.
+                </p>
+            </div>
+
+            <div class="pack-card mt-12">
+                <h3 class="section-title text-left">What about legal and privacy?</h3>
+                <p class="mw-78ch">
+                    See the Legal and Transparency page for our approach and PoC usage framing.
+                </p>
+                <p class="mt-12">
+                    <a href="./legal-transparency.html" class="text-link">
+                        Open Legal Transparency →
+                    </a>
+                    </a>
+                </p>
+            </div>
+        </section>
+
+        <!-- FINAL CTA -->
+        <section class="section dark-section">
+            <h2 class="section-title text-left">Ready to validate in your pipeline?</h2>
+            <p class="lead text-left mw-78ch">
+                Tell us your target environment and failure cases. We will recommend a PoC tier and a
+                coverage plan.
+            </p>
+            <div class="cta-row">
+                <a href="/index.html#contact" class="btn btn-primary">Request a Coverage Snapshot</a>
+                <a href="./pricing.html" class="btn btn-primary">
+                    See Pricing →
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <script type="module" src="/src/main.js"></script>
+
+    <style>
+        /* Data Overview only: CTA alignment lock */
+        .data-overview .cta-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 18px;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+
+        .data-overview .cta-row .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .data-overview .cta-row .cta-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: 600;
+            text-decoration: none;
+            color: rgba(255, 255, 255, 0.85);
+            transition: transform .15s ease, color .15s ease;
+        }
+
+        .data-overview .cta-row .cta-link:hover {
+            color: #fff;
+            transform: translateY(-1px);
+        }
+
+        .data-overview .cta-row .cta-link .arrow {
+            transition: transform .15s ease;
+        }
+
+        .data-overview .cta-row .cta-link:hover .arrow {
+            transform: translateX(2px);
+        }
+    </style>
+
+</body>
+
+</html>
