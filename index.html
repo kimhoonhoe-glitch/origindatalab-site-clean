@@ -21,24 +21,7 @@
 
 <body class="home">
   <!-- INDEX_MARKER_2026-03-03 -->
-  <header>
-    <div class="container">
-      <a href="/" class="logo">
-        Origindata<span>Lab</span>
-      </a>
-      <nav>
-        <ul>
-          <li><a href="/company.html">Company</a></li>
-          <li><a href="#different">Why It's Different</a></li>
-          <li><a href="/use-cases.html">Use Cases</a></li>
-          <li><a href="#packs">Dataset Packs</a></li>
-          <li><a href="/legal-transparency.html">Legal & Transparency</a></li>
-
-          <li><a href="#contact" class="btn btn-primary-sm">Talk to a Data Engineer</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  <div id="site-header"></div>
 
   <main>
     <!-- ✅ HERO (Rebuilt, accessible) -->
@@ -282,7 +265,9 @@
       <div class="container">
         <div class="differentiation-grid">
           <div class="diff-image-wrapper">
-            <img src="/assets/sections/env-traffic-new.webp" alt="Chaotic Real World Environment" class="diff-image">
+            <img src="/assets/sections/env-traffic-new.webp"
+              alt="High-density urban traffic environment with mixed road users in a real-world street scene"
+              class="diff-image">
           </div>
           <div class="diff-content">
             <h2 class="section-title" style="text-align: left; margin-bottom: 1.5rem;">Why We’re Not a Data Marketplace
@@ -391,7 +376,8 @@
           <!-- Card 1 -->
           <div class="env-card">
             <div class="env-img-wrapper">
-              <img src="/assets/sections/env-card-1.webp" class="env-img" alt="Unstructured Road">
+              <img src="/assets/sections/env-card-1.webp" class="env-img"
+                alt="Unstructured urban road environment with unclear lane boundaries" />
             </div>
             <div class="env-content">
               <h3 class="env-title">Unstructured Road & Path Boundaries</h3>
@@ -401,7 +387,8 @@
           <!-- Card 2 -->
           <div class="env-card">
             <div class="env-img-wrapper">
-              <img src="/assets/sections/env-card-2.webp" class="env-img" alt="Dense Interaction">
+              <img src="/assets/sections/env-card-2.webp" class="env-img"
+                alt="Dense interaction between pedestrians, motorcycles, and vehicles in urban traffic" />
             </div>
             <div class="env-content">
               <h3 class="env-title">Dense Human–Vehicle Interaction</h3>
@@ -411,7 +398,8 @@
           <!-- Card 3 -->
           <div class="env-card">
             <div class="env-img-wrapper">
-              <img src="/assets/sections/env-card-3.webp" class="env-img" alt="Low Enforcement">
+              <img src="/assets/sections/env-card-3.webp" class="env-img"
+                alt="High-entropy urban zone with informal traffic behavior and weak rule enforcement" />
             </div>
             <div class="env-content">
               <h3 class="env-title">Low-Enforcement, High-Entropy Zones</h3>
@@ -421,7 +409,8 @@
           <!-- Card 4 -->
           <div class="env-card">
             <div class="env-img-wrapper">
-              <img src="/assets/sections/env-card-4.webp" class="env-img" alt="Motion Intelligence">
+              <img src="/assets/sections/env-card-4.webp" class="env-img"
+                alt="Urban movement scene showing behavior and motion patterns in real-world traffic" />
             </div>
             <div class="env-content">
               <h3 class="env-title">Behavior & Motion Intelligence</h3>
@@ -591,7 +580,9 @@
             <div class="pack-header">
               <h3>Urban POV Streams</h3>
             </div>
-            <img src="/assets/packs/pov-2.webp" style="width: 100%; height: 180px; object-fit: cover; opacity: 0.8;">
+            <img src="/assets/packs/pov-2.webp"
+              alt="First-person urban POV traffic footage for real-world driving datasets"
+              style="width: 100%; height: 180px; object-fit: cover; opacity: 0.8;">
             <div class="pack-body">
               <p class="pack-focus">High-density agent interaction from mobile viewpoints.</p>
               <ul class="pack-features">
@@ -607,6 +598,7 @@
               <h3>Chaotic Intersections</h3>
             </div>
             <img src="/assets/sections/inter-3.webp"
+              alt="Chaotic urban intersection with mixed traffic flow and unsignalized movement"
               style="width: 100%; height: 180px; object-fit: cover; opacity: 0.8;">
             <div class="pack-body">
               <p class="pack-focus">Non-signaled crossings, negotiation behavior, near-miss dynamics.</p>
@@ -623,6 +615,7 @@
               <h3>Continuous Context</h3>
             </div>
             <img src="/assets/sections/continuous-context.webp"
+              alt="Continuous real-world urban scene for long-horizon temporal context modeling"
               style="width: 100%; height: 180px; object-fit: cover; opacity: 0.8;">
             <div class="pack-body">
               <p class="pack-focus">Extended temporal sequences for long-horizon reasoning.</p>
@@ -1004,69 +997,7 @@
       </div>
     </section>
 
-    <footer style="background:var(--bg-main); margin-top:0;">
-      <div class="container" style="padding:1rem 0 8rem;">
-
-        <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:2rem; align-items:start; text-align:center;">
-
-          <div>
-            <p style="margin:0 0 0.55rem; color:#ffffff; font-size:1.08rem; font-weight:700; line-height:1.3;">
-              OriginDataLab
-            </p>
-            <p style="margin:0; color:#ffffff; font-size:1rem; font-weight:600; line-height:1.3;">
-              Real-world urban datasets<br />
-              for AI systems that<br />
-              fail in messy reality.
-            </p>
-          </div>
-
-          <div>
-            <p style="margin:0 0 0.6rem; color:#ffffff; font-size:1rem; font-weight:700; line-height:1.3;">
-              Navigation
-            </p>
-            <div style="display:flex; flex-direction:column; gap:0.35rem; align-items:center;">
-              <a href="/company.html"
-                style="color:var(--text-primary); text-decoration:none; line-height:1.6;">Company</a>
-              <a href="/data-overview.html"
-                style="color:var(--text-primary); text-decoration:none; line-height:1.6;">Data Overview</a>
-              <a href="/pricing.html"
-                style="color:var(--text-primary); text-decoration:none; line-height:1.6;">Pricing</a>
-              <a href="/use-cases.html" style="color:var(--text-primary); text-decoration:none; line-height:1.6;">Use
-                Cases</a>
-              <a href="/contact.html"
-                style="color:var(--text-primary); text-decoration:none; line-height:1.6;">Contact</a>
-            </div>
-          </div>
-
-          <div>
-            <p style="margin:0 0 0.6rem; color:#ffffff; font-size:1rem; font-weight:700; line-height:1.3;">
-              Operational Base
-            </p>
-            <p style="margin:0 0 0.8rem; color:var(--text-primary); line-height:1.6;">
-              South Korea
-            </p>
-
-            <p style="margin:0 0 0.35rem; color:#ffffff; font-size:1rem; font-weight:700; line-height:1.3;">
-              Collection Network
-            </p>
-            <p style="margin:0; color:var(--text-primary); line-height:1.6;">
-              South Asia · Southeast Asia
-            </p>
-          </div>
-
-        </div>
-
-        <div <div
-          style="margin-top:0.15rem; padding-top:0.15rem; border-top:1px solid var(--border-color); text-align:center;">
-          <p style="max-width:720px; margin:0 auto 0.05rem; color:var(--text-primary); line-height:1.55;">
-            High-entropy urban mobility datasets for AI, robotics, and autonomous systems.
-          <p style="max-width:720px; margin:0 auto; color:var(--text-muted); line-height:1.55;">
-            © 2024–2026 OriginDataLab. All rights reserved.
-          </p>
-        </div>
-
-      </div>
-    </footer>
+    <div id="site-footer"></div>
     <script>
       (function () {
         const form = document.getElementById('pocForm');
@@ -1113,7 +1044,7 @@
       }
     </script>
 
-    <script type="module" src="/main.js"></script>
+    <script type="module" src="/src/main.js"></script>
 </body>
 
 </html>

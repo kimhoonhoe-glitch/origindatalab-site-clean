@@ -1,46 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<meta charset="UTF-8" />
-<link rel="icon" type="image/svg+xml" href="/assets/icons/vite.svg" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Origindata Lab | Real-World Urban Datasets</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-<link rel="preload" as="image" href="/assets/hero/hero1.jpg">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/assets/icons/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Origindata Lab | Real-World Urban Datasets</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preload" as="image" href="/assets/hero/hero1.jpg">
 
-<style>
-    /* index 전용: 히어로를 헤더에 밀착 */
-    main {
-        padding-top: 0 !important;
-    }
-</style>
+    <style>
+        /* index 전용: 히어로를 헤더에 밀착 */
+        main {
+            padding-top: 0 !important;
+        }
+    </style>
 </head>
 
 <body class="use-cases">
-    <header>
-        <div class="container">
-            <a href="index.html" class="logo">
-                Origindata<span>Lab</span>
-            </a>
+    <div id="site-header"></div>
 
-            <nav>
-                <ul>
-                    <li><a href="company.html">Company</a></li>
-                    <li><a href="index.html#different">Why It's Different</a></li>
-                    <li><a href="use-cases.html">Use Cases</a></li>
-                    <li><a href="index.html#packs">Dataset Packs</a></li>
-                    <li><a href="legal-transparency.html">Legal & Transparency</a></li>
-
-                    <li>
-                        <a href="contact.html" class="btn btn-primary-sm">
-                            Talk to a Data Engineer
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </header>
     <main class="use-cases-page">
         <div class="container text-center use-cases-hero">
             <h1 class="section-title" style="margin-bottom: 1rem;">Use Cases</h1>
@@ -97,11 +77,9 @@
         </p>
     </main>
 
-    <footer class="container">
-        <p>&copy; 2024 Origindata Lab. Images via Unsplash (Royalty Free).</p>
-    </footer>
+    <div id="site-footer"></div>
 
-    <script type="module" src="./main.js"></script>
+    <script type="module" src="/src/main.js"></script>
 </body>
 
 </html>

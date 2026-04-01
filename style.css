@@ -2864,3 +2864,97 @@ body.home .hero-content {
 #contact {
   padding-bottom: 0;
 }
+
+/* =========================
+   FOOTER FINAL FIX
+   ========================= */
+
+.site-footer {
+  width: 100%;
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+  background: #050505 !important;
+  text-align: center !important;
+  padding: 36px 0 34px !important;
+}
+
+.site-footer .footer-inner {
+  max-width: 1280px !important;
+  margin: 0 auto !important;
+  padding: 0 32px !important;
+}
+
+.site-footer .footer-nav {
+  margin-bottom: 22px !important;
+}
+
+.site-footer .footer-links {
+  list-style: none !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 14px 34px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.site-footer .footer-links li {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.site-footer .footer-links a {
+  display: inline-block !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  color: rgba(255, 255, 255, 0.92) !important;
+  letter-spacing: 0.01em !important;
+  line-height: 1.7 !important;
+  white-space: nowrap !important;
+  text-decoration: none !important;
+}
+
+.site-footer .footer-links a:hover {
+  color: #66e6df !important;
+}
+
+.site-footer .footer-copy {
+  display: block !important;
+  margin: 0 !important;
+  padding-top: 18px !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+  font-size: 15px !important;
+  color: rgba(255, 255, 255, 0.72) !important;
+  line-height: 1.9 !important;
+}
+
+@media (max-width: 900px) {
+  .site-footer {
+    padding: 30px 0 28px !important;
+  }
+
+  .site-footer .footer-nav {
+    margin-bottom: 18px !important;
+  }
+
+  .site-footer .footer-links {
+    flex-direction: column !important;
+    gap: 10px !important;
+  }
+
+  .site-footer .footer-copy {
+    padding-top: 16px !important;
+  }
+}
+
+/* =========================
+   HEADER FONT WEIGHT FIX
+   ========================= */
+
+.site-header .nav-list a {
+  font-weight: 700 !important;
+  letter-spacing: 0.01em;
+}
