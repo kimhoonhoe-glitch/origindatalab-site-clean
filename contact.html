@@ -57,102 +57,77 @@
 <body class="contact">
     <!-- CONTACT_VERSION: V2_2026-03-02 -->
     <!-- HEADER (다른 페이지와 동일) -->
-    <header>
-        <div class="container">
-            <a href="/" class="logo">Origindata<span>Lab</span></a>
-            <nav>
-                <ul>
-                    <li><a href="/company.html">Company</a></li>
-                    <li><a href="/why-its-different.html">Why It's Different</a></li>
-                    <li><a href="/use-cases.html">Use Cases</a></li>
-                    <li><a href="/#packs">Dataset Packs</a></li>
-                    <li>
-                        <a href="/contact.html" class="btn btn-primary-sm">
-                            Talk to a Data Engineer
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <div id="site-header"></div>
 
     <!-- MAIN -->
     <main class="container contact-main">
 
         <!-- 👉 여기 아래에 -->
         <!-- index.html에 있던 contact 섹션을 그대로 붙여넣기 -->
-        <section id="contact" class="section">
-            <div class="container contact-wrapper">
+        <section id="contact" class="contact-section">
+            <div class="contact-shell">
+                <div class="contact-hero">
+                    <p class="contact-kicker">START YOUR POC</p>
 
-                <h2 class="section-title text-center">
-                    Start with a $500 PoC.<br />
-                    Validate on real-world data.
-                </h2>
+                    <h1 class="contact-title">
+                        Start with a $500 PoC.<br />
+                        Validate on real-world data.
+                    </h1>
 
-                <p class="lead text-center" style="max-width: 680px; margin: 1rem auto 2rem;">
-                    This short form starts a <strong>PoC Lite intake</strong>.
-                    Share your target scenario and we’ll confirm feasibility and next steps
-                    <strong>before any payment</strong>.
-                </p>
-
-                <p class="text-center"
-                    style="max-width: 680px; margin: -1rem auto 2rem; opacity: .82; line-height: 1.6;">
-                    You can also request a Free Sample Pack through this form. We typically respond within 24 hours.
-                </p>
-
-
-                <form id="pocForm" class="contact-form" action="https://formspree.io/f/xaqdzezp" method="POST"
-                    data-thankyou="/thank-you.html">
-                    <input type="hidden" name="_subject" value="[PoC Lite] New Contact Submission" />
-                    <input type="hidden" name="_redirect" value="/thank-you.html" />
-
-                    <div class="form-group">
-                        <label>Work Email (used for PoC delivery)</label>
-                        <input type="email" name="email" placeholder="name@company.com" required />
-                    </div>
-
-                    <div class="form-group">
-                        <label>Project Stage (current development phase)</label>
-                        <select name="project_stage" required>
-                            <option value="Research">Research</option>
-                            <option value="Proof of Concept">Proof of Concept</option>
-                            <option value="Production">Production</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label>What specific scenarios should this $500 PoC focus on?</label>
-                        <textarea name="scenario" rows="4"
-                            placeholder="Example: non-lane-based traffic, dense pedestrians, night rain, occlusions..."
-                            required></textarea>
-                    </div>
-                    <p style="margin:0 0 0.8rem; text-align:center; color:var(--text-primary); line-height:1.6;">
-                        No payment is collected through this form. We review fit first and confirm next steps before any
-                        paid PoC begins.
-                    </p>
-                    <button type="submit" class="btn btn-primary full-width">
-                        Start PoC Lite Review
-                    </button>
-
-                    <!-- Secondary paths -->
-                    <div class="cta-row"
-                        style="margin-top: 1rem; display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
-                        <a href="/pricing.html" class="btn">
-                            Request a Custom Quote →
-                        </a>
-                        <a href="/data-overview.html" class="btn">
-                            View Data Overview →
-                        </a>
-                    </div>
-
-                    <p class="text-muted"
-                        style="font-size: 0.9rem; margin-top: 1rem; line-height: 1.6; text-align:center;">
-                        PoC Lite is capped at <strong>$500</strong>.
-                        For larger scope or production licensing, please use <strong>Custom Quote</strong>.
+                    <p class="contact-lead">
+                        Tell us your target scenario and project stage.
+                        We review feasibility first and confirm next steps before any payment.
                     </p>
 
-                </form>
+                    <p class="contact-sublead">
+                        You can also request a Free Sample Pack through this form.
+                        We typically respond within <strong>24 hours</strong>.
+                    </p>
+                </div>
 
+                <div class="contact-card">
+                    <form action="https://formspree.io/f/your-form-id" method="POST" class="contact-form">
+                        <div class="contact-field">
+                            <label for="work-email">Work Email (used for PoC delivery)</label>
+                            <input type="email" id="work-email" name="work_email" placeholder="name@company.com"
+                                required />
+                        </div>
+
+                        <div class="contact-field">
+                            <label for="project-stage">Project Stage (current development phase)</label>
+                            <select id="project-stage" name="project_stage" required>
+                                <option value="Research">Research</option>
+                                <option value="Prototype">Prototype</option>
+                                <option value="Pilot">Pilot</option>
+                                <option value="Production">Production</option>
+                            </select>
+                        </div>
+
+                        <div class="contact-field">
+                            <label for="scenario">
+                                What specific scenarios should this $500 PoC focus on?
+                            </label>
+                            <textarea id="scenario" name="scenario_focus" rows="5"
+                                placeholder="Example: non-lane-based traffic, dense pedestrians, night rain, occlusions..."
+                                required></textarea>
+                        </div>
+
+                        <p class="contact-note">
+                            No payment is collected through this form.
+                            We review fit first and confirm next steps before any paid PoC begins.
+                        </p>
+
+                        <div class="contact-actions">
+                            <button type="submit" class="btn btn-primary">
+                                Submit PoC Request
+                            </button>
+
+                            <a href="/pricing.html" class="btn btn-secondary">
+                                View Pricing
+                            </a>
+                        </div>
+                    </form>
+                </div>
             </div>
         </section>
     </main>

@@ -16,7 +16,20 @@ document.addEventListener("DOMContentLoaded", () => {
   loadPartial("site-header", "/partials/header.html");
   loadPartial("site-footer", "/partials/footer.html");
 
-  initHeroSlider(); // ✅ 이거 추가
+  initHeroSlider();
+
+  // 헤더 partial 로딩 후 햄버거 연결
+  setTimeout(() => {
+    const header = document.querySelector(".site-header");
+    const btn = document.querySelector(".hamburger-btn");
+
+    if (header && btn) {
+      btn.addEventListener("click", () => {
+        const isOpen = header.classList.toggle("is-open");
+        btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      });
+    }
+  }, 600);
 });
 
 // HERO SLIDER
