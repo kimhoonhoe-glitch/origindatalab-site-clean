@@ -42,8 +42,15 @@ function initHamburgerMenuDelegation() {
 document.addEventListener("DOMContentLoaded", async () => {
   initHamburgerMenuDelegation();
 
-  await loadPartial("site-header", "/partials/header.html");
-  await loadPartial("site-footer", "/partials/footer.html");
+  const headerLoaded = await loadPartial("site-header", "/partials/header.html");
+  const footerLoaded = await loadPartial("site-footer", "/partials/footer.html");
+
+  console.log("DEBUG headerLoaded:", headerLoaded);
+  console.log("DEBUG footerLoaded:", footerLoaded);
+  console.log("DEBUG #site-header exists:", !!document.getElementById("site-header"));
+  console.log("DEBUG .site-header exists:", !!document.querySelector(".site-header"));
+  console.log("DEBUG .hamburger-btn exists:", !!document.querySelector(".hamburger-btn"));
+  console.log("DEBUG .nav exists:", !!document.querySelector(".site-header .nav"));
 
   initHeroSlider();
 });

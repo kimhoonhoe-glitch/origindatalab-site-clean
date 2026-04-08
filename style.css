@@ -3889,3 +3889,330 @@ body.contact .contact-main {
     margin-top: 0 !important;
   }
 }
+
+/* =========================
+   MOBILE HEADER FINAL FIX
+   ========================= */
+@media (max-width: 768px) {
+  .site-header .header-inner {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 12px !important;
+    position: relative !important;
+  }
+
+  /* 닫힌 상태: nav 공간 완전 제거 */
+  .site-header .nav {
+    display: none !important;
+    width: 0 !important;
+    max-width: 0 !important;
+    overflow: hidden !important;
+    flex: 0 0 0 !important;
+  }
+
+  /* 열린 상태: 드롭다운 정상 복구 */
+  .site-header.is-open .nav {
+    display: block !important;
+    position: absolute !important;
+    top: calc(100% + 8px) !important;
+    right: 12px !important;
+    left: auto !important;
+    width: 220px !important;
+    max-width: 220px !important;
+    overflow: visible !important;
+    flex: initial !important;
+    margin: 0 !important;
+    padding: 12px !important;
+    background: #0f172a !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 14px !important;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.28) !important;
+    z-index: 1201 !important;
+  }
+
+  .site-header .hamburger-btn {
+    display: inline-flex !important;
+    margin-left: auto !important;
+    flex: 0 0 40px !important;
+  }
+}
+
+/* =========================
+   Company - Current Coverage Snapshot
+   Mobile stacked cards fix
+========================= */
+@media (max-width: 768px) {
+
+  .coverage-stats,
+  .coverage-grid,
+  .snapshot-grid,
+  .company-snapshot-grid,
+  .coverage-cards {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  .coverage-stats>*,
+  .coverage-grid>*,
+  .snapshot-grid>*,
+  .company-snapshot-grid>*,
+  .coverage-cards>* {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  /* 카드 내부 글자 줄바꿈 자연스럽게 */
+  .coverage-stats .stat-card,
+  .coverage-grid .stat-card,
+  .snapshot-grid .stat-card,
+  .company-snapshot-grid .stat-card,
+  .coverage-cards .stat-card {
+    padding: 22px 18px !important;
+  }
+
+  .coverage-stats .stat-card h3,
+  .coverage-grid .stat-card h3,
+  .snapshot-grid .stat-card h3,
+  .company-snapshot-grid .stat-card h3,
+  .coverage-cards .stat-card h3 {
+    font-size: 30px !important;
+    line-height: 1.18 !important;
+    word-break: keep-all !important;
+  }
+
+  .coverage-stats .stat-card p,
+  .coverage-grid .stat-card p,
+  .snapshot-grid .stat-card p,
+  .company-snapshot-grid .stat-card p,
+  .coverage-cards .stat-card p {
+    font-size: 16px !important;
+    line-height: 1.7 !important;
+    word-break: keep-all !important;
+  }
+}
+
+.coverage-snapshot-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .coverage-snapshot-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* =========================
+   USE CASES - MOBILE FIX
+========================= */
+@media (max-width: 768px) {
+  .use-cases-page {
+    overflow-x: hidden !important;
+  }
+
+  .use-cases-page .container,
+  .use-cases-hero {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    box-sizing: border-box !important;
+  }
+
+  .use-cases-hero {
+    padding-top: 36px !important;
+    padding-bottom: 24px !important;
+  }
+
+  .use-cases-hero .section-title {
+    font-size: 38px !important;
+    line-height: 1.15 !important;
+    text-align: center !important;
+    margin-bottom: 14px !important;
+  }
+
+  .use-cases-hero>p,
+  .use-cases-page>p {
+    max-width: 100% !important;
+    padding-left: 4px !important;
+    padding-right: 4px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+    line-height: 1.7 !important;
+    word-break: keep-all !important;
+  }
+
+  /* 핵심: 카드 전체 세로 1열 */
+  .use-case-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+    width: 100% !important;
+    margin-top: 28px !important;
+  }
+
+  .use-case-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    padding: 24px 20px !important;
+    box-sizing: border-box !important;
+  }
+
+  .use-case-card h3 {
+    font-size: 28px !important;
+    line-height: 1.3 !important;
+    margin-bottom: 14px !important;
+    word-break: keep-all !important;
+  }
+
+  .use-case-card p {
+    font-size: 17px !important;
+    line-height: 1.75 !important;
+    word-break: keep-all !important;
+  }
+}
+
+/* =========================
+   Data Overview - Dataset Snapshot (mobile safe)
+========================= */
+.data-overview-snapshot-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .data-overview .page-main {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  .data-overview-snapshot-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+  }
+
+  .data-overview-snapshot-grid .pack-card {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 14px 12px !important;
+    min-height: 110px !important;
+  }
+
+  .data-overview-snapshot-grid .pack-card h3 {
+    font-size: 1.8rem !important;
+    line-height: 1.1 !important;
+    margin: 0 !important;
+  }
+
+  .data-overview-snapshot-grid .pack-card p {
+    font-size: 0.95rem !important;
+    line-height: 1.45 !important;
+    margin-top: 6px !important;
+    margin-bottom: 0 !important;
+    word-break: keep-all !important;
+  }
+}
+
+/* =========================
+   Legal page mobile width + diagram centering fix
+========================= */
+@media (max-width: 768px) {
+
+  /* 리갈 페이지만 다른 페이지와 같은 좌우 폭으로 */
+  .page-spaced .page-main {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  /* main 안의 중첩 container 폭 과축소 방지 */
+  .page-spaced .page-main>.section>.container,
+  .page-spaced .page-main>section>.container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 리갈 페이지 카드/그리드 중앙 정렬 */
+  body.page-spaced #legal-transparency .grid-3 {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+    justify-items: center !important;
+  }
+
+  body.page-spaced #legal-transparency .pack-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 다이어그램 이미지 가운데 정렬 */
+  body.page-spaced #legal-transparency .pack-media {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* 제목/소제목도 다른 페이지와 같은 안정감 */
+  body.page-spaced #legal-transparency .section-title,
+  body.page-spaced #legal-transparency .lt-subtitle {
+    text-align: center !important;
+  }
+}
+
+/* =========================
+   Data Overview - Tablet only
+   Dataset snapshot 2x2
+========================= */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .dataset-snapshot-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px !important;
+  }
+
+  .dataset-snapshot-grid .pack-card {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    min-height: 130px !important;
+    padding: 18px 16px !important;
+    box-sizing: border-box !important;
+  }
+
+  .dataset-snapshot-grid .pack-card h3 {
+    font-size: 2rem !important;
+    line-height: 1.1 !important;
+    margin: 0 !important;
+  }
+
+  .dataset-snapshot-grid .pack-card p {
+    font-size: 1rem !important;
+    line-height: 1.5 !important;
+    margin-top: 8px !important;
+    margin-bottom: 0 !important;
+    word-break: keep-all !important;
+  }
+}
