@@ -60,10 +60,9 @@
 
     <main class="page-main">
 
+        <!-- HERO -->
         <div class="container">
             <div class="page-wrap">
-
-                <!-- HERO -->
                 <section class="section data-overview-hero">
                     <div class="section-intro section-intro-center">
                         <p class="eyebrow">Data Delivery Structure</p>
@@ -76,10 +75,23 @@
                     </div>
 
                     <div class="hero-actions">
-                        <a href="/pricing.html" class="btn btn-primary hero-equal-btn">View PoC Tiers</a>
-                        <a href="/contact.html" class="btn btn-primary hero-equal-btn">Request a Coverage Snapshot</a>
-                        <a href="/legal-transparency.html" class="btn btn-primary hero-equal-btn">
-                            Trust and Transparency →
+                        <a href="/contact.html" class="btn btn-primary hero-equal-btn">
+                            Request Sample Pack
+                        </a>
+
+                        <a href="/pricing.html" class="hero-equal-btn" style="
+                            display:inline-flex;
+                            align-items:center;
+                            justify-content:center;
+                            padding:12px 20px;
+                            border-radius:999px;
+                            border:1px solid #38bdf8;
+                            color:#38bdf8;
+                            background:transparent;
+                            text-decoration:none;
+                            font-weight:600;
+                        ">
+                            View Pricing →
                         </a>
                     </div>
 
@@ -88,8 +100,12 @@
                         within days, not weeks.
                     </p>
                 </section>
+            </div>
+        </div>
 
-                <!-- WHAT YOU GET -->
+        <!-- WHAT YOU GET -->
+        <div class="container">
+            <div class="page-wrap">
                 <section class="section data-overview-what-you-get">
                     <div class="overview-panel">
                         <h2 class="section-title text-left">What you get in a PoC pack</h2>
@@ -108,8 +124,54 @@
                         </p>
                     </div>
                 </section>
+            </div>
+        </div>
 
-                <!-- DATASET SNAPSHOT -->
+        <!-- EXACTLY WHAT YOU RECEIVE -->
+        <section class="section dark-section dark-fullbleed exactly-receive-section">
+            <div class="page-wrap">
+                <h2 class="section-title text-left">Exactly what you receive</h2>
+                <p class="lead text-left mw-78ch">
+                    A practical breakdown of what is included in a PoC delivery, what can be added after
+                    validation, and what is not included by default.
+                </p>
+
+                <div class="exactly-receive-grid">
+                    <div class="pack-card exactly-card">
+                        <h3>Included in PoC</h3>
+                        <ul>
+                            <li>MP4 sample sequences</li>
+                            <li>Segment-level JSON metadata</li>
+                            <li>QC summary</li>
+                            <li>Schema preview / manifest</li>
+                        </ul>
+                    </div>
+
+                    <div class="pack-card exactly-card">
+                        <h3>Optional Add-ons</h3>
+                        <ul>
+                            <li>Annotation / labeling</li>
+                            <li>Custom scenario expansion</li>
+                            <li>Custom delivery format</li>
+                        </ul>
+                    </div>
+
+                    <div class="pack-card exactly-card">
+                        <h3>Not Included</h3>
+                        <ul>
+                            <li>Exclusive rights</li>
+                            <li>Resale rights</li>
+                            <li>Full production licensing</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DATASET SNAPSHOT + COVERAGE -->
+        <div class="container">
+            <div class="page-wrap">
+
                 <section class="section data-overview-snapshot">
                     <h2 class="section-title text-left">Dataset snapshot</h2>
 
@@ -140,7 +202,6 @@
                     </p>
                 </section>
 
-                <!-- COVERAGE -->
                 <section class="section data-overview-coverage">
                     <h2 class="section-title text-left">Coverage at a glance</h2>
                     <p class="lead text-left mw-78ch coverage-intro">
@@ -196,8 +257,7 @@
 
                 <div class="pack-card mt-12">
                     <h3 class="section-title text-left">Example segment metadata (illustrative)</h3>
-                    <pre style="white-space: pre-wrap; line-height: 1.35; margin: 0;">
-{
+                    <pre style="white-space: pre-wrap; line-height: 1.35; margin: 0;">{
   "segment_id": "IN-BLR-2026-02-000123",
   "scene_type": "unstructured_urban_flow",
   "short_description": "Dense mixed traffic with frequent cut-ins and near-field pedestrians.",
@@ -208,29 +268,25 @@
   },
   "qc_status": "pass",
   "qc_notes": "Stable exposure, minimal obstruction, continuous forward view."
-}
-      </pre>
+}</pre>
                     <p class="mt-12 note mw-78ch">
                         This example illustrates the structure. Final schema definitions and allowed values are
-                        shared
-                        during the PoC stage so your pipeline can validate exact keys.
+                        shared during the PoC stage so your pipeline can validate exact keys.
                     </p>
                 </div>
             </div>
         </section>
 
+        <!-- QC -->
         <div class="container">
             <div class="page-wrap">
-
-                <!-- QC -->
                 <section class="section">
                     <h2 class="section-title text-left">Quality control summary</h2>
                     <p class="lead text-left mw-78ch">
                         Quality control focuses on technical usability rather than visual perfection.
                         Each segment is checked for video integrity, basic visibility, continuity, and metadata
                         completeness
-                        to
-                        ensure the data can be reliably ingested into training pipelines.
+                        to ensure the data can be reliably ingested into training pipelines.
                     </p>
 
                     <div class="pack-card mt-12">
@@ -248,7 +304,6 @@
                         </p>
                     </div>
                 </section>
-
             </div>
         </div>
 
@@ -273,9 +328,8 @@
                 </div>
 
                 <div class="cta-row">
-                    <a href="/pricing.html" class="btn btn-primary">Choose a PoC tier</a>
                     <a href="/contact.html" class="btn btn-primary">
-                        Send Requirements →
+                        Request Sample Pack
                     </a>
                 </div>
 
@@ -287,10 +341,9 @@
             </div>
         </section>
 
+        <!-- FAQ -->
         <div class="container">
             <div class="page-wrap">
-
-                <!-- FAQ -->
                 <section class="section">
                     <h2 class="section-title text-left">FAQ</h2>
 
@@ -316,18 +369,18 @@
                             See the Legal and Transparency page for our approach and PoC usage framing.
                         </p>
                         <p class="mt-12">
-                            <a href="./legal-transparency.html" class="btn btn-primary">
-                                Open Legal Transparency →
+                            <a href="./legal-transparency.html"
+                                style="font-weight:600; color:#38bdf8; text-decoration:none;">
+                                View Legal & Transparency →
                             </a>
                         </p>
                     </div>
                 </section>
-
             </div>
         </div>
 
         <!-- FINAL CTA -->
-        <section class="section dark-section dark-fullbleed">
+        <section class="section final-cta-light">
             <div class="page-wrap">
                 <h2 class="section-title text-left">Ready to validate in your pipeline?</h2>
                 <p class="lead text-left mw-78ch">
@@ -336,9 +389,8 @@
                 </p>
 
                 <div class="cta-row">
-                    <a href="/index.html#contact" class="btn btn-primary">Request a Coverage Snapshot</a>
-                    <a href="./pricing.html" class="btn btn-primary">
-                        See Pricing →
+                    <a href="/contact.html" class="btn btn-primary">
+                        Request Sample Pack
                     </a>
                 </div>
             </div>
@@ -351,7 +403,6 @@
     <script type="module" src="/src/main.js"></script>
 
     <style>
-        /* Data Overview only: CTA alignment lock */
         .data-overview .cta-row {
             display: flex;
             align-items: center;

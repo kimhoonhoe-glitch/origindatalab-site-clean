@@ -8076,3 +8076,135 @@ body:not(.use-cases-page-body) #use-cases .use-case-failure span {
     display: block !important;
   }
 }
+
+/* =========================
+   DATA OVERVIEW - EXACTLY WHAT YOU RECEIVE
+   ========================= */
+
+.data-overview .exactly-receive-section .page-wrap {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.data-overview .exactly-receive-section .section-title,
+.data-overview .exactly-receive-section .lead {
+  color: #fff;
+}
+
+.data-overview .exactly-receive-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 28px;
+  align-items: stretch;
+}
+
+.data-overview .exactly-receive-section .exactly-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 340px;
+  padding: 28px 24px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+  box-sizing: border-box;
+  margin-top: 0 !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+.data-overview .exactly-receive-section .exactly-card:hover {
+  transform: none !important;
+}
+
+.data-overview .exactly-receive-section .exactly-card h3 {
+  margin: 0;
+  height: 72px;
+  font-size: 24px;
+  line-height: 1.25;
+  color: #fff;
+  display: flex;
+  align-items: flex-start;
+}
+
+.data-overview .exactly-receive-section .exactly-card ul {
+  margin: 18px 0 0 0;
+  padding-left: 20px;
+}
+
+.data-overview .exactly-receive-section .exactly-card li {
+  margin: 0 0 10px 0;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.84);
+}
+
+.data-overview .exactly-receive-section .exactly-card li:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 1024px) {
+  .data-overview .exactly-receive-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .data-overview .exactly-receive-section .exactly-card {
+    height: auto;
+  }
+
+  .data-overview .exactly-receive-section .exactly-card h3 {
+    height: auto;
+  }
+}
+
+/* FINAL CTA LIGHT SECTION */
+
+.data-overview .final-cta-light {
+  background: #ffffff;
+  color: #111827;
+  padding: 72px 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.data-overview .final-cta-light .section-title,
+.data-overview .final-cta-light .lead {
+  color: #111827;
+}
+
+/* Pricing - PoC Scope mobile fix */
+@media (max-width: 768px) {
+  .pricing-scope-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  .pricing-scope-grid .pack-card {
+    height: auto !important;
+  }
+}
+
+/* Pricing sample row - dark override */
+.pricing-sample-row.pricing-sample-dark {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border: 1px solid rgba(255, 255, 255, 0.16) !important;
+}
+
+.pricing-sample-row.pricing-sample-dark p {
+  color: rgba(255, 255, 255, 0.84) !important;
+}
+
+.pricing-sample-row.pricing-sample-dark .pricing-sample-action .btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 12px 20px !important;
+  border-radius: 999px !important;
+  border: 1px solid #38bdf8 !important;
+  color: #38bdf8 !important;
+  background: transparent !important;
+  text-decoration: none !important;
+  font-weight: 600 !important;
+}
