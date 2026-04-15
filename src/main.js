@@ -15,26 +15,63 @@ async function loadPartial(id, url) {
 }
 
 function initHamburgerMenuDelegation() {
-  document.addEventListener("click", (e) => {
-    const hamburgerBtn = e.target.closest(".hamburger-btn");
-    const navLink = e.target.closest(".site-header .nav a");
-    const header = document.querySelector(".site-header");
+  function closeMenu(header) {
+    if (!header) return;
+    header.classList.remove("is-open");
 
+    const btn = header.querySelector(".hamburger-btn");
+    if (btn) {
+      btn.setAttribute("aria-expanded", "false");
+    }
+  }
+
+  function toggleMenu(header, btn) {
+    if (!header || !btn) return;
+
+    const isOpen = header.classList.toggle("is-open");
+    btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+  }
+
+  document.addEventListener("click", (e) => {
+    const header = document.querySelector(".site-header");
     if (!header) return;
 
+    const hamburgerBtn = e.target.closest(".hamburger-btn");
+    const navLink = e.target.closest(".site-header .nav a");
+    const clickedInsideHeader = !!e.target.closest(".site-header");
+
+    // 햄버거 버튼 클릭 → 열기/닫기 토글
     if (hamburgerBtn) {
-      const isOpen = header.classList.toggle("is-open");
-      hamburgerBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      e.preventDefault();
+      toggleMenu(header, hamburgerBtn);
       return;
     }
 
+    // 메뉴 링크 클릭 → 닫기
     if (navLink) {
-      header.classList.remove("is-open");
+      closeMenu(header);
+      return;
+    }
 
-      const btn = document.querySelector(".hamburger-btn");
-      if (btn) {
-        btn.setAttribute("aria-expanded", "false");
-      }
+    // 헤더 바깥 클릭 → 닫기
+    if (!clickedInsideHeader) {
+      closeMenu(header);
+    }
+  });
+
+  // ESC 누르면 닫기
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      const header = document.querySelector(".site-header");
+      closeMenu(header);
+    }
+  });
+
+  // 화면이 PC 크기로 바뀌면 모바일 메뉴 닫기
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 767) {
+      const header = document.querySelector(".site-header");
+      closeMenu(header);
     }
   });
 }
@@ -57,18 +94,37 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 // HERO SLIDER
 function initHeroSlider() {
-  const slides = document.querySelectorAll("#heroSlider .hero-bg");
-
-  if (!slides.length) {
-    console.log("No hero slides found");
+  const slider = document.getElementById("heroSlider");
+  if (!slider) {
+    console.log("No hero slider found");
     return;
   }
 
-  let current = 0;
+  const slides = Array.from(slider.querySelectorAll(".hero-bg"));
+  if (slides.length < 2) {
+    console.log("Not enough hero slides");
+    return;
+  }
+
+  let current = slides.findIndex((slide) => slide.classList.contains("active"));
+  if (current < 0) current = 0;
+
+  slides.forEach((slide, index) => {
+    slide.classList.toggle("active", index === current);
+    slide.classList.toggle("prev", false);
+  });
 
   setInterval(() => {
-    slides[current].classList.remove("active");
+    const prev = current;
     current = (current + 1) % slides.length;
+
+    slides[prev].classList.remove("active");
+    slides[prev].classList.add("prev");
+
     slides[current].classList.add("active");
+
+    setTimeout(() => {
+      slides[prev].classList.remove("prev");
+    }, 1400);
   }, 4000);
 }

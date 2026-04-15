@@ -51,66 +51,68 @@
     </script>
 </head>
 
-<!-- Lightbox -->
-<div class="lt-lightbox" id="ltLightbox" aria-hidden="true">
-    <button class="lt-close" type="button" aria-label="Close">✕</button>
-    <img id="ltLightboxImg" alt="Diagram zoom" />
-</div>
-
-<script>
-    window.addEventListener('DOMContentLoaded', () => {
-        const lightbox = document.getElementById('ltLightbox');
-        const lightboxImg = document.getElementById('ltLightboxImg');
-        const closeBtn = lightbox ? lightbox.querySelector('.lt-close') : null;
-
-        if (!lightbox || !lightboxImg || !closeBtn) {
-            console.warn('[LT] Lightbox elements missing');
-            return;
-        }
-
-        function openBox(src, alt) {
-            console.log('[LT] open', src);
-            lightboxImg.src = src;
-            lightboxImg.alt = alt || 'Diagram zoom';
-            lightbox.classList.add('is-open');
-            lightbox.setAttribute('aria-hidden', 'false');
-        }
-
-        function closeBox() {
-            lightbox.classList.remove('is-open');
-            lightbox.setAttribute('aria-hidden', 'true');
-            lightboxImg.src = '';
-        }
-
-        // ✅ Event delegation (더 튼튼함)
-        document.addEventListener('click', (e) => {
-            const img = e.target.closest && e.target.closest('img.js-zoom');
-            if (!img) return;
-            openBox(img.src, img.alt);
-        }, true);
-
-        closeBtn.addEventListener('click', closeBox);
-        lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeBox(); });
-        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeBox(); });
-
-        console.log('[LT] ready. zoom imgs:', document.querySelectorAll('img.js-zoom').length);
-    });
-</script>
-
 <body class="page-spaced">
     <div id="site-header"></div>
 
+    <!-- Lightbox -->
+    <div class="lt-lightbox" id="ltLightbox" aria-hidden="true">
+        <button class="lt-close" type="button" aria-label="Close">✕</button>
+        <img id="ltLightboxImg" alt="" />
+    </div>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const lightbox = document.getElementById('ltLightbox');
+            const lightboxImg = document.getElementById('ltLightboxImg');
+            const closeBtn = lightbox ? lightbox.querySelector('.lt-close') : null;
+
+            if (!lightbox || !lightboxImg || !closeBtn) {
+                console.warn('[LT] Lightbox elements missing');
+                return;
+            }
+
+            function openBox(src, alt) {
+                console.log('[LT] open', src);
+                lightboxImg.src = src;
+                lightboxImg.alt = alt || 'Diagram zoom';
+                lightbox.classList.add('is-open');
+                lightbox.setAttribute('aria-hidden', 'false');
+            }
+
+            function closeBox() {
+                lightbox.classList.remove('is-open');
+                lightbox.setAttribute('aria-hidden', 'true');
+                lightboxImg.src = '';
+            }
+
+            // ✅ Event delegation (더 튼튼함)
+            document.addEventListener('click', (e) => {
+                const img = e.target.closest && e.target.closest('img.js-zoom');
+                if (!img) return;
+                openBox(img.src, img.alt);
+            }, true);
+
+            closeBtn.addEventListener('click', closeBox);
+            lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeBox(); });
+            document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeBox(); });
+
+            console.log('[LT] ready. zoom imgs:', document.querySelectorAll('img.js-zoom').length);
+        });
+    </script>
+
     <main class="container page-main">
         <!-- Hero / Intro -->
-        <section class="section">
+        <section class="section legal-hero">
             <div class="container">
-                <h1 class="section-title">Legal &amp; Transparency</h1>
-                <p class="section-subtitle">
-                    Built for procurement confidence — clear consent, explicit licensing scope, and audit-ready
-                    documentation.
-                    We minimize legal uncertainty so your team can approve faster and train on reality with peace of
-                    mind.
-                </p>
+                <div class="section-head section-head-left">
+                    <h1 class="section-title">Legal &amp; Transparency</h1>
+                    <p class="section-subtitle">
+                        Built for procurement confidence — clear consent, explicit licensing scope, and audit-ready
+                        documentation. We minimize legal uncertainty so your team can approve faster and train on
+                        reality
+                        with peace of mind.
+                    </p>
+                </div>
             </div>
         </section>
 
@@ -150,7 +152,8 @@
 
                         <div class="pack-body">
                             <p class="pack-focus">
-                                Every delivery is labeled with a clear scope (PoC / Trial / Research / Commercial) plus
+                                Every delivery is labeled with a clear scope (PoC / Trial / Research / Commercial)
+                                plus
                                 written boundaries to speed up approvals.
                             </p>
                             <ul class="pack-features">
@@ -162,74 +165,80 @@
                     </div>
                 </div>
 
+                <!-- Bottom row: 3 cards -->
                 <h3 class="lt-subtitle">Audit Evidence — Diagrams</h3>
 
-                <!-- Bottom row: 3 cards -->
-                <div class="grid-3">
-                    <!-- Card 3 -->
-                    <div class="pack-card">
-                        <div class="pack-header">
-                            <h3>Consent Flow</h3>
+                <div class="lt-diagram-wrap">
+                    <div class="grid-3 lt-diagram-grid">
+                        <!-- Card 3 -->
+                        <div class="pack-card">
+                            <div class="pack-header">
+                                <h3>Consent Flow</h3>
+                            </div>
+
+                            <img class="pack-media js-zoom" src="/assets/legal/consent-flow.webp"
+                                alt="Consent workflow diagram showing capture, upload, verification, and acceptance steps for dataset compliance"
+                                loading="lazy" />
+
+                            <div class="pack-body">
+                                <p class="pack-focus">
+                                    A standardized flow from capture → upload → verification → acceptance, with
+                                    evidence
+                                    retained for audits.
+                                </p>
+                                <ul class="pack-features">
+                                    <li>Consent status stored at upload</li>
+                                    <li>Metadata retained as immutable evidence</li>
+                                    <li>Segment-based accept/reject decisions</li>
+                                </ul>
+                            </div>
                         </div>
 
-                        <img class="pack-media js-zoom" src="/assets/legal/consent-flow.webp"
-                            alt="Consent workflow diagram showing capture, upload, verification, and acceptance steps for dataset compliance"
-                            loading="lazy" />
+                        <!-- Card 4 -->
+                        <div class="pack-card">
+                            <div class="pack-header">
+                                <h3>Permitted vs Restricted</h3>
+                            </div>
 
-                        <div class="pack-body">
-                            <p class="pack-focus">
-                                A standardized flow from capture → upload → verification → acceptance, with evidence
-                                retained for audits.
-                            </p>
-                            <ul class="pack-features">
-                                <li>Consent status stored at upload</li>
-                                <li>Metadata retained as immutable evidence</li>
-                                <li>Segment-based accept/reject decisions</li>
-                            </ul>
-                        </div>
-                    </div>
+                            <img class="pack-media js-zoom" src="/assets/legal/permitted-vs-restricted.webp"
+                                alt="Usage policy diagram comparing permitted and restricted dataset use cases for legal review"
+                                loading="lazy" />
 
-                    <!-- Card 4 -->
-                    <div class="pack-card">
-                        <div class="pack-header">
-                            <h3>Permitted vs Restricted</h3>
-                        </div>
-
-                        <img class="pack-media js-zoom" src="/assets/legal/permitted-vs-restricted.webp"
-                            alt="Usage policy diagram comparing permitted and restricted dataset use cases for legal review"
-                            loading="lazy" />
-
-                        <div class="pack-body">
-                            <p class="pack-focus">
-                                A clear usage matrix separating “allowed” vs “restricted” so legal review completes
-                                faster.
-                            </p>
-                            <ul class="pack-features">
-                                <li>Allowed: training, evaluation, benchmarking</li>
-                                <li>Restricted: redistribution, resale, public release</li>
-                                <li>Scope labeling per pack (PoC/Trial/Research/Commercial)</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Card 5 -->
-                    <div class="pack-card">
-                        <div class="pack-header">
-                            <h3>Responsibility Boundary</h3>
+                            <div class="pack-body">
+                                <p class="pack-focus">
+                                    A clear usage matrix separating “allowed” vs “restricted” so legal review
+                                    completes
+                                    faster.
+                                </p>
+                                <ul class="pack-features">
+                                    <li>Allowed: training, evaluation, benchmarking</li>
+                                    <li>Restricted: redistribution, resale, public release</li>
+                                    <li>Scope labeling per pack (PoC/Trial/Research/Commercial)</li>
+                                </ul>
+                            </div>
                         </div>
 
-                        <img class="pack-media js-zoom" src="/assets/legal/responsibility-boundary.webp"
-                            alt="Responsibility boundary diagram showing dataset provider obligations and buyer-controlled downstream use"
-                            loading="lazy" />
-                        <div class="pack-body">
-                            <p class="pack-focus">
-                                Clear boundaries: what we guarantee and document vs what the buyer controls downstream.
-                            </p>
-                            <ul class="pack-features">
-                                <li>We provide: provenance, metadata, QC, delivery integrity</li>
-                                <li>Buyer controls: training pipeline, downstream usage, model outputs</li>
-                                <li>Audit-ready: dataset + segment traceability</li>
-                            </ul>
+                        <!-- Card 5 -->
+                        <div class="pack-card">
+                            <div class="pack-header">
+                                <h3>Responsibility Boundary</h3>
+                            </div>
+
+                            <img class="pack-media js-zoom" src="/assets/legal/responsibility-boundary.webp"
+                                alt="Responsibility boundary diagram showing dataset provider obligations and buyer-controlled downstream use"
+                                loading="lazy" />
+
+                            <div class="pack-body">
+                                <p class="pack-focus">
+                                    Clear boundaries: what we guarantee and document vs what the buyer controls
+                                    downstream.
+                                </p>
+                                <ul class="pack-features">
+                                    <li>We provide: provenance, metadata, QC, delivery integrity</li>
+                                    <li>Buyer controls: training pipeline, downstream usage, model outputs</li>
+                                    <li>Audit-ready: dataset + segment traceability</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>

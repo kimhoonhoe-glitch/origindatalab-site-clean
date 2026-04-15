@@ -58,52 +58,71 @@
 <body class="page-spaced autonomous">
     <div id="site-header"></div>
 
-    <!-- ✅ MAIN -->
     <main class="container page-main">
-        <!-- ✅ page width wrapper: 다른 페이지들과 폭/정렬 일치 -->
-        <div class="page-wrap">
+        <div class="page-wrap autonomous-page">
 
-            <section>
+            <section class="autonomous-hero">
                 <h1>Autonomous Driving & ADAS</h1>
-                <p>
+                <p class="page-intro">
                     Real-world urban driving data collected for perception, planning, and ADAS validation.
                     Designed for PoC, early customer evaluation, and real-world performance benchmarking.
                 </p>
-            </section>
 
-            <section style="margin-top: 4rem;">
-                <h2>Sample Driving Footage</h2>
-                <p>
-                    Short excerpts from continuous real-world driving sequences.
-                    These samples represent typical traffic density and intersection complexity.
-                </p>
-
-                <div class="video-grid" style="margin-top: 2rem;">
-                    <div class="video-card">
-                        <video src="/assets/videos/sample_drive_01.mp4" controls muted playsinline preload="metadata"
-                            style="width:100%; border-radius:10px;"></video>
-                        <p class="video-title">Sample Drive 01</p>
-                        <p class="video-desc">Urban mixed traffic flow</p>
-                        <a class="download-btn" href="/assets/videos/sample_drive_01.mp4" download>
-                            ⬇️ Download Sample Video 01
-                        </a>
-                    </div>
-
-                    <div class="video-card">
-                        <video src="/assets/videos/sample_drive_02.mp4" controls muted playsinline preload="metadata"
-                            style="width:100%; border-radius:10px;"></video>
-                        <p class="video-title">Sample Drive 02</p>
-                        <p class="video-desc">Dense intersection scenario</p>
-                        <a class="download-btn" href="/assets/videos/sample_drive_02.mp4" download>
-                            ⬇️ Download Sample Video 02
-                        </a>
-                    </div>
+                <div class="autonomous-hero-actions">
+                    <a href="/contact.html" class="btn btn-primary">Request Sample Pack</a>
+                    <a href="/contact.html" class="btn btn-primary">Talk to Our Team</a>
                 </div>
             </section>
 
-            <section style="margin-top: 4rem;">
+        </div>
+    </main>
+
+    <section class="autonomous-section-dark-full">
+        <div class="container">
+            <div class="page-wrap autonomous-page">
+
+                <section class="autonomous-section autonomous-section-dark-content">
+                    <h2>Sample Driving Footage</h2>
+                    <p>
+                        Short excerpts from continuous real-world driving sequences.<br>
+                        These samples represent typical traffic density and intersection complexity.
+                    </p>
+
+                    <div class="video-grid autonomous-video-grid">
+                        <div class="video-card">
+                            <video src="/assets/videos/sample_drive_01.mp4" controls muted playsinline
+                                preload="metadata" class="sample-video"></video>
+                            <p class="video-title">Sample Drive 01</p>
+                            <p class="video-desc">Urban mixed traffic flow</p>
+                            <a class="btn btn-primary autonomous-download-btn" href="/assets/videos/sample_drive_01.mp4"
+                                download>
+                                Download Sample Video 01
+                            </a>
+                        </div>
+
+                        <div class="video-card">
+                            <video src="/assets/videos/sample_drive_02.mp4" controls muted playsinline
+                                preload="metadata" class="sample-video"></video>
+                            <p class="video-title">Sample Drive 02</p>
+                            <p class="video-desc">Dense intersection scenario</p>
+                            <a class="btn btn-primary autonomous-download-btn" href="/assets/videos/sample_drive_02.mp4"
+                                download>
+                                Download Sample Video 02
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </section>
+
+    <main class="container page-main">
+        <div class="page-wrap autonomous-page">
+
+            <section class="autonomous-section">
                 <h2>Dataset Characteristics</h2>
-                <ul>
+                <ul class="autonomous-list">
                     <li>Continuous real-world video sequences (not stitched clips)</li>
                     <li>Urban traffic with varying density and environmental conditions</li>
                     <li>Segment-ready structure for perception, prediction, and planning tasks</li>
@@ -111,14 +130,40 @@
                 </ul>
             </section>
 
-            <section style="margin-top: 4rem;">
+        </div>
+    </main>
+
+    <section class="autonomous-cta-full">
+        <div class="container">
+            <div class="page-wrap autonomous-page">
+
+                <div class="autonomous-cta-content">
+                    <h2>Need sample footage for evaluation?</h2>
+                    <p>
+                        Request a sample pack or start a PoC discussion for autonomous driving and ADAS use cases.
+                    </p>
+
+                    <div class="autonomous-cta-actions">
+                        <a href="/contact.html" class="btn btn-primary">Request Sample Pack</a>
+                        <a href="/contact.html" class="btn btn-primary">Start a PoC Conversation</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <main class="container page-main">
+        <div class="page-wrap autonomous-page">
+
+            <section class="autonomous-section">
                 <h2>Status & Availability</h2>
                 <p>
-                    This dataset is currently available during PoC and early customer engagement.<br />
+                    This dataset is currently available during PoC and early customer engagement.
                     Extended sequences, annotations, metadata schemas, and sample packs are provided upon request.
                 </p>
                 <p>
-                    <strong>Contact us</strong> to request full sample packs or discuss custom data collection.
+                    Contact us to discuss custom data collection, metadata scope, and evaluation requirements.
                 </p>
             </section>
 

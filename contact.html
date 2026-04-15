@@ -61,9 +61,6 @@
 
     <!-- MAIN -->
     <main class="container contact-main">
-
-        <!-- 👉 여기 아래에 -->
-        <!-- index.html에 있던 contact 섹션을 그대로 붙여넣기 -->
         <section id="contact" class="contact-section">
             <div class="contact-shell">
                 <div class="contact-hero">
@@ -85,8 +82,9 @@
                     </p>
                 </div>
 
-                <div class="contact-card">
-                    <form action="https://formspree.io/f/your-form-id" method="POST" class="contact-form">
+                <div class="contact-card pack-card">
+                    <form id="pocForm" action="https://formspree.io/f/your-form-id" method="POST" class="contact-form"
+                        data-thankyou="/thank-you.html">
                         <div class="contact-field">
                             <label for="work-email">Work Email (used for PoC delivery)</label>
                             <input type="email" id="work-email" name="work_email" placeholder="name@company.com"
@@ -96,6 +94,7 @@
                         <div class="contact-field">
                             <label for="project-stage">Project Stage (current development phase)</label>
                             <select id="project-stage" name="project_stage" required>
+                                <option value="" disabled selected>Select your stage</option>
                                 <option value="Research">Research</option>
                                 <option value="Prototype">Prototype</option>
                                 <option value="Pilot">Pilot</option>
@@ -118,11 +117,11 @@
                         </p>
 
                         <div class="contact-actions">
-                            <button type="submit" class="btn btn-primary">
+                            <button type="submit" class="btn btn-primary contact-submit">
                                 Submit PoC Request
                             </button>
 
-                            <a href="/pricing.html" class="btn btn-secondary">
+                            <a href="/pricing.html" class="btn btn-secondary contact-secondary">
                                 View Pricing
                             </a>
                         </div>

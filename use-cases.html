@@ -12,9 +12,9 @@
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://origindatalab.io/use-cases.html" />
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="preload" as="image" href="/assets/hero/1.webp">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preload" as="image" href="/assets/hero/1.webp" />
 
     <meta property="og:type" content="website" />
     <meta property="og:title"
@@ -33,89 +33,176 @@
     <meta name="twitter:image" content="https://origindatalab.io/assets/hero/1.webp" />
 
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "CollectionPage",
-      "name": "AI Dataset Use Cases",
-      "url": "https://origindatalab.io/use-cases.html",
-      "description": "Use case overview page covering autonomous driving, ADAS, robotics, embodied AI, mapping, traffic analysis, and AI perception research."
-    }
-    </script>
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "AI Dataset Use Cases",
+    "url": "https://origindatalab.io/use-cases.html",
+    "description": "Use case overview page covering autonomous driving, ADAS, robotics, embodied AI, mapping, traffic analysis, and AI perception research."
+  }
+  </script>
 
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Origindata Lab",
-      "url": "https://origindatalab.io/",
-      "logo": "https://origindatalab.io/assets/icons/vite.svg"
-    }
-    </script>
-
-    <style>
-        main {
-            padding-top: 0 !important;
-        }
-    </style>
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Origindata Lab",
+    "url": "https://origindatalab.io/",
+    "logo": "https://origindatalab.io/assets/icons/vite.svg"
+  }
+  </script>
 </head>
 
-<body class="use-cases">
+<body class="use-cases-page-body">
     <div id="site-header"></div>
 
     <main class="use-cases-page">
-        <div class="container text-center use-cases-hero">
-            <h1 class="section-title" style="margin-bottom: 1rem;">Use Cases</h1>
-
-            <p style="color:#ffffff; margin-bottom:4rem; max-width:600px; margin-left:auto; margin-right:auto;">
-                Real-world data applications.<br />
-                Detailed use cases will be available during PoC and early customer engagement.
-            </p>
-
-            <div class="use-case-grid">
-                <!-- ✅ 1) ADAS 상세 페이지 유지 (새 창 열기 유지) -->
-                <a href="autonomous-driving.html" class="use-case-card" target="_blank" rel="noopener"
-                    style="text-decoration: none; color: inherit; display: block;">
-                    <h3>Autonomous Driving & ADAS</h3>
-                    <p><strong>Available for PoC</strong></p>
-                    <p>View sample footage + request a coverage snapshot (24h response).</p>
-                </a>
-
-                <!-- ✅ 2) 아래 4개는 contact로 연결 (상세페이지 대신 샘플/요청으로) -->
-                <a href="/contact.html" class="use-case-card"
-                    style="text-decoration: none; color: inherit; display: block;">
-                    <h3>Robotics & Embodied AI</h3>
-                    <p><strong>Available for PoC</strong></p>
-                    <p>Request a sample pack & coverage snapshot (24h response).</p>
-                </a>
-
-                <a href="/contact.html" class="use-case-card"
-                    style="text-decoration: none; color: inherit; display: block;">
-                    <h3>Urban Mapping & Simulation</h3>
-                    <p><strong>Available for PoC</strong></p>
-                    <p>Request a sample pack & coverage snapshot (24h response).</p>
-                </a>
-
-                <a href="/contact.html" class="use-case-card"
-                    style="text-decoration: none; color: inherit; display: block;">
-                    <h3>Traffic & Infrastructure Analysis</h3>
-                    <p><strong>Available for PoC</strong></p>
-                    <p>Request a sample pack & coverage snapshot (24h response).</p>
-                </a>
-
-                <a href="/contact.html" class="use-case-card"
-                    style="text-decoration: none; color: inherit; display: block;">
-                    <h3>AI Perception Research</h3>
-                    <p><strong>Available for PoC</strong></p>
-                    <p>Request a sample pack & coverage snapshot (24h response).</p>
-                </a>
+        <!-- Hero -->
+        <section class="section use-cases-hero-section light-section">
+            <div class="container">
+                <div class="use-cases-hero-inner">
+                    <p class="eyebrow">Application Layer</p>
+                    <h1 class="section-title">Use Cases</h1>
+                    <p class="use-cases-hero-text">
+                        Real-world urban data applications for teams building perception, autonomy,
+                        embodied intelligence, mapping, and operational AI systems.
+                    </p>
+                    <p class="use-cases-hero-subtext">
+                        Detailed scope is defined during PoC and early customer engagement, but the
+                        commercial direction is already clear: this data is built for hard environments,
+                        ambiguous human behavior, and dense city conditions.
+                    </p>
+                </div>
             </div>
-        </div>
+        </section>
 
-        <p
-            style="margin-top:0.5rem; margin-bottom:6rem; color:#ffffff; text-align:center; max-width:600px; margin-left:auto; margin-right:auto;">
-            Specific datasets, metadata structure, and access conditions are defined collaboratively
-            during PoC and early commercial discussions.
-        </p>
+        <!-- Core Use Cases -->
+        <section class="section use-cases-cards-section light-section">
+            <div class="container">
+                <div class="use-cases-section-head">
+                    <h2 class="section-title">Where This Data Can Be Applied</h2>
+                    <p class="use-cases-section-intro">
+                        Not abstract industry labels. These are practical deployment paths where difficult,
+                        real-world urban footage and metadata become commercially useful.
+                    </p>
+                </div>
+
+                <div class="use-cases-grid">
+                    <a href="autonomous-driving.html" class="use-case-card use-case-card-featured">
+                        <div class="use-case-card-top">
+                            <span class="use-case-badge">Available for PoC</span>
+                        </div>
+                        <h3 class="use-case-title">Autonomous Driving & ADAS</h3>
+                        <p class="use-case-text">
+                            Evaluate perception, behavior prediction, near-edge road interaction, and dense
+                            urban driving scenarios where informal human movement breaks clean driving logic.
+                        </p>
+                        <p class="use-case-link-text">View sample footage and request a coverage snapshot</p>
+                    </a>
+
+                    <a href="contact.html" class="use-case-card">
+                        <div class="use-case-card-top">
+                            <span class="use-case-badge">Available for PoC</span>
+                        </div>
+                        <h3 class="use-case-title">Robotics & Embodied AI</h3>
+                        <p class="use-case-text">
+                            Train and evaluate systems that must interpret crowded, dynamic, human-dominated
+                            spaces rather than controlled lab conditions.
+                        </p>
+                        <p class="use-case-link-text">Request a sample pack and coverage snapshot</p>
+                    </a>
+
+                    <a href="contact.html" class="use-case-card">
+                        <div class="use-case-card-top">
+                            <span class="use-case-badge">Available for PoC</span>
+                        </div>
+                        <h3 class="use-case-title">Urban Mapping & Simulation</h3>
+                        <p class="use-case-text">
+                            Support mapping, environment modeling, and simulation layers with footage from
+                            visually dense streets, roadside complexity, and unpredictable agent movement.
+                        </p>
+                        <p class="use-case-link-text">Request a sample pack and coverage snapshot</p>
+                    </a>
+
+                    <a href="contact.html" class="use-case-card">
+                        <div class="use-case-card-top">
+                            <span class="use-case-badge">Available for PoC</span>
+                        </div>
+                        <h3 class="use-case-title">Traffic & Infrastructure Analysis</h3>
+                        <p class="use-case-text">
+                            Study congestion behavior, curbside friction, informal traffic flow, and road-use
+                            patterns in environments where structure is weak and density is high.
+                        </p>
+                        <p class="use-case-link-text">Request a sample pack and coverage snapshot</p>
+                    </a>
+
+                    <a href="contact.html" class="use-case-card">
+                        <div class="use-case-card-top">
+                            <span class="use-case-badge">Available for PoC</span>
+                        </div>
+                        <h3 class="use-case-title">AI Perception Research</h3>
+                        <p class="use-case-text">
+                            Benchmark models against real-world visual ambiguity, incomplete signaling,
+                            occlusion, and human behavior that does not follow idealized assumptions.
+                        </p>
+                        <p class="use-case-link-text">Request a sample pack and coverage snapshot</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Engagement Model -->
+        <section class="section use-cases-process-section light-section">
+            <div class="container">
+                <div class="use-cases-section-head">
+                    <h2 class="section-title">How Engagement Starts</h2>
+                    <p class="use-cases-section-intro use-cases-section-intro-dark">
+                        We keep early conversations simple. Scope, metadata structure, and access conditions
+                        are shaped collaboratively around the buyer’s actual evaluation need.
+                    </p>
+                </div>
+
+                <div class="use-cases-process-grid">
+                    <div class="process-card">
+                        <span class="process-step">01</span>
+                        <h3>Tell Us the Scenario</h3>
+                        <p>
+                            Share the environment, use case, or failure mode you care about most.
+                        </p>
+                    </div>
+
+                    <div class="process-card">
+                        <span class="process-step">02</span>
+                        <h3>Review Feasibility</h3>
+                        <p>
+                            We align on likely coverage, collection conditions, and what can be packaged for PoC.
+                        </p>
+                    </div>
+
+                    <div class="process-card">
+                        <span class="process-step">03</span>
+                        <h3>Request Sample Pack</h3>
+                        <p>
+                            Initial sample material and coverage direction are shared for early validation.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="section use-cases-cta-section light-section">
+            <div class="container">
+                <div class="use-cases-cta-box">
+                    <h2 class="section-title">Need a Use-Case-Aligned Sample Pack?</h2>
+                    <p class="use-cases-cta-text">
+                        Specific datasets, metadata structure, and access conditions are defined during PoC
+                        and early commercial discussion. Start with the environment or scenario you need most.
+                    </p>
+                    <a href="contact.html" class="btn btn-primary">Request Sample Pack</a>
+                </div>
+            </div>
+        </section>
     </main>
 
     <div id="site-footer"></div>
