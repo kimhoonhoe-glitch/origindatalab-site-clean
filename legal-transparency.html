@@ -51,7 +51,7 @@
     </script>
 </head>
 
-<body class="page-spaced">
+<body class="page-spaced legal-page">
     <div id="site-header"></div>
 
     <!-- Lightbox -->
@@ -72,7 +72,6 @@
             }
 
             function openBox(src, alt) {
-                console.log('[LT] open', src);
                 lightboxImg.src = src;
                 lightboxImg.alt = alt || 'Diagram zoom';
                 lightbox.classList.add('is-open');
@@ -85,7 +84,6 @@
                 lightboxImg.src = '';
             }
 
-            // ✅ Event delegation (더 튼튼함)
             document.addEventListener('click', (e) => {
                 const img = e.target.closest && e.target.closest('img.js-zoom');
                 if (!img) return;
@@ -95,170 +93,406 @@
             closeBtn.addEventListener('click', closeBox);
             lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeBox(); });
             document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeBox(); });
-
-            console.log('[LT] ready. zoom imgs:', document.querySelectorAll('img.js-zoom').length);
         });
     </script>
 
-    <main class="container page-main">
-        <!-- Hero / Intro -->
-        <section class="section legal-hero">
+    <main class="page-main">
+
+        <!-- HERO / WHITE -->
+        <div class="container">
+            <div class="page-wrap">
+                <section class="section legal-hero">
+                    <div class="section-head section-head-left">
+                        <h1 class="section-title">Legal &amp; Transparency</h1>
+                        <p class="section-subtitle">
+                            Built for procurement confidence — clear consent, explicit licensing scope, and audit-ready
+                            documentation. We minimize legal uncertainty so your team can approve faster and train on
+                            reality with peace of mind.
+                        </p>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <!-- TRANSPARENCY FRAMEWORK / DARK -->
+        <section id="legal-transparency" class="section dark-section legal-dark-band">
             <div class="container">
-                <div class="section-head section-head-left">
-                    <h1 class="section-title">Legal &amp; Transparency</h1>
-                    <p class="section-subtitle">
-                        Built for procurement confidence — clear consent, explicit licensing scope, and audit-ready
-                        documentation. We minimize legal uncertainty so your team can approve faster and train on
-                        reality
-                        with peace of mind.
+                <div class="page-wrap">
+                    <h2 class="section-title text-left">Transparency Framework</h2>
+
+                    <h3 class="lt-subtitle">Compliance Assurance Pack</h3>
+
+                    <div class="grid-3 legal-top-grid">
+                        <div class="pack-card">
+                            <div class="pack-header">
+                                <h3>Consent &amp; Capture Notice</h3>
+                            </div>
+
+                            <div class="pack-body">
+                                <p class="pack-focus">
+                                    Designed to reduce legal ambiguity: consent evidence, capture context, and review
+                                    outcomes are recorded at upload time.
+                                </p>
+                                <ul class="pack-features">
+                                    <li>Capture context recorded (scene type, location class, time window)</li>
+                                    <li>Contributor acknowledgment logged during upload</li>
+                                    <li>Segment-level review with raw footage preserved</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="pack-card">
+                            <div class="pack-header">
+                                <h3>License Scope &amp;<br>Permitted Use</h3>
+                            </div>
+
+                            <div class="pack-body">
+                                <p class="pack-focus">
+                                    Every delivery is labeled with a clear scope (PoC / Trial / Research / Commercial)
+                                    plus written boundaries to speed up approvals.
+                                </p>
+                                <ul class="pack-features">
+                                    <li>Usage scope explicitly assigned per pack</li>
+                                    <li>Export / distribution constraints documented</li>
+                                    <li>Dataset ID + segment IDs retained for auditability</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="lt-subtitle">Audit Evidence — Diagrams</h3>
+
+                    <div class="lt-diagram-wrap">
+                        <div class="grid-3 lt-diagram-grid">
+                            <div class="pack-card">
+                                <div class="pack-header">
+                                    <h3>Consent Flow</h3>
+                                </div>
+
+                                <img class="pack-media js-zoom" src="/assets/legal/consent-flow.webp"
+                                    alt="Consent workflow diagram showing capture, upload, verification, and acceptance steps for dataset compliance"
+                                    loading="lazy" />
+
+                                <div class="pack-body">
+                                    <p class="pack-focus">
+                                        A standardized flow from capture → upload → verification → acceptance, with
+                                        evidence retained for audits.
+                                    </p>
+                                    <ul class="pack-features">
+                                        <li>Consent status stored at upload</li>
+                                        <li>Metadata retained as immutable evidence</li>
+                                        <li>Segment-based accept/reject decisions</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="pack-card">
+                                <div class="pack-header">
+                                    <h3>Permitted vs Restricted</h3>
+                                </div>
+
+                                <img class="pack-media js-zoom" src="/assets/legal/permitted-vs-restricted.webp"
+                                    alt="Usage policy diagram comparing permitted and restricted dataset use cases for legal review"
+                                    loading="lazy" />
+
+                                <div class="pack-body">
+                                    <p class="pack-focus">
+                                        A clear usage matrix separating “allowed” vs “restricted” so legal review
+                                        completes faster.
+                                    </p>
+                                    <ul class="pack-features">
+                                        <li>Allowed: training, evaluation, benchmarking</li>
+                                        <li>Restricted: redistribution, resale, public release</li>
+                                        <li>Scope labeling per pack (PoC/Trial/Research/Commercial)</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="pack-card">
+                                <div class="pack-header">
+                                    <h3>Responsibility Boundary</h3>
+                                </div>
+
+                                <img class="pack-media js-zoom" src="/assets/legal/responsibility-boundary.webp"
+                                    alt="Responsibility boundary diagram showing dataset provider obligations and buyer-controlled downstream use"
+                                    loading="lazy" />
+
+                                <div class="pack-body">
+                                    <p class="pack-focus">
+                                        Clear boundaries: what we guarantee and document vs what the buyer controls
+                                        downstream.
+                                    </p>
+                                    <ul class="pack-features">
+                                        <li>We provide: provenance, metadata, QC, delivery integrity</li>
+                                        <li>Buyer controls: training pipeline, downstream usage, model outputs</li>
+                                        <li>Audit-ready: dataset + segment traceability</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BUYER APPROVAL FAQ / WHITE -->
+        <div class="container">
+            <div class="page-wrap">
+                <section class="section legal-faq-section">
+                    <h2 class="section-title text-left">Buyer Approval FAQ</h2>
+                    <p class="section-subtitle" style="text-align:left; max-width:72ch;">
+                        A practical review block for procurement, legal, and compliance teams before purchase approval.
                     </p>
-                </div>
-            </div>
-        </section>
 
-        <!-- ✅ Rebuilt using the SAME card/grid system as Production-Grade Dataset Packs -->
-        <section id="legal-transparency" class="section dark-section">
+                    <div class="legal-faq-grid">
+                        <div class="pack-card legal-faq-card">
+                            <h3 class="legal-faq-question">Is the data collected on public roads?</h3>
+                            <p>
+                                Yes. The dataset is collected in publicly accessible road environments as part of
+                                real-world urban traffic capture.
+                            </p>
+                        </div>
+
+                        <div class="pack-card legal-faq-card">
+                            <h3 class="legal-faq-question">Are faces and license plates blurred by default?</h3>
+                            <p>
+                                Blurring or anonymization can be applied based on buyer requirements, jurisdictional
+                                needs, and approved delivery scope.
+                            </p>
+                        </div>
+
+                        <div class="pack-card legal-faq-card">
+                            <h3 class="legal-faq-question">Can procurement teams review licensing terms before purchase?
+                            </h3>
+                            <p>
+                                Yes. Public summary information is available in advance, and more detailed licensing
+                                materials can be shared during qualification or under NDA where needed.
+                            </p>
+                        </div>
+
+                        <div class="pack-card legal-faq-card">
+                            <h3 class="legal-faq-question">Is a DPA available on request?</h3>
+                            <p>
+                                Yes. Data Processing Agreement support can be discussed when procurement or legal review
+                                requires it.
+                            </p>
+                        </div>
+
+                        <div class="pack-card legal-faq-card">
+                            <h3 class="legal-faq-question">Can provenance documentation be shared under NDA?</h3>
+                            <p>
+                                Yes. More detailed provenance, handling, and compliance-related materials can be
+                                provided during formal review under NDA.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <!-- DATA PROVENANCE FAQ / DARK -->
+        <section class="section dark-section legal-provenance-section">
             <div class="container">
-                <h2 class="section-title">Transparency Framework</h2>
+                <div class="page-wrap">
+                    <h2 class="section-title text-left">Data Provenance FAQ</h2>
+                    <p class="section-subtitle legal-dark-subtitle">
+                        Key operational and governance details for security review, provenance validation, and
+                        engineering
+                        confidence.
+                    </p>
 
-                <h3 class="lt-subtitle">Compliance Assurance Pack</h3>
-
-                <!-- Top row: 2 cards -->
-                <div class="grid-3">
-                    <!-- Card 1 -->
-                    <div class="pack-card">
-                        <div class="pack-header">
-                            <h3>Consent &amp; Capture Notice</h3>
-                        </div>
-
-                        <div class="pack-body">
-                            <p class="pack-focus">
-                                Designed to reduce legal ambiguity: consent evidence, capture context, and review
-                                outcomes are recorded at upload time.
+                    <div class="legal-provenance-grid">
+                        <div class="pack-card legal-dark-faq-card">
+                            <h3 class="legal-dark-faq-question">How is the data collected?</h3>
+                            <p>
+                                Real-world mobile capture is performed through structured field collection workflows
+                                designed for traffic, environment, and scenario diversity.
                             </p>
-                            <ul class="pack-features">
-                                <li>Capture context recorded (scene type, location class, time window)</li>
-                                <li>Contributor acknowledgment logged during upload</li>
-                                <li>Segment-level review with raw footage preserved</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Card 2 -->
-                    <div class="pack-card">
-                        <div class="pack-header">
-                            <h3>License Scope &amp;<br>Permitted Use</h3>
                         </div>
 
-                        <div class="pack-body">
-                            <p class="pack-focus">
-                                Every delivery is labeled with a clear scope (PoC / Trial / Research / Commercial)
-                                plus
-                                written boundaries to speed up approvals.
+                        <div class="pack-card legal-dark-faq-card">
+                            <h3 class="legal-dark-faq-question">What anonymization standards are applied?</h3>
+                            <p>
+                                Sensitive elements such as faces, license plates, and other identifying details can be
+                                masked, filtered, or handled according to buyer and compliance requirements.
                             </p>
-                            <ul class="pack-features">
-                                <li>Usage scope explicitly assigned per pack</li>
-                                <li>Export / distribution constraints documented</li>
-                                <li>Dataset ID + segment IDs retained for auditability</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Bottom row: 3 cards -->
-                <h3 class="lt-subtitle">Audit Evidence — Diagrams</h3>
-
-                <div class="lt-diagram-wrap">
-                    <div class="grid-3 lt-diagram-grid">
-                        <!-- Card 3 -->
-                        <div class="pack-card">
-                            <div class="pack-header">
-                                <h3>Consent Flow</h3>
-                            </div>
-
-                            <img class="pack-media js-zoom" src="/assets/legal/consent-flow.webp"
-                                alt="Consent workflow diagram showing capture, upload, verification, and acceptance steps for dataset compliance"
-                                loading="lazy" />
-
-                            <div class="pack-body">
-                                <p class="pack-focus">
-                                    A standardized flow from capture → upload → verification → acceptance, with
-                                    evidence
-                                    retained for audits.
-                                </p>
-                                <ul class="pack-features">
-                                    <li>Consent status stored at upload</li>
-                                    <li>Metadata retained as immutable evidence</li>
-                                    <li>Segment-based accept/reject decisions</li>
-                                </ul>
-                            </div>
                         </div>
 
-                        <!-- Card 4 -->
-                        <div class="pack-card">
-                            <div class="pack-header">
-                                <h3>Permitted vs Restricted</h3>
-                            </div>
-
-                            <img class="pack-media js-zoom" src="/assets/legal/permitted-vs-restricted.webp"
-                                alt="Usage policy diagram comparing permitted and restricted dataset use cases for legal review"
-                                loading="lazy" />
-
-                            <div class="pack-body">
-                                <p class="pack-focus">
-                                    A clear usage matrix separating “allowed” vs “restricted” so legal review
-                                    completes
-                                    faster.
-                                </p>
-                                <ul class="pack-features">
-                                    <li>Allowed: training, evaluation, benchmarking</li>
-                                    <li>Restricted: redistribution, resale, public release</li>
-                                    <li>Scope labeling per pack (PoC/Trial/Research/Commercial)</li>
-                                </ul>
-                            </div>
+                        <div class="pack-card legal-dark-faq-card">
+                            <h3 class="legal-dark-faq-question">Is raw data preserved?</h3>
+                            <p>
+                                Yes. Raw continuous footage may be preserved for traceability, auditability, and
+                                controlled downstream processing, while delivery scope remains segment-based.
+                            </p>
                         </div>
 
-                        <!-- Card 5 -->
-                        <div class="pack-card">
-                            <div class="pack-header">
-                                <h3>Responsibility Boundary</h3>
-                            </div>
+                        <div class="pack-card legal-dark-faq-card">
+                            <h3 class="legal-dark-faq-question">How are minors or sensitive scenes handled?</h3>
+                            <p>
+                                Sensitive or review-flagged content can be filtered, restricted, or excluded based on
+                                policy, legal requirements, and delivery scope.
+                            </p>
+                        </div>
 
-                            <img class="pack-media js-zoom" src="/assets/legal/responsibility-boundary.webp"
-                                alt="Responsibility boundary diagram showing dataset provider obligations and buyer-controlled downstream use"
-                                loading="lazy" />
+                        <div class="pack-card legal-dark-faq-card">
+                            <h3 class="legal-dark-faq-question">Is cross-border transfer involved?</h3>
+                            <p>
+                                Data handling and storage may involve controlled cross-border workflows depending on
+                                buyer requirements, hosting structure, and compliance constraints.
+                            </p>
+                        </div>
 
-                            <div class="pack-body">
-                                <p class="pack-focus">
-                                    Clear boundaries: what we guarantee and document vs what the buyer controls
-                                    downstream.
-                                </p>
-                                <ul class="pack-features">
-                                    <li>We provide: provenance, metadata, QC, delivery integrity</li>
-                                    <li>Buyer controls: training pipeline, downstream usage, model outputs</li>
-                                    <li>Audit-ready: dataset + segment traceability</li>
-                                </ul>
-                            </div>
+                        <div class="pack-card legal-dark-faq-card">
+                            <h3 class="legal-dark-faq-question">What infrastructure is used?</h3>
+                            <p>
+                                Cloud-based storage, controlled access, and traceable handling processes are used to
+                                support delivery integrity, audit readiness, and operational security.
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="section">
-            <div class="container" style="text-align:center; margin-top: 2rem;">
-                <p style="opacity:.85; margin-bottom: .75rem;">
-                    Trust is designed — not implied.
-                </p>
-                <a href="/contact.html" class="btn btn-primary">
-                    Request Sample Pack →
-                </a>
+
+        <!-- FINAL CTA / WHITE -->
+        <div class="container">
+            <div class="page-wrap">
+                <section class="section legal-final-cta">
+                    <div style="text-align:center; margin-top: 0;">
+                        <a href="/contact.html" class="btn btn-primary">
+                            Request Sample Pack →
+                        </a>
+                    </div>
+                </section>
             </div>
-        </section>
+        </div>
+
     </main>
 
     <div id="site-footer"></div>
 
     <script type="module" src="/src/main.js"></script>
+
+    <style>
+        /* =========================
+           LEGAL PAGE FIXED LAYOUT
+           ========================= */
+
+        .legal-page .page-wrap {
+            width: min(1120px, calc(100% - 48px));
+            margin: 0 auto;
+        }
+
+        .legal-dark-band,
+        .legal-provenance-section {
+            background: #061326 !important;
+            color: #ffffff;
+        }
+
+        .legal-dark-band .section-title,
+        .legal-dark-band .lt-subtitle,
+        .legal-provenance-section .section-title,
+        .legal-provenance-section .section-subtitle,
+        .legal-provenance-section p,
+        .legal-provenance-section li,
+        .legal-provenance-section h2,
+        .legal-provenance-section h3 {
+            color: #ffffff;
+        }
+
+        .legal-dark-subtitle {
+            color: rgba(255, 255, 255, 0.82) !important;
+            max-width: 72ch;
+            margin: 0;
+        }
+
+        .legal-faq-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 22px;
+            margin-top: 28px;
+            align-items: stretch;
+        }
+
+        .legal-faq-card {
+            height: 100%;
+            padding: 28px;
+            text-align: left;
+        }
+
+        .legal-faq-question {
+            margin: 0 0 12px;
+            font-size: 1.35rem;
+            line-height: 1.35;
+            font-weight: 700;
+            color: #0f1720;
+        }
+
+        .legal-faq-card p {
+            margin: 0;
+            line-height: 1.75;
+            color: rgba(15, 23, 32, 0.82);
+        }
+
+        .legal-provenance-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 22px;
+            margin-top: 28px;
+            align-items: stretch;
+        }
+
+        .legal-dark-faq-card {
+            height: 100%;
+            padding: 28px;
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            background: rgba(255, 255, 255, 0.08) !important;
+            text-align: left;
+            box-sizing: border-box;
+        }
+
+        .legal-dark-faq-question {
+            margin: 0 0 12px;
+            font-size: 1.25rem;
+            line-height: 1.35;
+            font-weight: 700;
+            color: #ffffff !important;
+        }
+
+        .legal-dark-faq-card p {
+            margin: 0;
+            line-height: 1.75;
+            color: rgba(255, 255, 255, 0.84) !important;
+        }
+
+        .legal-final-cta .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @media (max-width: 900px) {
+
+            .legal-faq-grid,
+            .legal-provenance-grid,
+            .legal-top-grid,
+            .lt-diagram-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .legal-faq-card,
+            .legal-dark-faq-card {
+                padding: 24px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .legal-page .page-wrap {
+                width: min(1120px, calc(100% - 32px));
+            }
+        }
+    </style>
 </body>
 
 </html>

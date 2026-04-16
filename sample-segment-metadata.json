@@ -1,0 +1,24 @@
+{
+    "_note": "Sample metadata for pipeline integration testing. Structure may evolve as the system is finalized.",
+    {
+        "_note": "Sample metadata for pipeline integration testing. Structure may evolve as the system is finalized.",
+        "segment_id": "BD-DHK-SEG-000182",
+        "source_file_id": "BD-DHK-RIDE-000021",
+        "clip_file_name": "BD-DHK-SEG-000182.mp4",
+        "segment_window": {
+            "start_sec": 120,
+            "end_sec": 162,
+            "duration_sec": 42
+        },
+        "scene_type": "unstructured_urban_flow",
+        "short_description": "Dense mixed traffic with near-field pedestrian interaction and frequent vehicle cut-ins.",
+        "capture_context": {
+            "country": "Bangladesh",
+            "city": "Dhaka",
+            "time_of_day": "day",
+            "weather": "overcast",
+            "capture_platform": "two_wheeler"
+        },
+        "qc_status": "pass",
+        "qc_summary": "Continuous forward view with acceptable visibility and usable motion stability."
+    }

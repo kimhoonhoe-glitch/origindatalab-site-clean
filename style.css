@@ -8208,3 +8208,551 @@ body:not(.use-cases-page-body) #use-cases .use-case-failure span {
   text-decoration: none !important;
   font-weight: 600 !important;
 }
+
+/* =========================
+   COVERAGE TABLE - DARK VERSION
+   ========================= */
+
+.data-overview-coverage-table .section-title,
+.data-overview-coverage-table .lead,
+.data-overview-coverage-table .note {
+  text-align: left;
+}
+
+.data-overview-coverage-table .coverage-table-wrap {
+  margin-top: 24px;
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.coverage-table.dark {
+  width: 100%;
+  min-width: 980px;
+  border-collapse: collapse;
+}
+
+.coverage-table.dark th,
+.coverage-table.dark td {
+  padding: 16px 18px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 15px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.coverage-table.dark th {
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.06);
+  white-space: nowrap;
+}
+
+.coverage-table.dark tbody tr:last-child td {
+  border-bottom: none;
+}
+
+@media (max-width: 768px) {
+  .coverage-table.dark {
+    min-width: 900px;
+  }
+
+  .coverage-table.dark th,
+  .coverage-table.dark td {
+    padding: 14px;
+    font-size: 14px;
+  }
+}
+
+/* mobile hint */
+.coverage-table-mobile-hint {
+  display: none;
+  margin-top: 10px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+@media (max-width: 768px) {
+  .coverage-table-mobile-hint {
+    display: block;
+  }
+}
+
+/* =========================
+   DATA OVERVIEW - ENGINEER INTEGRATION SECTION
+   ========================= */
+
+.data-overview .engineer-integration-section .engineer-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.data-overview .engineer-integration-section .engineer-card {
+  height: 100%;
+}
+
+.data-overview .engineer-integration-section .engineer-card h3 {
+  margin-bottom: 14px;
+}
+
+.data-overview .engineer-integration-section .engineer-card ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.data-overview .engineer-integration-section .engineer-card li+li {
+  margin-top: 8px;
+}
+
+.data-overview .engineer-integration-section .distribution-snapshot {
+  margin-top: 18px;
+}
+
+.data-overview .engineer-integration-section .distribution-row+.distribution-row {
+  margin-top: 12px;
+}
+
+.data-overview .engineer-integration-section .distribution-label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.data-overview .engineer-integration-section .distribution-bar {
+  width: 100%;
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  overflow: hidden;
+}
+
+.data-overview .engineer-integration-section .distribution-fill {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  background: #38bdf8;
+}
+
+.data-overview .engineer-integration-section .distribution-fill.dist-85 {
+  width: 85%;
+}
+
+.data-overview .engineer-integration-section .distribution-fill.dist-35 {
+  width: 35%;
+}
+
+.data-overview .engineer-integration-section .distribution-fill.dist-70 {
+  width: 70%;
+}
+
+.data-overview .engineer-integration-section .engineer-json {
+  margin: 0;
+  padding: 18px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  white-space: pre-wrap;
+  word-break: break-word;
+  line-height: 1.5;
+  overflow-x: auto;
+}
+
+.data-overview .engineer-integration-section .engineer-actions {
+  margin-top: 16px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.data-overview .engineer-integration-section .integration-flow {
+  margin-top: 18px;
+  padding: 16px 18px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.data-overview .engineer-integration-section .integration-flow p {
+  margin-bottom: 10px;
+}
+
+.data-overview .engineer-integration-section .integration-flow ol {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.data-overview .engineer-integration-section code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.95em;
+}
+
+@media (max-width: 900px) {
+  .data-overview .engineer-integration-section .engineer-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .data-overview .engineer-integration-section .engineer-actions {
+    justify-content: stretch;
+  }
+
+  .data-overview .engineer-integration-section .engineer-actions .btn {
+    width: 100%;
+    min-height: 52px;
+  }
+}
+
+/* =========================
+   ENGINEER SECTION FINAL ALIGN FIX
+   ========================= */
+
+/* 1) grid 섹션에서는 pack-card 연속 margin 제거 */
+.data-overview .engineer-integration-section .pack-card+.pack-card {
+  margin-top: 0 !important;
+}
+
+/* 2) 섹션 상단 제목/본문 정렬 통일 */
+.data-overview .engineer-integration-section .section-title {
+  margin: 0 !important;
+  max-width: 78ch;
+}
+
+.data-overview .engineer-integration-section .lead {
+  margin: 12px 0 0 0 !important;
+  max-width: 78ch;
+}
+
+/* 3) 카드 grid 시작 간격 통일 */
+.data-overview .engineer-integration-section .engineer-grid {
+  margin-top: 24px !important;
+}
+
+/* 4) 카드 내부 제목 기본 margin 제거 */
+.data-overview .engineer-integration-section .engineer-card h3 {
+  margin: 0 0 14px 0 !important;
+  line-height: 1.35;
+}
+
+/* 5) 카드 내부 리스트 리셋 복구 */
+.data-overview .engineer-integration-section .engineer-card ul {
+  margin: 0 !important;
+  padding-left: 20px !important;
+  list-style: disc !important;
+}
+
+.data-overview .engineer-integration-section .engineer-card ol {
+  margin: 0 !important;
+  padding-left: 20px !important;
+  list-style: decimal !important;
+}
+
+/* 6) 카드 내부 문단 위 여백 튐 방지 */
+.data-overview .engineer-integration-section .engineer-card p {
+  margin-top: 0;
+}
+
+/* =========================
+   ENGINEER SECTION BUTTON FIX
+   ========================= */
+
+.data-overview .engineer-integration-section .engineer-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.data-overview .engineer-integration-section .engineer-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 56px;
+  padding: 14px 18px;
+  text-align: center;
+  font-weight: 700;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.data-overview .engineer-integration-section .btn.btn-secondary.engineer-btn {
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: transparent;
+  color: #f9fafb;
+}
+
+.data-overview .engineer-integration-section .btn.btn-secondary.engineer-btn:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+@media (max-width: 768px) {
+  .data-overview .engineer-integration-section .engineer-actions {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================
+   METADATA MODAL (복붙)
+   ========================= */
+
+.metadata-modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(15, 23, 32, 0.75);
+  z-index: 9999;
+}
+
+.metadata-modal.is-open {
+  display: flex;
+}
+
+.metadata-modal-dialog {
+  width: min(860px, 95%);
+  max-height: 85vh;
+  border-radius: 20px;
+  background: #111827;
+  color: #f9fafb;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.metadata-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 22px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.metadata-modal-header h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.metadata-modal-close {
+  border: none;
+  background: transparent;
+  color: #fff;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+.metadata-modal-body {
+  padding: 20px;
+  overflow: auto;
+}
+
+.metadata-modal-pre {
+  margin: 0;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  font-size: 13px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+/* =========================
+   INDEX TRUST SECTIONS
+   Anonymous Use Cases / Comparison / Team
+   ========================= */
+
+.trust-usecases-section,
+.trust-team-section {
+  background: #f8fafc;
+}
+
+.trust-compare-section {
+  background: #0f172a;
+}
+
+.trust-section-header {
+  margin-bottom: 2.25rem;
+}
+
+.trust-usecases-grid,
+.trust-team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.trust-usecase-card,
+.trust-team-card {
+  background: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+}
+
+.trust-usecase-card h3,
+.trust-team-card h3 {
+  margin: 0 0 0.75rem;
+  font-size: 1.1rem;
+  line-height: 1.45;
+  color: #0f172a;
+}
+
+.trust-usecase-card p,
+.trust-team-card p {
+  margin: 0;
+  color: #475569;
+  line-height: 1.7;
+  font-size: 0.98rem;
+}
+
+.trust-usecase-label,
+.trust-team-role {
+  display: inline-block;
+  margin-bottom: 0.9rem !important;
+  font-size: 0.82rem !important;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #06b6d4 !important;
+}
+
+.trust-compare-section .section-title,
+.trust-compare-section .section-intro,
+.trust-compare-section .section-eyebrow {
+  color: #ffffff;
+}
+
+.trust-compare-table {
+  display: grid;
+  gap: 0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 18px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.trust-compare-row {
+  display: grid;
+  grid-template-columns: 1.1fr 1.45fr 1.45fr;
+}
+
+.trust-compare-row>div {
+  padding: 18px 20px;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.65;
+  font-size: 0.97rem;
+}
+
+.trust-compare-row>div:last-child {
+  border-right: 0;
+}
+
+.trust-compare-row:last-child>div {
+  border-bottom: 0;
+}
+
+.trust-compare-head {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.trust-compare-head>div {
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.trust-compare-cat {
+  font-weight: 700;
+  color: #ffffff !important;
+}
+
+@media (max-width: 1024px) {
+
+  .trust-usecases-grid,
+  .trust-team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .trust-compare-row {
+    grid-template-columns: 1fr;
+  }
+
+  .trust-compare-head {
+    display: none;
+  }
+
+  .trust-compare-row {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .trust-compare-row:last-child {
+    border-bottom: 0;
+  }
+
+  .trust-compare-row>div {
+    border-right: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 14px 16px;
+  }
+
+  .trust-compare-row>div:last-child {
+    border-bottom: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .trust-section-header {
+    margin-bottom: 1.75rem;
+  }
+
+  .trust-usecase-card,
+  .trust-team-card {
+    padding: 20px;
+    border-radius: 16px;
+  }
+
+  .trust-usecase-card h3,
+  .trust-team-card h3 {
+    font-size: 1.02rem;
+  }
+
+  .trust-usecase-card p,
+  .trust-team-card p,
+  .trust-compare-row>div {
+    font-size: 0.95rem;
+  }
+}
+
+.trust-impact {
+  margin-top: 10px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.trust-team-cta {
+  margin-top: 12px;
+  text-align: center;
+}
+
+.trust-team-cta p {
+  margin-bottom: 8px;
+  color: #475569;
+}
+
+.trust-micro-bar {
+  margin-top: 16px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+}

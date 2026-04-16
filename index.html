@@ -605,6 +605,161 @@
       </div>
     </section>
 
+    <!-- Anonymous Use Cases -->
+    <section class="section trust-usecases-section section-light">
+      <div class="container">
+        <div class="trust-section-header">
+          <span class="section-eyebrow">Who uses this kind of data</span>
+          <h2 class="section-title">How Teams Actually Use This Data</h2>
+          <p class="section-intro">
+            Buyer names can stay private. What matters is who used it, what they were testing,
+            and why structured or simulation-heavy data was not enough.
+          </p>
+        </div>
+
+        <div class="trust-usecases-grid">
+          <article class="trust-usecase-card">
+            <p class="trust-usecase-label">Southeast Asia ADAS evaluation team</p>
+            <h3>Validated failure-prone urban interactions before deployment</h3>
+            <p>
+              Faced repeated sim-to-real gaps in dense intersections.
+              Used high-entropy segments to expose ambiguous right-of-way behavior.
+            </p>
+            <p class="trust-impact">
+              → Identified critical edge cases earlier and reduced evaluation blind spots.
+            </p>
+          </article>
+
+          <article class="trust-usecase-card">
+            <p class="trust-usecase-label">Robotics perception validation team</p>
+            <h3>Stress-tested perception under occlusion and compression</h3>
+            <p>
+              Simulation could not reproduce overlap, hesitation, and chaotic agent movement.
+              Real-world segments introduced unstable tracking conditions.
+            </p>
+            <p class="trust-impact">
+              → Exposed perception instability that synthetic data failed to reveal.
+            </p>
+          </article>
+
+          <article class="trust-usecase-card">
+            <p class="trust-usecase-label">Early-stage urban scenario screening</p>
+            <h3>Filtered high-risk segments before training cycles</h3>
+            <p>
+              Needed to avoid wasting compute on low-value data.
+              Used metadata to isolate failure-prone clips early.
+            </p>
+            <p class="trust-impact">
+              → Reduced wasted training cycles and focused engineering effort.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="section trust-compare-section dark-section">
+      <div class="container">
+        <div class="trust-section-header">
+          <span class="section-eyebrow">Buyer-side comparison</span>
+          <h2 class="section-title">Why Teams Choose This Instead of the Usual Alternatives</h2>
+          <p class="section-intro">
+            This is not a branding claim. It is the practical comparison buyers usually make
+            before deciding whether a dataset is useful for evaluation work.
+          </p>
+        </div>
+
+        <div class="trust-compare-table">
+          <div class="trust-compare-head trust-compare-row">
+            <div>Category</div>
+            <div>Typical Alternative</div>
+            <div>OriginData Approach</div>
+          </div>
+
+          <div class="trust-compare-row">
+            <div class="trust-compare-cat">Generic open datasets</div>
+            <div>Clean, structured, but hides real-world failure conditions</div>
+            <div>Captured where rules break — ambiguity, density, and informal behavior</div>
+          </div>
+
+          <div class="trust-compare-row">
+            <div class="trust-compare-cat">Simulation-heavy datasets</div>
+            <div>Repeatable, but lacks irrational human behavior</div>
+            <div>Real-world interactions with hesitation, negotiation, and unpredictability</div>
+          </div>
+
+          <div class="trust-compare-row">
+            <div class="trust-compare-cat">Self-collection</div>
+            <div>Slow, expensive, operationally complex</div>
+            <div>Ready-to-use structured data without building collection pipelines</div>
+          </div>
+
+          <div class="trust-compare-row">
+            <div class="trust-compare-cat">Marketplace datasets</div>
+            <div>Wide inventory, inconsistent quality, weak scenario targeting</div>
+            <div>Deliberately captured for failure scenarios, not volume</div>
+          </div>
+        </div>
+      </div>
+
+      <p class="trust-micro-bar">
+        Used for internal evaluation, failure-mode analysis, and early-stage model validation — not for demos.
+      </p>
+
+    </section>
+
+    <!-- Team Section -->
+    <section class="section trust-team-section section-light">
+      <div class="container">
+        <div class="trust-section-header">
+          <span class="section-eyebrow">Who stands behind delivery</span>
+          <h2 class="section-title">The Team Behind Collection, Structure, and Delivery</h2>
+          <p class="section-intro">
+            Buyers do not only evaluate the data. They evaluate whether the team behind it
+            can actually collect, organize, and deliver reliably.
+          </p>
+        </div>
+
+        <div class="trust-team-grid">
+          <article class="trust-team-card">
+            <p class="trust-team-role">Founder / Lead</p>
+            <h3>Angela Kim</h3>
+            <p>
+              Leads dataset direction, buyer alignment, and real-world collection strategy
+              for high-entropy urban use cases.
+            </p>
+          </article>
+
+          <article class="trust-team-card">
+            <p class="trust-team-role">Operations / Data Delivery</p>
+            <h3>Field Operations Lead</h3>
+            <p>
+              Coordinates collection flow, pack preparation, QA handoff,
+              and delivery readiness across evolving dataset batches.
+            </p>
+          </article>
+
+          <article class="trust-team-card">
+            <p class="trust-team-role">Engineering / Workflow Lead</p>
+            <h3>Data Workflow Lead</h3>
+            <p>
+              Maintains ingestion structure, segment organization, metadata consistency,
+              and delivery formats designed for engineering use.
+            </p>
+          </article>
+        </div>
+
+        <div class="trust-team-cta">
+          <p>
+            Want to see if this fits your evaluation pipeline?
+          </p>
+          <a href="/contact.html" class="btn btn-primary">
+            Request a Sample Pack →
+          </a>
+        </div>
+      </div>
+    </section>
+
     <!-- Results + Philosophy Combined -->
     <section class="section dark-section outcomes-philosophy-section">
       <div class="container outcomes-philosophy-container">

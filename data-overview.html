@@ -168,7 +168,7 @@
             </div>
         </section>
 
-        <!-- DATASET SNAPSHOT + COVERAGE -->
+        <!-- DATASET SNAPSHOT -->
         <div class="container">
             <div class="page-wrap">
 
@@ -202,6 +202,80 @@
                     </p>
                 </section>
 
+            </div>
+        </div>
+
+        <!-- COVERAGE TABLE (BLACK SECTION) -->
+        <section class="section dark-section dark-fullbleed data-overview-coverage-table">
+            <div class="page-wrap">
+
+                <h2 class="section-title text-left">Coverage Table</h2>
+
+                <p class="lead text-left mw-78ch">
+                    A simplified snapshot of current collection coverage.
+                    Detailed breakdowns and sample packs are shared during qualification.
+                </p>
+
+                <p class="coverage-table-mobile-hint">
+                    Swipe horizontally to view full coverage details.
+                </p>
+
+                <div class="coverage-table-wrap dark">
+                    <table class="coverage-table dark">
+                        <thead>
+                            <tr>
+                                <th>City / Country</th>
+                                <th>Collection Window</th>
+                                <th>Primary Scenarios</th>
+                                <th>Day / Night</th>
+                                <th>Weather</th>
+                                <th>Traffic Density</th>
+                                <th>Segment / Footage Scale</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Dhaka, Bangladesh</td>
+                                <td>Q4 2025 – Q1 2026</td>
+                                <td>Urban intersections, mixed traffic</td>
+                                <td>Mostly Day, Partial Night</td>
+                                <td>Clear, Overcast, Light Rain</td>
+                                <td>Medium to Heavy</td>
+                                <td>10,000+ segments</td>
+                            </tr>
+                            <tr>
+                                <td>Chattogram, Bangladesh</td>
+                                <td>Q4 2025 – Q1 2026</td>
+                                <td>Dense mixed vehicle flow</td>
+                                <td>Day</td>
+                                <td>Humid, Overcast</td>
+                                <td>Medium to Heavy</td>
+                                <td>Growing weekly</td>
+                            </tr>
+                            <tr>
+                                <td>Secondary Urban Coverage</td>
+                                <td>Rolling collection</td>
+                                <td>Market streets, narrow roads</td>
+                                <td>Day / Select Night</td>
+                                <td>Variable</td>
+                                <td>Medium</td>
+                                <td>Available on request</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p class="mt-12 note mw-78ch">
+                    Representative public snapshot. Detailed breakdowns available during buyer qualification.
+                </p>
+
+            </div>
+        </section>
+
+        <!-- COVERAGE AT A GLANCE -->
+        <div class="container">
+            <div class="page-wrap">
+
                 <section class="section data-overview-coverage">
                     <h2 class="section-title text-left">Coverage at a glance</h2>
                     <p class="lead text-left mw-78ch coverage-intro">
@@ -229,6 +303,8 @@
 
             </div>
         </div>
+
+
 
         <!-- METADATA -->
         <section class="section dark-section dark-fullbleed">
@@ -307,6 +383,157 @@
             </div>
         </div>
 
+        <!-- ENGINEER INTEGRATION SECTION -->
+        <section class="section dark-section dark-fullbleed engineer-integration-section">
+            <div class="page-wrap">
+                <h2 class="section-title text-left">QC Structure, Metadata Preview, and Integration Notes</h2>
+                <p class="lead text-left mw-78ch">
+                    This section is designed for technical buyers who want to review filtering principles,
+                    example scenario structure, metadata format, and a simple ingestion path before requesting a PoC.
+                </p>
+
+                <div class="engineer-grid">
+                    <div class="pack-card engineer-card">
+                        <h3>QC filtering principles</h3>
+                        <ul>
+                            <li><strong>Technical usability first</strong> — segments are reviewed for visibility,
+                                continuity, and ingestion readiness.</li>
+                            <li><strong>Low-information segments</strong> — repetitive or operationally weak clips are
+                                excluded from delivery priority.</li>
+                            <li><strong>High-entropy interactions</strong> — dense mixed traffic, ambiguity, and
+                                near-field interactions are prioritized.</li>
+                            <li><strong>Metadata consistency</strong> — required keys must be present for segment-level
+                                delivery.</li>
+                            <li><strong>Delivery rule</strong> — rejected segments are excluded from delivery datasets.
+                            </li>
+                        </ul>
+                        <p class="mt-12 note mw-78ch">
+                            For PoC, the goal is transparent filtering structure rather than overengineered scoring.
+                            Expanded QC logic can be introduced for larger production programs.
+                        </p>
+                    </div>
+
+                    <div class="pack-card engineer-card">
+                        <h3>Scenario categories and distribution logic</h3>
+                        <ul>
+                            <li>Unsignalized intersections</li>
+                            <li>Mixed-agent urban flow</li>
+                            <li>Pedestrian negotiation zones</li>
+                            <li>Motorbike-heavy corridors</li>
+                            <li>Occlusion, glare, rain, and dense compression scenes</li>
+                        </ul>
+
+                        <div class="distribution-snapshot">
+                            <div class="distribution-row">
+                                <span class="distribution-label">Edge-like interactions</span>
+                                <div class="distribution-bar">
+                                    <span class="distribution-fill dist-85"></span>
+                                </div>
+                            </div>
+
+                            <div class="distribution-row">
+                                <span class="distribution-label">Routine low-complexity flow</span>
+                                <div class="distribution-bar">
+                                    <span class="distribution-fill dist-35"></span>
+                                </div>
+                            </div>
+
+                            <div class="distribution-row">
+                                <span class="distribution-label">Occlusion / ambiguity moments</span>
+                                <div class="distribution-bar">
+                                    <span class="distribution-fill dist-70"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p class="mt-12 note mw-78ch">
+                            Distribution snapshot is illustrative. The collection strategy is intentionally biased
+                            toward
+                            scenarios that are more useful for evaluation, failure analysis, and hard-case review.
+                        </p>
+                    </div>
+
+                    <div class="pack-card engineer-card">
+                        <h3>Sample metadata JSON</h3>
+                        <pre class="engineer-json">{
+  "segment_id": "BD-DHK-2026-000182",
+  "file_name": "BD-DHK-2026-000182.mp4",
+  "duration_sec": 42,
+  "scene_type": "unsignalized_intersection",
+  "short_description": "Dense mixed traffic with pedestrian negotiation near junction entry.",
+  "capture_context": {
+    "time_of_day": "day",
+    "weather": "overcast",
+    "platform": "two_wheeler"
+  },
+  "qc_status": "pass",
+  "qc_notes": "Continuous forward view, acceptable visibility, stable enough for PoC ingestion."
+}</pre>
+
+                        <div class="engineer-actions">
+
+                            <!-- Preview (View Pricing 스타일 복제) -->
+                            <a href="#" onclick="openMetadataModal(); return false;" style="
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:12px 20px;
+    border-radius:999px;
+    border:1px solid #38bdf8;
+    color:#38bdf8;
+    background:transparent;
+    text-decoration:none;
+    font-weight:600;
+    width:100%;
+  ">
+                                Preview Metadata →
+                            </a>
+
+                            <!-- Download (기존 primary 유지) -->
+                            <a href="/sample-segment-metadata.json" download class="btn btn-primary">
+                                Download JSON
+                            </a>
+
+                        </div>
+
+                        <p class="mt-12 note mw-78ch">
+                            This downloadable file helps engineering teams test parsing, mapping, and internal review
+                            flows
+                            before requesting a broader sample pack.
+                        </p>
+                    </div>
+
+                    <div class="pack-card engineer-card">
+                        <h3>Integration hint</h3>
+                        <ul>
+                            <li><strong>Delivery format</strong> — MP4 clips + JSON metadata</li>
+                            <li><strong>File naming</strong> — one segment ID maps to one video file and one metadata
+                                entry</li>
+                            <li><strong>Clip-to-metadata mapping</strong> — use <code>segment_id</code> as the stable
+                                join key</li>
+                            <li><strong>Schema simplicity</strong> — lightweight fields for fast PoC validation</li>
+                        </ul>
+
+                        <div class="integration-flow">
+                            <p><strong>Typical ingestion flow</strong></p>
+                            <ol>
+                                <li>Download sample package</li>
+                                <li>Parse JSON metadata</li>
+                                <li>Map <code>segment_id</code> to clip filename</li>
+                                <li>Run ingestion and compatibility checks</li>
+                                <li>Expand coverage after validation</li>
+                            </ol>
+                        </div>
+
+                        <p class="mt-12 note mw-78ch">
+                            The objective is to reduce internal review friction and make technical validation possible
+                            without requiring custom tooling first.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- HOW TO EVALUATE -->
         <section class="section dark-section dark-fullbleed">
             <div class="page-wrap">
@@ -369,8 +596,18 @@
                             See the Legal and Transparency page for our approach and PoC usage framing.
                         </p>
                         <p class="mt-12">
-                            <a href="./legal-transparency.html"
-                                style="font-weight:600; color:#38bdf8; text-decoration:none;">
+                            <a href="./legal-transparency.html" style="
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:12px 20px;
+    border-radius:999px;
+    border:1px solid #38bdf8;
+    color:#38bdf8;
+    background:transparent;
+    text-decoration:none;
+    font-weight:600;
+">
                                 View Legal & Transparency →
                             </a>
                         </p>
@@ -398,9 +635,70 @@
 
     </main>
 
+    <!-- METADATA MODAL (복붙) -->
+    <div id="metadataModal" class="metadata-modal" aria-hidden="true">
+        <div class="metadata-modal-dialog">
+            <div class="metadata-modal-header">
+                <h3>Sample Segment Metadata</h3>
+                <button type="button" class="metadata-modal-close" onclick="closeMetadataModal()">
+                    ×
+                </button>
+            </div>
+
+            <div class="metadata-modal-body">
+                <pre class="metadata-modal-pre">{
+  "segment_id": "BD-DHK-SEG-000182",
+  "source_file_id": "BD-DHK-RIDE-000021",
+  "clip_file_name": "BD-DHK-SEG-000182.mp4",
+  "segment_window": {
+    "start_sec": 120,
+    "end_sec": 162,
+    "duration_sec": 42
+  },
+  "scene_type": "unstructured_urban_flow",
+  "short_description": "Dense mixed traffic with near-field pedestrian interaction and frequent vehicle cut-ins.",
+  "capture_context": {
+    "country": "Bangladesh",
+    "city": "Dhaka",
+    "time_of_day": "day",
+    "weather": "overcast",
+    "capture_platform": "two_wheeler"
+  },
+  "qc_status": "pass",
+  "qc_summary": "Continuous forward view with acceptable visibility and usable motion stability."
+}</pre>
+            </div>
+        </div>
+    </div>
+
     <div id="site-footer"></div>
 
     <script type="module" src="/src/main.js"></script>
+
+    <script>
+        function openMetadataModal() {
+            const modal = document.getElementById('metadataModal');
+            modal.classList.add('is-open');
+        }
+
+        function closeMetadataModal() {
+            const modal = document.getElementById('metadataModal');
+            modal.classList.remove('is-open');
+        }
+
+        document.addEventListener('click', function (e) {
+            const modal = document.getElementById('metadataModal');
+            if (e.target === modal) {
+                closeMetadataModal();
+            }
+        });
+
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') {
+                closeMetadataModal();
+            }
+        });
+    </script>
 
     <style>
         .data-overview .cta-row {
