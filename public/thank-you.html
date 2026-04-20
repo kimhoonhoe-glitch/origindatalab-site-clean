@@ -6,24 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Request Received | Origindata Lab</title>
     <meta name="description"
-        content="Your PoC Lite request has been received. Origindata Lab will review your scenario and respond with next steps within 24 hours." />
+        content="Your request has been received. Origindata Lab will review your scenario and respond with next steps within 24 hours." />
     <meta name="robots" content="noindex, nofollow" />
     <link rel="canonical" href="https://origindatalab.io/thank-you.html" />
 
     <link rel="icon" type="image/svg+xml" href="/assets/icons/vite.svg" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/style.css" />
 
     <style>
         body.thank-you-page {
+            margin: 0;
             background: #f3f4f6;
             color: #111827;
-            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
         }
 
         body.thank-you-page main {
-            padding-top: calc(var(--header-height) + 52px);
-            padding-bottom: 84px;
+            padding-top: 120px;
+            padding-bottom: 72px;
         }
 
         .thankyou-wrap {
@@ -32,7 +31,7 @@
         }
 
         .thankyou-card {
-            background: rgba(255, 255, 255, 0.94);
+            background: rgba(255, 255, 255, 0.96);
             border: 1px solid rgba(17, 24, 39, 0.08);
             border-radius: 22px;
             padding: 52px 44px 44px;
@@ -47,9 +46,9 @@
             border-radius: 999px;
             display: grid;
             place-items: center;
-            background: rgba(102, 252, 241, 0.18);
-            border: 1px solid rgba(69, 162, 158, 0.28);
-            box-shadow: 0 12px 32px rgba(69, 162, 158, 0.14);
+            background: rgba(79, 209, 217, 0.18);
+            border: 1px solid rgba(79, 209, 217, 0.32);
+            box-shadow: 0 12px 32px rgba(79, 209, 217, 0.14);
         }
 
         .thankyou-success-mark span {
@@ -67,98 +66,61 @@
         }
 
         .thankyou-card h1 {
-            margin: 0 0 10px;
-            font-size: 2.25rem;
+            margin: 0 0 12px;
+            font-size: 2.2rem;
             line-height: 1.15;
             letter-spacing: -0.03em;
             color: #111827;
         }
 
         .thankyou-subtitle {
-            margin: 0 auto;
-            max-width: 640px;
-            font-size: 1.06rem;
+            margin: 0 auto 10px;
+            max-width: 620px;
+            font-size: 1.04rem;
             line-height: 1.75;
             color: #4b5563;
-        }
-
-        .thankyou-section-title {
-            margin: 34px 0 16px;
-            font-size: 1.18rem;
-            font-weight: 800;
-            letter-spacing: -0.02em;
-            color: #111827;
-        }
-
-        .thankyou-steps-wrap {
-            text-align: center;
-        }
-
-        .thankyou-steps {
-            display: inline-block;
-            text-align: left;
-            margin: 0 auto;
-            padding-left: 22px;
-            max-width: 650px;
-            font-size: 1rem;
-            line-height: 1.85;
-            color: #374151;
-        }
-
-        .thankyou-steps li {
-            margin: 9px 0;
-        }
-
-        .thankyou-steps strong {
-            color: #111827;
         }
 
         .thankyou-reassure {
-            margin: 26px auto 0;
-            max-width: 680px;
+            margin: 0 auto;
+            max-width: 620px;
             font-size: 0.98rem;
             line-height: 1.75;
-            color: #4b5563;
+            color: #6b7280;
         }
 
         .thankyou-links {
-            margin-top: 30px;
+            margin: 28px auto 0;
             display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
+            grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 14px;
+            max-width: 560px;
         }
 
-        .thankyou-links .btn {
-            width: 100%;
+        .thankyou-links a {
             min-height: 52px;
             display: inline-flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            border-radius: 12px;
-            font-weight: 800;
-            letter-spacing: 0.02em;
-            text-transform: none;
+            border-radius: 999px;
+            font-weight: 700;
             font-size: 0.96rem;
-            padding: 0 18px;
-        }
-
-        .thankyou-links .btn-primary {
-            background-color: var(--text-highlight);
-            color: #0B0C10;
-            border: 1px solid var(--text-highlight);
-        }
-
-        .thankyou-links .btn-secondary-lite {
-            background: #ffffff;
-            color: #111827;
-            border: 1px solid rgba(17, 24, 39, 0.12);
+            padding: 12px 22px;
             text-decoration: none;
+            box-sizing: border-box;
         }
 
-        .thankyou-links .btn-secondary-lite:hover {
-            border-color: rgba(17, 24, 39, 0.22);
-            background: #f9fafb;
+        .thankyou-links .btn-primary-like {
+            background: #4fd1d9;
+            color: #111827;
+            border: 1px solid #4fd1d9;
+        }
+
+        .thankyou-links .btn-secondary-like {
+            background: transparent;
+            color: #38bdf8;
+            border: 1px solid #38bdf8;
         }
 
         .thankyou-divider {
@@ -185,15 +147,9 @@
             text-decoration: underline;
         }
 
-        @media (max-width: 900px) {
-            .thankyou-links {
-                grid-template-columns: 1fr;
-            }
-        }
-
         @media (max-width: 768px) {
             body.thank-you-page main {
-                padding-top: calc(var(--header-height) + 30px);
+                padding-top: 96px;
                 padding-bottom: 56px;
             }
 
@@ -213,7 +169,7 @@
             }
 
             .thankyou-card h1 {
-                font-size: 1.85rem;
+                font-size: 1.8rem;
             }
 
             .thankyou-subtitle {
@@ -221,20 +177,14 @@
                 line-height: 1.7;
             }
 
-            .thankyou-section-title {
-                font-size: 1.08rem;
-                margin-top: 28px;
-            }
-
-            .thankyou-steps {
-                font-size: 0.95rem;
-                line-height: 1.75;
-                padding-left: 20px;
-            }
-
             .thankyou-reassure,
             .thankyou-footer-note {
                 font-size: 0.93rem;
+            }
+
+            .thankyou-links {
+                grid-template-columns: 1fr;
+                max-width: 100%;
             }
         }
     </style>
@@ -250,51 +200,91 @@
                     <span>✅</span>
                 </div>
 
-                <p class="thankyou-kicker">Submission Successful</p>
+                <p class="thankyou-kicker">Request Received</p>
 
-                <h1>Your request was submitted successfully.</h1>
+                <h1>Your request has been received.</h1>
 
-                <p class="thankyou-subtitle">
-                    Thanks — your PoC Lite intake has been received. Our team will review your scenario and send clear
-                    next steps within 24 hours.
+                <p class="thankyou-subtitle" style="white-space: nowrap;">
+                    We’ll review your request and send a matching sample or next steps within 24 hours.
                 </p>
 
-                <h2 class="thankyou-section-title">What happens next</h2>
-
-                <div class="thankyou-steps-wrap">
-                    <ol class="thankyou-steps">
-                        <li><strong>Same-day feasibility check:</strong> We review your scenario and confirm whether the
-                            request fits our current dataset scope.</li>
-                        <li><strong>Within 24 hours:</strong> You’ll receive a clear follow-up email with recommended
-                            next steps and PoC direction.</li>
-                        <li><strong>If approved:</strong> We’ll share a secure checkout link and a proposed delivery
-                            timeline.</li>
-                    </ol>
-                </div>
-
                 <p class="thankyou-reassure">
-                    No spam. No obligation. This submission does <strong>not</strong> initiate payment.
+                    No payment required. We’ll recommend the fastest way to validate your use case.
                 </p>
 
                 <div class="thankyou-links" aria-label="Helpful links">
-                    <a href="/pricing.html" class="btn btn-primary">View Pricing</a>
-                    <a href="/data-overview.html" class="btn btn-secondary-lite">View Data Overview</a>
-                    <a href="/contact.html" class="btn btn-secondary-lite">Talk to a Data Engineer</a>
+                    <a href="/data-overview.html" class="btn-primary-like">See Sample Structure →</a>
+                    <a href="/contact.html" class="btn-secondary-like">Update Request →</a>
                 </div>
 
                 <div class="thankyou-divider" role="separator" aria-hidden="true"></div>
 
                 <p class="thankyou-footer-note">
-                    Enterprise or large-scale dataset request?
-                    <a href="/contact.html">Invoice-based engagement available →</a>
+                    Need to update your request or share more detail?
+                    <a href="/contact.html">Go back to Contact →</a>
                 </p>
             </section>
         </div>
     </main>
 
-    <div id="site-footer"></div>
+    <footer class="site-footer">
+        <div class="container footer-inner">
 
-    <script type="module" src="/src/main.js"></script>
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        Origindata<span>Lab</span>
+                    </a>
+                    <p class="footer-description">
+                        Real-world urban POV datasets for AI, robotics, and autonomous systems.
+                    </p>
+                </div>
+
+                <div class="footer-links-group">
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="company.html">Company</a></li>
+                            <li><a href="data-overview.html">Data Overview</a></li>
+                            <li><a href="legal-transparency.html">Legal & Transparency</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>Explore</h4>
+                        <ul>
+                            <li><a href="index.html#different">Why It’s Different</a></li>
+                            <li><a href="use-cases.html">Use Cases</a></li>
+                            <li><a href="pricing.html">Pricing</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>Contact</h4>
+                        <ul>
+                            <li><a href="contact.html">Start a PoC</a></li>
+                            <li><a href="mailto:contact@origindatalab.io">contact@origindatalab.io</a></li>
+                            <li><a href="mailto:sales@origindatalab.io">sales@origindatalab.io</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-legal">
+                <p>
+                    OriginDataLab Co., Ltd. | Business Registration No: 423-87-03934 | Republic of Korea<br>
+                    CEO: Angela Kim | Email: <a href="mailto:ceo@origindatalab.io">ceo@origindatalab.io</a> |
+                    Contracting Entity: OriginDataLab Co., Ltd.<br>
+                    Address: 31-46, Hangogae-gil, Yangyang-eup, Yangyang-gun, Gangwon-do, Republic of Korea
+                </p>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2026 Origindata Lab. All rights reserved.</p>
+            </div>
+
+        </div>
+    </footer>
 </body>
 
 </html>

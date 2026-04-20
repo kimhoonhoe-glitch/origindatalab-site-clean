@@ -1,0 +1,16 @@
+QC Summary
+
+All clips in this sample pack passed basic QC review.
+
+Checked items:
+- playable video
+- usable visibility
+- forward-facing capture
+- continuous scene flow
+- metadata consistency
+
+Note:
+This sample pack is intended for structure and format evaluation only.
+
+Full PoC deliveries include expanded scenario coverage,
+larger volume, and stricter quality validation.

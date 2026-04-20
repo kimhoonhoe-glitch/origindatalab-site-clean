@@ -1,0 +1,22 @@
+[
+  {
+    "clip_id": "clip-01",
+    "scene_type": "mixed_traffic_intersection",
+    "country": "Bangladesh",
+    "city": "Dhaka",
+    "time_of_day": "day",
+    "weather": "clear",
+    "traffic_density": "high",
+    "notes": "Dense mixed traffic with pedestrian interaction"
+  },
+  {
+    "clip_id": "clip-02",
+    "scene_type": "pedestrian_interaction_zone",
+    "country": "Bangladesh",
+    "city": "Dhaka",
+    "time_of_day": "day",
+    "weather": "overcast",
+    "traffic_density": "medium",
+    "notes": "Close-range pedestrian and motorcycle interaction"
+  }
+]
